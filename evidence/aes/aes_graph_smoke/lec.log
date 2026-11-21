@@ -1,0 +1,8 @@
+# [EXTRACTED SUMMARY] - AES Stage 4 LEC summary extract
+# Original file: <LOCAL_ROOT>/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/stage4_graphfilter_aesndr_margin50_recheck/lec.log
+# Original size: 730 bytes (0.00 MB)
+# Original SHA-256: 04ef41b387b323e2c7eb19d3b734080874c2f1a8fb6595f06bde1b47a6360229
+
+CL_OVPS_LEC status=LEC_PASS top=aes_cipher_top baseline_removed_clock=109 candidate_removed_clock=108 baseline_removed_dummy=97 candidate_removed_dummy=0 baseline_ties=0 candidate_ties=0 baseline_supply_pins_added=57448 candidate_supply_pins_added=57596 reset_model=native_cell_model clock_sinks=562 clock_transport_abstraction=graph_verified topology=$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/stage4_graphfilter_aesndr_margin50_recheck/lec/clock_topology.json log=$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/stage4_graphfilter_aesndr_margin50_recheck/lec/equivalence.log
+
+LEC_PROOF_POINTS proven=562 unproven=0

@@ -1,0 +1,8 @@
+# [EXTRACTED SUMMARY] - RISCV32I Stage 4 LEC summary extract
+# Original file: <LOCAL_ROOT>/build/power/cl_ovps_topology_upgrade_20261103/riscv_graph_smoke/candidate_stage4_graphfilter/lec.log
+# Original size: 704 bytes (0.00 MB)
+# Original SHA-256: e0f0ac31f100ac1b110e2c7bc6a91c93c029b34052413f3e060f59c8001eccf9
+
+CL_OVPS_LEC status=LEC_PASS top=riscv baseline_removed_clock=112 candidate_removed_clock=112 baseline_removed_dummy=94 candidate_removed_dummy=0 baseline_ties=32 candidate_ties=32 baseline_supply_pins_added=20720 candidate_supply_pins_added=20724 reset_model=async2sync_for_dfrtp clock_sinks=1056 clock_transport_abstraction=graph_verified topology=$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/riscv_graph_smoke/candidate_stage4_graphfilter/lec/clock_topology.json log=$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/riscv_graph_smoke/candidate_stage4_graphfilter/lec/equivalence.log
+
+LEC_PROOF_POINTS proven=1123 unproven=0

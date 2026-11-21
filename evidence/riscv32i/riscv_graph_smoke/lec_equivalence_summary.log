@@ -1,0 +1,67 @@
+# [EXTRACTED SUMMARY] - RISCV32I Yosys equivalence check summary extract
+# Original file: <LOCAL_ROOT>/build/power/cl_ovps_topology_upgrade_20261103/riscv_graph_smoke/candidate_stage4_graphfilter/lec/equivalence.log
+# Original size: 20182073 bytes (19.25 MB)
+# Original SHA-256: 926401c8c7848145cf65a14141aecd4d52f71f6073c1237614dbe01e00573744
+
+# RISCV32I Yosys equivalence check summary
+# Sourced from original: build/power/cl_ovps_topology_upgrade_20261103/riscv_graph_smoke/candidate_stage4_graphfilter/lec/equivalence.log (Size: 19.25 MB, SHA256: 926401c8c7848145cf65a14141aecd4d52f71f6073c1237614dbe01e00573744)
+# Tool command and invocation header:
+
+-- Executing script file `$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/riscv_graph_smoke/candidate_stage4_graphfilter/lec/equivalence.ys' --
+
+1. Executing Verilog-2005 frontend: $CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/riscv_graph_smoke/candidate_stage4_graphfilter/lec/udp_blackboxes.v
+Parsing Verilog input from `$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/riscv_graph_smoke/candidate_stage4_graphfilter/lec/udp_blackboxes.v' to AST representation.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__udp_dff$NSR'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__udp_dff$NSR_pp$PG$N'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__udp_dff$P'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__udp_dff$P_pp$PG$N'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__udp_dff$PR'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__udp_dff$PR_pp$PG$N'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__udp_dff$PS'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__udp_dff$PS_pp$PG$N'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__udp_dlatch$lP'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__udp_dlatch$lP_pp$PG$N'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__udp_dlatch$P'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__udp_dlatch$P_pp$PG$N'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__udp_dlatch$PR'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__udp_dlatch$PR_pp$PG$N'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__udp_mux_2to1'.
+
+# [... detailed per-cell proof iterations omitted for size ...]
+
+# Final equivalence status and Yosys version summary:
+ success!
+  Trying to prove $equiv for \dp.rf.rf[9][2]$_DFFE_PP_.Q:ezsat
+ success!
+  Trying to prove $equiv for \dp.rf.rf[9][30]$_DFFE_PP_.Q:ezsat
+ success!
+  Trying to prove $equiv for \dp.rf.rf[9][31]$_DFFE_PP_.Q:ezsat
+ success!
+  Trying to prove $equiv for \dp.rf.rf[9][3]$_DFFE_PP_.Q:ezsat
+ success!
+  Trying to prove $equiv for \dp.rf.rf[9][4]$_DFFE_PP_.Q:ezsat
+ success!
+  Trying to prove $equiv for \dp.rf.rf[9][5]$_DFFE_PP_.Q:ezsat
+ success!
+  Trying to prove $equiv for \dp.rf.rf[9][6]$_DFFE_PP_.Q:ezsat
+ success!
+  Trying to prove $equiv for \dp.rf.rf[9][7]$_DFFE_PP_.Q:ezsat
+ success!
+  Trying to prove $equiv for \dp.rf.rf[9][8]$_DFFE_PP_.Q:ezsat
+ success!
+  Trying to prove $equiv for \dp.rf.rf[9][9]$_DFFE_PP_.Q:ezsat
+ success!
+Proved 1056 previously unproven $equiv cells.
+
+17. Executing EQUIV_INDUCT pass.
+No selected unproven $equiv cells found in riscv_equiv.
+Proved 0 previously unproven $equiv cells.
+
+18. Executing EQUIV_STATUS pass.
+Found 1123 $equiv cells in riscv_equiv:
+  Of those cells 1123 are proven and 0 are unproven.
+  Equivalence successfully proven!
+
+End of script. Logfile hash: d44776ec52, time: 4.49s, user: 6.20s, system: 0.26s, MEM: 494.95 MB peak
+Yosys 0.68+post (git sha1 c12172fbae8af5e20f6fb52e3d4e92d56ed587b6, Release, AppleClang clang++ 17.0.0.17000604)
+Time spent: 21% 5x opt_clean (1 sec), 16% 8x read_verilog (0 sec), ...

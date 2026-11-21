@@ -1,0 +1,60 @@
+# CL-OVPS .gitignore
+
+# Heavy physical design EDA artifacts (ODB, DEF, SPEF, VCD, GDS, SDF)
+*.odb
+*.def
+*.spef
+*.vcd
+*.gds
+*.sdf
+*.vvp
+
+# Build trees, temporary directories, caches, scratch
+build/
+work/
+results/
+logs/
+objects/
+reports_dir/
+
+# Vendored toolchains, PDKs, external checkouts
+openroad/
+tools/
+pdk/
+
+# Upstream git repository inside designs
+designs/picorv32/.git/
+
+# Compiled code, binaries, libraries
+__pycache__/
+*.py[cod]
+*$py.class
+*.a
+*.o
+*.so
+*.dylib
+
+# Python virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Editor and OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Whitelist small essential evidence
+!evidence/
+designs/picorv32/.git_backup/
+.git_backup/

@@ -1,0 +1,53 @@
+{
+  "clock_leaf_ndr_nets": 4,
+  "design": "gcd_topology_safe",
+  "engine": "CL-OVPS Stage 4 ORFS route/signoff driver",
+  "gates": {
+    "clock_leaf_ndr": true,
+    "logical_equivalence": true,
+    "pdn_vdd_vss": true,
+    "route_drc_antenna": true
+  },
+  "inputs": {
+    "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_power/gcd_baseline20ns/3_place.odb": "dd2c20772c2e2ef4adbb56410752914b6d8d93ff3a54bd39947a127523d6ac5f",
+    "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_power/gcd_baseline20ns/3_place.sdc": "3adc599eaa8404b5b03990e23d1ee23fb0db51c36b4dd8953fd52249ffb4a142",
+    "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcdtopo_safe_20261103/cts/4_cts.sdc": "2fcc41e3bf3f80ff38b20a0067781701a7e1247755dc549c419e004939e698dd",
+    "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/stage3/sized.odb": "662022c2317fe86fd8f0da4ff031045c6e214f9b6dfd95bac20e2666590e8f1a",
+    "$CL_OVPS_ROOT/designs/gcd/flow/config.mk": "ba5989f18d6b5c5216de1159b9c472030863cb00865283eec2cf5703f888be30"
+  },
+  "lec": {
+    "log": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/stage4_proof_refresh/lec.log",
+    "pass": true,
+    "plan": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/lec_plan.json",
+    "return_code": 0,
+    "status": "LEC_PASS"
+  },
+  "outputs": {
+    "lec_status": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/stage4_proof_refresh/lec_status.txt",
+    "netlist": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcdtopo_safe_20261103/route/6_final.v",
+    "netlist_sha256": "599dcfe036b30b970a01471894f74bd4f3afa07ac94a9c0b712a783c815a2afc",
+    "odb": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcdtopo_safe_20261103/route/6_final.odb",
+    "odb_sha256": "bcd0a8e4f87071667d905105f2a2cd1b9531767eade052752378d02423f850b8",
+    "spef": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcdtopo_safe_20261103/route/6_final.spef",
+    "spef_sha256": "02bc8f67446a55b02c4c6d3d4d17e4d20c4c5e119e7a4e385019929001f038f1"
+  },
+  "power_grid": {
+    "pass": true,
+    "psm_0069_count": 0,
+    "vdd_pass": true,
+    "vss_pass": true
+  },
+  "route": {
+    "antenna_net_violations": 0,
+    "antenna_pin_violations": 0,
+    "drc_violations": 0,
+    "pass": true
+  },
+  "schema_version": 1,
+  "status": "PASS",
+  "timing_repair": {
+    "effective_setup_margin_ns": 0.0,
+    "requested_setup_margin_ns": null
+  },
+  "variant": "route"
+}

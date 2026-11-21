@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "variables": {
+    "flow_dir": "{root}/tools/openroad-flow-scripts/flow",
+    "flow_config": "{root}/designs/gcd/flow/config.mk",
+    "work_home": "{root}/build/orfs",
+    "platform": "sky130hd",
+    "design_nickname": "gcd_phase3b_control_20261104",
+    "route_variant": "clovps_phase3b_control_gcd_20261104_route",
+    "cts_variant": "clovps_phase3b_control_gcd_20261104_cts",
+    "stage1_dir": "{output_dir}/stage1",
+    "cts_dir": "{output_dir}/cts",
+    "stage2_dir": "{output_dir}/stage2",
+    "stage3_dir": "{output_dir}/stage3",
+    "stage4_dir": "{output_dir}/stage4",
+    "rc_tcl": "{root}/tools/openroad-flow-scripts/flow/platforms/sky130hd/setRC.tcl",
+    "route_results": "{root}/build/orfs/results/{platform}/{design_nickname}/{route_variant}",
+    "route_logs": "{root}/build/orfs/logs/{platform}/{design_nickname}/{route_variant}",
+    "candidate_vcd_dir": "{output_dir}/candidate_vcd",
+    "routed_netlist": "{route_results}/6_final.v",
+    "baseline_netlist": "{root}/build/orfs/results/sky130hd/gcdflowplan_cold_v2/clovps_flowplan_gcd_cold_20261103_v2_route/6_final.v",
+    "lec_plan": "{root}/configs/phase3b/gcd_lec_plan.json"
+  },
+  "stages": [
+    {
+      "name": "stage1",
+      "command": [
+        "python3",
+        "{root}/scripts/cl_ovps_copy_odb.py",
+        "--input-odb",
+        "{placed_odb}",
+        "--output-odb",
+        "{stage1_dir}/optimized.odb"
+      ],
+      "outputs": {
+        "optimized_odb": "{stage1_dir}/optimized.odb"
+      }
+    },
+    {
+      "name": "stage2",
+      "commands": [
+        [
+          "python3",
+          "{root}/scripts/run_cl_ovps_cts.py",
+          "--design",
+          "gcd_flowplan_cold",
+          "--flow-dir",
+          "{flow_dir}",
+          "--flow-config",
+          "{flow_config}",
+          "--work-home",
+          "{work_home}",
+          "--platform",
+          "{platform}",
+          "--design-nickname",
+          "{design_nickname}",
+          "--placement-odb",
+          "{stage1_optimized_odb}",
+          "--placement-sdc",
+          "{sdc}",
+          "--variant",
+          "{cts_variant}",
+          "--output-dir",
+          "{cts_dir}"
+        ],
+        [
+          "python3",
+          "{root}/scripts/run_cl_ovps_pass.py",
+          "--stage",
+          "clock",
+          "--action",
+          "all",
+          "--input-odb",
+          "{work_home}/results/{platform}/{design_nickname}/{cts_variant}/4_1_cts.odb",
+          "--sdc",
+          "{work_home}/results/{platform}/{design_nickname}/{cts_variant}/4_cts.sdc",
+          "--default-activity",
+          "0.1",
+          "--lib",
+          "{lib}",
+          "--rc-tcl",
+          "{rc_tcl}",
+          "--upf",
+          "{upf}",
+          "--output-odb",
+          "{stage2_dir}/clock.odb",
+          "--report",
+          "{stage2_dir}/clock.tsv",
+          "--log",
+          "{stage2_dir}/clock.log"
+        ]
+      ],
+      "outputs": {
+        "clock_odb": "{stage2_dir}/clock.odb",
+        "cts_sdc": "{work_home}/results/{platform}/{design_nickname}/{cts_variant}/4_cts.sdc"
+      }
+    },
+    {
+      "name": "stage3",
+      "command": [
+        "python3",
+        "{root}/scripts/run_cl_ovps_pass.py",
+        "--stage",
+        "sizing",
+        "--action",
+        "all",
+        "--input-odb",
+        "{stage2_clock_odb}",
+        "--sdc",
+        "{stage2_cts_sdc}",
+        "--default-activity",
+        "0.1",
+        "--lib",
+        "{lib}",
+        "--rc-tcl",
+        "{rc_tcl}",
+        "--upf",
+        "{upf}",
+        "--output-odb",
+        "{stage3_dir}/sized.odb",
+        "--report",
+        "{stage3_dir}/sizing.tsv",
+        "--log",
+        "{stage3_dir}/sizing.log"
+      ],
+      "outputs": {
+        "sizing_odb": "{stage3_dir}/sized.odb"
+      }
+    },
+    {
+      "name": "stage4",
+      "outputs": {
+        "final_odb": "{route_results}/6_final.odb",
+        "final_sdc": "{route_results}/6_final.sdc",
+        "final_spef": "{route_results}/6_final.spef",
+        "stage4_manifest": "{stage4_dir}/stage4_manifest.json",
+        "final_netlist": "{routed_netlist}",
+        "candidate_vcd_dir": "{candidate_vcd_dir}"
+      },
+      "commands": [
+        [
+          "python3",
+          "{root}/scripts/run_cl_ovps_stage4.py",
+          "--design",
+          "gcd_flowplan_cold",
+          "--flow-dir",
+          "{flow_dir}",
+          "--flow-config",
+          "{flow_config}",
+          "--work-home",
+          "{work_home}",
+          "--platform",
+          "{platform}",
+          "--design-nickname",
+          "{design_nickname}",
+          "--source-place-odb",
+          "{stage1_optimized_odb}",
+          "--source-place-sdc",
+          "{sdc}",
+          "--transformed-odb",
+          "{stage3_sizing_odb}",
+          "--cts-sdc",
+          "{stage2_cts_sdc}",
+          "--variant",
+          "{route_variant}",
+          "--output-dir",
+          "{stage4_dir}",
+          "--openroad",
+          "{root}/tools/openroad/build/bin/openroad",
+          "--baseline-netlist",
+          "{baseline_netlist}",
+          "--lec-plan",
+          "{lec_plan}"
+        ],
+        [
+          "python3",
+          "{root}/scripts/cl_ovps_run_gate_vcd.py",
+          "--script",
+          "{root}/designs/gcd/sim/run_activity.sh",
+          "--netlist",
+          "{routed_netlist}",
+          "--output-dir",
+          "{candidate_vcd_dir}"
+        ]
+      ]
+    }
+  ],
+  "final": {
+    "placed_odb": "{stage4_final_odb}",
+    "sdc": "{stage4_final_sdc}",
+    "spef": "{stage4_final_spef}",
+    "vcd_dir": "{stage4_candidate_vcd_dir}"
+  },
+  "evidence": {
+    "route_log": "{route_logs}/5_2_route.log",
+    "psm_log": "{route_logs}/6_report.log",
+    "lec_status": "{stage4_dir}/lec_status.txt",
+    "lec_log": "{stage4_dir}/lec.log"
+  }
+}

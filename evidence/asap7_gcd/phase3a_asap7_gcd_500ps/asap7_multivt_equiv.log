@@ -1,0 +1,2240 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.68+post (git sha1 c12172fbae8af5e20f6fb52e3d4e92d56ed587b6, Release, AppleClang clang++ 17.0.0.17000604)
+
+-- Executing script file `$CL_OVPS_ROOT/build/power/phase3a_asap7_gcd_500ps/pass3a_routed_idle_trial_15lib/formal_lec/asap7_multivt_equiv.ys' --
+Found gzip magic in file `$CL_OVPS_ROOT/tools/openroad-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib.gz', decompressing using zlib.
+
+1. Executing Liberty frontend: $CL_OVPS_ROOT/tools/openroad-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib.gz
+Imported 42 cell types from liberty file.
+Found gzip magic in file `$CL_OVPS_ROOT/tools/openroad-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz', decompressing using zlib.
+
+2. Executing Liberty frontend: $CL_OVPS_ROOT/tools/openroad-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz
+Imported 37 cell types from liberty file.
+Found gzip magic in file `$CL_OVPS_ROOT/tools/openroad-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib.gz', decompressing using zlib.
+
+3. Executing Liberty frontend: $CL_OVPS_ROOT/tools/openroad-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib.gz
+Imported 34 cell types from liberty file.
+
+4. Executing Liberty frontend: $CL_OVPS_ROOT/tools/openroad-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib
+Imported 33 cell types from liberty file.
+Found gzip magic in file `$CL_OVPS_ROOT/tools/openroad-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz', decompressing using zlib.
+
+5. Executing Liberty frontend: $CL_OVPS_ROOT/tools/openroad-flow-scripts/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz
+Imported 56 cell types from liberty file.
+
+6. Executing Verilog-2005 frontend: $CL_OVPS_ROOT/build/power/phase3a_asap7_gcd_500ps/pass3a_routed_idle_trial_15lib/formal_lec/baseline_vt_normalized.v
+Parsing Verilog input from `$CL_OVPS_ROOT/build/power/phase3a_asap7_gcd_500ps/pass3a_routed_idle_trial_15lib/formal_lec/baseline_vt_normalized.v' to AST representation.
+Generating RTLIL representation for module `\gcd_baseline'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: $CL_OVPS_ROOT/build/power/phase3a_asap7_gcd_500ps/pass3a_routed_idle_trial_15lib/formal_lec/candidate_vt_normalized.v
+Parsing Verilog input from `$CL_OVPS_ROOT/build/power/phase3a_asap7_gcd_500ps/pass3a_routed_idle_trial_15lib/formal_lec/candidate_vt_normalized.v' to AST representation.
+Generating RTLIL representation for module `\gcd_candidate'.
+Successfully finished Verilog frontend.
+
+8. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: dpath.b_reg_out_gold (\dpath.b_reg_out_gold), dpath.b_reg_out_gate (\dpath.b_reg_out_gate) -> dpath.b_reg_out
+Presumably equivalent wires: dpath.a_reg$out_gold (\dpath.a_reg$out_gold), dpath.a_reg$out_gate (\dpath.a_reg$out_gate) -> dpath.a_reg$out
+Presumably equivalent wires: ctrl.curr_state__0_gold (\ctrl.curr_state__0_gold), ctrl.curr_state__0_gate (\ctrl.curr_state__0_gate) -> ctrl.curr_state__0
+Presumably equivalent wires: clknet_2_3__leaf_clk_gold (\clknet_2_3__leaf_clk_gold), clknet_2_3__leaf_clk_gate (\clknet_2_3__leaf_clk_gate) -> clknet_2_3__leaf_clk
+Presumably equivalent wires: net110_gold (\net110_gold), net110_gate (\net110_gate) -> net110
+Presumably equivalent wires: clknet_0_clk_gold (\clknet_0_clk_gold), clknet_0_clk_gate (\clknet_0_clk_gate) -> clknet_0_clk
+Presumably equivalent wires: net121_gold (\net121_gold), net121_gate (\net121_gate) -> net121
+Presumably equivalent wires: net120_gold (\net120_gold), net120_gate (\net120_gate) -> net120
+Presumably equivalent wires: net119_gold (\net119_gold), net119_gate (\net119_gate) -> net119
+Presumably equivalent wires: net118_gold (\net118_gold), net118_gate (\net118_gate) -> net118
+Presumably equivalent wires: net117_gold (\net117_gold), net117_gate (\net117_gate) -> net117
+Presumably equivalent wires: net116_gold (\net116_gold), net116_gate (\net116_gate) -> net116
+Presumably equivalent wires: net115_gold (\net115_gold), net115_gate (\net115_gate) -> net115
+Presumably equivalent wires: net114_gold (\net114_gold), net114_gate (\net114_gate) -> net114
+Presumably equivalent wires: clknet_2_0__leaf_clk_gold (\clknet_2_0__leaf_clk_gold), clknet_2_0__leaf_clk_gate (\clknet_2_0__leaf_clk_gate) -> clknet_2_0__leaf_clk
+Presumably equivalent wires: clknet_2_1__leaf_clk_gold (\clknet_2_1__leaf_clk_gold), clknet_2_1__leaf_clk_gate (\clknet_2_1__leaf_clk_gate) -> clknet_2_1__leaf_clk
+Presumably equivalent wires: clknet_2_2__leaf_clk_gold (\clknet_2_2__leaf_clk_gold), clknet_2_2__leaf_clk_gate (\clknet_2_2__leaf_clk_gate) -> clknet_2_2__leaf_clk
+Presumably equivalent wires: net112_gold (\net112_gold), net112_gate (\net112_gate) -> net112
+Presumably equivalent wires: net111_gold (\net111_gold), net111_gate (\net111_gate) -> net111
+Presumably equivalent wires: net113_gold (\net113_gold), net113_gate (\net113_gate) -> net113
+Presumably equivalent wires: n208_gold (\n208_gold), n208_gate (\n208_gate) -> n208
+Presumably equivalent wires: n207_gold (\n207_gold), n207_gate (\n207_gate) -> n207
+Presumably equivalent wires: n206_gold (\n206_gold), n206_gate (\n206_gate) -> n206
+Presumably equivalent wires: n205_gold (\n205_gold), n205_gate (\n205_gate) -> n205
+Presumably equivalent wires: n204_gold (\n204_gold), n204_gate (\n204_gate) -> n204
+Presumably equivalent wires: n203_gold (\n203_gold), n203_gate (\n203_gate) -> n203
+Presumably equivalent wires: n202_gold (\n202_gold), n202_gate (\n202_gate) -> n202
+Presumably equivalent wires: n201_gold (\n201_gold), n201_gate (\n201_gate) -> n201
+Presumably equivalent wires: n200_gold (\n200_gold), n200_gate (\n200_gate) -> n200
+Presumably equivalent wires: n199_gold (\n199_gold), n199_gate (\n199_gate) -> n199
+Presumably equivalent wires: n198_gold (\n198_gold), n198_gate (\n198_gate) -> n198
+Presumably equivalent wires: n197_gold (\n197_gold), n197_gate (\n197_gate) -> n197
+Presumably equivalent wires: n196_gold (\n196_gold), n196_gate (\n196_gate) -> n196
+Presumably equivalent wires: n195_gold (\n195_gold), n195_gate (\n195_gate) -> n195
+Presumably equivalent wires: n194_gold (\n194_gold), n194_gate (\n194_gate) -> n194
+Presumably equivalent wires: n193_gold (\n193_gold), n193_gate (\n193_gate) -> n193
+Presumably equivalent wires: n192_gold (\n192_gold), n192_gate (\n192_gate) -> n192
+Presumably equivalent wires: n191_gold (\n191_gold), n191_gate (\n191_gate) -> n191
+Presumably equivalent wires: n190_gold (\n190_gold), n190_gate (\n190_gate) -> n190
+Presumably equivalent wires: n189_gold (\n189_gold), n189_gate (\n189_gate) -> n189
+Presumably equivalent wires: n188_gold (\n188_gold), n188_gate (\n188_gate) -> n188
+Presumably equivalent wires: n187_gold (\n187_gold), n187_gate (\n187_gate) -> n187
+Presumably equivalent wires: n186_gold (\n186_gold), n186_gate (\n186_gate) -> n186
+Presumably equivalent wires: n185_gold (\n185_gold), n185_gate (\n185_gate) -> n185
+Presumably equivalent wires: n184_gold (\n184_gold), n184_gate (\n184_gate) -> n184
+Presumably equivalent wires: n183_gold (\n183_gold), n183_gate (\n183_gate) -> n183
+Presumably equivalent wires: n182_gold (\n182_gold), n182_gate (\n182_gate) -> n182
+Presumably equivalent wires: n181_gold (\n181_gold), n181_gate (\n181_gate) -> n181
+Presumably equivalent wires: n180_gold (\n180_gold), n180_gate (\n180_gate) -> n180
+Presumably equivalent wires: n179_gold (\n179_gold), n179_gate (\n179_gate) -> n179
+Presumably equivalent wires: n178_gold (\n178_gold), n178_gate (\n178_gate) -> n178
+Presumably equivalent wires: n177_gold (\n177_gold), n177_gate (\n177_gate) -> n177
+Presumably equivalent wires: n176_gold (\n176_gold), n176_gate (\n176_gate) -> n176
+Presumably equivalent wires: n175_gold (\n175_gold), n175_gate (\n175_gate) -> n175
+Presumably equivalent wires: n174_gold (\n174_gold), n174_gate (\n174_gate) -> n174
+Presumably equivalent wires: n173_gold (\n173_gold), n173_gate (\n173_gate) -> n173
+Presumably equivalent wires: n172_gold (\n172_gold), n172_gate (\n172_gate) -> n172
+Presumably equivalent wires: n171_gold (\n171_gold), n171_gate (\n171_gate) -> n171
+Presumably equivalent wires: n170_gold (\n170_gold), n170_gate (\n170_gate) -> n170
+Presumably equivalent wires: n169_gold (\n169_gold), n169_gate (\n169_gate) -> n169
+Presumably equivalent wires: n168_gold (\n168_gold), n168_gate (\n168_gate) -> n168
+Presumably equivalent wires: n167_gold (\n167_gold), n167_gate (\n167_gate) -> n167
+Presumably equivalent wires: n166_gold (\n166_gold), n166_gate (\n166_gate) -> n166
+Presumably equivalent wires: n165_gold (\n165_gold), n165_gate (\n165_gate) -> n165
+Presumably equivalent wires: n164_gold (\n164_gold), n164_gate (\n164_gate) -> n164
+Presumably equivalent wires: n163_gold (\n163_gold), n163_gate (\n163_gate) -> n163
+Presumably equivalent wires: n162_gold (\n162_gold), n162_gate (\n162_gate) -> n162
+Presumably equivalent wires: n161_gold (\n161_gold), n161_gate (\n161_gate) -> n161
+Presumably equivalent wires: n160_gold (\n160_gold), n160_gate (\n160_gate) -> n160
+Presumably equivalent wires: n159_gold (\n159_gold), n159_gate (\n159_gate) -> n159
+Presumably equivalent wires: n158_gold (\n158_gold), n158_gate (\n158_gate) -> n158
+Presumably equivalent wires: n157_gold (\n157_gold), n157_gate (\n157_gate) -> n157
+Presumably equivalent wires: n156_gold (\n156_gold), n156_gate (\n156_gate) -> n156
+Presumably equivalent wires: n155_gold (\n155_gold), n155_gate (\n155_gate) -> n155
+Presumably equivalent wires: n154_gold (\n154_gold), n154_gate (\n154_gate) -> n154
+Presumably equivalent wires: n153_gold (\n153_gold), n153_gate (\n153_gate) -> n153
+Presumably equivalent wires: n152_gold (\n152_gold), n152_gate (\n152_gate) -> n152
+Presumably equivalent wires: n151_gold (\n151_gold), n151_gate (\n151_gate) -> n151
+Presumably equivalent wires: n150_gold (\n150_gold), n150_gate (\n150_gate) -> n150
+Presumably equivalent wires: n149_gold (\n149_gold), n149_gate (\n149_gate) -> n149
+Presumably equivalent wires: n148_gold (\n148_gold), n148_gate (\n148_gate) -> n148
+Presumably equivalent wires: n147_gold (\n147_gold), n147_gate (\n147_gate) -> n147
+Presumably equivalent wires: n146_gold (\n146_gold), n146_gate (\n146_gate) -> n146
+Presumably equivalent wires: n145_gold (\n145_gold), n145_gate (\n145_gate) -> n145
+Presumably equivalent wires: n144_gold (\n144_gold), n144_gate (\n144_gate) -> n144
+Presumably equivalent wires: n143_gold (\n143_gold), n143_gate (\n143_gate) -> n143
+Presumably equivalent wires: n142_gold (\n142_gold), n142_gate (\n142_gate) -> n142
+Presumably equivalent wires: n141_gold (\n141_gold), n141_gate (\n141_gate) -> n141
+Presumably equivalent wires: n140_gold (\n140_gold), n140_gate (\n140_gate) -> n140
+Presumably equivalent wires: n139_gold (\n139_gold), n139_gate (\n139_gate) -> n139
+Presumably equivalent wires: n138_gold (\n138_gold), n138_gate (\n138_gate) -> n138
+Presumably equivalent wires: n137_gold (\n137_gold), n137_gate (\n137_gate) -> n137
+Presumably equivalent wires: n136_gold (\n136_gold), n136_gate (\n136_gate) -> n136
+Presumably equivalent wires: n135_gold (\n135_gold), n135_gate (\n135_gate) -> n135
+Presumably equivalent wires: n134_gold (\n134_gold), n134_gate (\n134_gate) -> n134
+Presumably equivalent wires: n133_gold (\n133_gold), n133_gate (\n133_gate) -> n133
+Presumably equivalent wires: n132_gold (\n132_gold), n132_gate (\n132_gate) -> n132
+Presumably equivalent wires: n131_gold (\n131_gold), n131_gate (\n131_gate) -> n131
+Presumably equivalent wires: n130_gold (\n130_gold), n130_gate (\n130_gate) -> n130
+Presumably equivalent wires: n129_gold (\n129_gold), n129_gate (\n129_gate) -> n129
+Presumably equivalent wires: n128_gold (\n128_gold), n128_gate (\n128_gate) -> n128
+Presumably equivalent wires: n127_gold (\n127_gold), n127_gate (\n127_gate) -> n127
+Presumably equivalent wires: n126_gold (\n126_gold), n126_gate (\n126_gate) -> n126
+Presumably equivalent wires: n125_gold (\n125_gold), n125_gate (\n125_gate) -> n125
+Presumably equivalent wires: n124_gold (\n124_gold), n124_gate (\n124_gate) -> n124
+Presumably equivalent wires: n123_gold (\n123_gold), n123_gate (\n123_gate) -> n123
+Presumably equivalent wires: n122_gold (\n122_gold), n122_gate (\n122_gate) -> n122
+Presumably equivalent wires: n121_gold (\n121_gold), n121_gate (\n121_gate) -> n121
+Presumably equivalent wires: n120_gold (\n120_gold), n120_gate (\n120_gate) -> n120
+Presumably equivalent wires: n119_gold (\n119_gold), n119_gate (\n119_gate) -> n119
+Presumably equivalent wires: n118_gold (\n118_gold), n118_gate (\n118_gate) -> n118
+Presumably equivalent wires: n117_gold (\n117_gold), n117_gate (\n117_gate) -> n117
+Presumably equivalent wires: n116_gold (\n116_gold), n116_gate (\n116_gate) -> n116
+Presumably equivalent wires: n115_gold (\n115_gold), n115_gate (\n115_gate) -> n115
+Presumably equivalent wires: n114_gold (\n114_gold), n114_gate (\n114_gate) -> n114
+Presumably equivalent wires: n113_gold (\n113_gold), n113_gate (\n113_gate) -> n113
+Presumably equivalent wires: n112_gold (\n112_gold), n112_gate (\n112_gate) -> n112
+Presumably equivalent wires: n111_gold (\n111_gold), n111_gate (\n111_gate) -> n111
+Presumably equivalent wires: n110_gold (\n110_gold), n110_gate (\n110_gate) -> n110
+Presumably equivalent wires: n109_gold (\n109_gold), n109_gate (\n109_gate) -> n109
+Presumably equivalent wires: n108_gold (\n108_gold), n108_gate (\n108_gate) -> n108
+Presumably equivalent wires: n107_gold (\n107_gold), n107_gate (\n107_gate) -> n107
+Presumably equivalent wires: n106_gold (\n106_gold), n106_gate (\n106_gate) -> n106
+Presumably equivalent wires: n105_gold (\n105_gold), n105_gate (\n105_gate) -> n105
+Presumably equivalent wires: n104_gold (\n104_gold), n104_gate (\n104_gate) -> n104
+Presumably equivalent wires: n103_gold (\n103_gold), n103_gate (\n103_gate) -> n103
+Presumably equivalent wires: n102_gold (\n102_gold), n102_gate (\n102_gate) -> n102
+Presumably equivalent wires: n101_gold (\n101_gold), n101_gate (\n101_gate) -> n101
+Presumably equivalent wires: n100_gold (\n100_gold), n100_gate (\n100_gate) -> n100
+Presumably equivalent wires: n99_gold (\n99_gold), n99_gate (\n99_gate) -> n99
+Presumably equivalent wires: n98_gold (\n98_gold), n98_gate (\n98_gate) -> n98
+Presumably equivalent wires: n97_gold (\n97_gold), n97_gate (\n97_gate) -> n97
+Presumably equivalent wires: n96_gold (\n96_gold), n96_gate (\n96_gate) -> n96
+Presumably equivalent wires: n95_gold (\n95_gold), n95_gate (\n95_gate) -> n95
+Presumably equivalent wires: n94_gold (\n94_gold), n94_gate (\n94_gate) -> n94
+Presumably equivalent wires: n93_gold (\n93_gold), n93_gate (\n93_gate) -> n93
+Presumably equivalent wires: n92_gold (\n92_gold), n92_gate (\n92_gate) -> n92
+Presumably equivalent wires: n91_gold (\n91_gold), n91_gate (\n91_gate) -> n91
+Presumably equivalent wires: n90_gold (\n90_gold), n90_gate (\n90_gate) -> n90
+Presumably equivalent wires: n89_gold (\n89_gold), n89_gate (\n89_gate) -> n89
+Presumably equivalent wires: n88_gold (\n88_gold), n88_gate (\n88_gate) -> n88
+Presumably equivalent wires: n87_gold (\n87_gold), n87_gate (\n87_gate) -> n87
+Presumably equivalent wires: n86_gold (\n86_gold), n86_gate (\n86_gate) -> n86
+Presumably equivalent wires: n85_gold (\n85_gold), n85_gate (\n85_gate) -> n85
+Presumably equivalent wires: n84_gold (\n84_gold), n84_gate (\n84_gate) -> n84
+Presumably equivalent wires: n83_gold (\n83_gold), n83_gate (\n83_gate) -> n83
+Presumably equivalent wires: n82_gold (\n82_gold), n82_gate (\n82_gate) -> n82
+Presumably equivalent wires: n81_gold (\n81_gold), n81_gate (\n81_gate) -> n81
+Presumably equivalent wires: n80_gold (\n80_gold), n80_gate (\n80_gate) -> n80
+Presumably equivalent wires: n79_gold (\n79_gold), n79_gate (\n79_gate) -> n79
+Presumably equivalent wires: n78_gold (\n78_gold), n78_gate (\n78_gate) -> n78
+Presumably equivalent wires: n77_gold (\n77_gold), n77_gate (\n77_gate) -> n77
+Presumably equivalent wires: n76_gold (\n76_gold), n76_gate (\n76_gate) -> n76
+Presumably equivalent wires: n75_gold (\n75_gold), n75_gate (\n75_gate) -> n75
+Presumably equivalent wires: n74_gold (\n74_gold), n74_gate (\n74_gate) -> n74
+Presumably equivalent wires: n73_gold (\n73_gold), n73_gate (\n73_gate) -> n73
+Presumably equivalent wires: n72_gold (\n72_gold), n72_gate (\n72_gate) -> n72
+Presumably equivalent wires: n71_gold (\n71_gold), n71_gate (\n71_gate) -> n71
+Presumably equivalent wires: n70_gold (\n70_gold), n70_gate (\n70_gate) -> n70
+Presumably equivalent wires: n69_gold (\n69_gold), n69_gate (\n69_gate) -> n69
+Presumably equivalent wires: n68_gold (\n68_gold), n68_gate (\n68_gate) -> n68
+Presumably equivalent wires: n67_gold (\n67_gold), n67_gate (\n67_gate) -> n67
+Presumably equivalent wires: n66_gold (\n66_gold), n66_gate (\n66_gate) -> n66
+Presumably equivalent wires: n65_gold (\n65_gold), n65_gate (\n65_gate) -> n65
+Presumably equivalent wires: n64_gold (\n64_gold), n64_gate (\n64_gate) -> n64
+Presumably equivalent wires: n63_gold (\n63_gold), n63_gate (\n63_gate) -> n63
+Presumably equivalent wires: n62_gold (\n62_gold), n62_gate (\n62_gate) -> n62
+Presumably equivalent wires: n61_gold (\n61_gold), n61_gate (\n61_gate) -> n61
+Presumably equivalent wires: n60_gold (\n60_gold), n60_gate (\n60_gate) -> n60
+Presumably equivalent wires: n59_gold (\n59_gold), n59_gate (\n59_gate) -> n59
+Presumably equivalent wires: n58_gold (\n58_gold), n58_gate (\n58_gate) -> n58
+Presumably equivalent wires: n57_gold (\n57_gold), n57_gate (\n57_gate) -> n57
+Presumably equivalent wires: n56_gold (\n56_gold), n56_gate (\n56_gate) -> n56
+Presumably equivalent wires: n55_gold (\n55_gold), n55_gate (\n55_gate) -> n55
+Presumably equivalent wires: n54_gold (\n54_gold), n54_gate (\n54_gate) -> n54
+Presumably equivalent wires: n53_gold (\n53_gold), n53_gate (\n53_gate) -> n53
+Presumably equivalent wires: n52_gold (\n52_gold), n52_gate (\n52_gate) -> n52
+Presumably equivalent wires: n51_gold (\n51_gold), n51_gate (\n51_gate) -> n51
+Presumably equivalent wires: n50_gold (\n50_gold), n50_gate (\n50_gate) -> n50
+Presumably equivalent wires: n49_gold (\n49_gold), n49_gate (\n49_gate) -> n49
+Presumably equivalent wires: n48_gold (\n48_gold), n48_gate (\n48_gate) -> n48
+Presumably equivalent wires: n47_gold (\n47_gold), n47_gate (\n47_gate) -> n47
+Presumably equivalent wires: n46_gold (\n46_gold), n46_gate (\n46_gate) -> n46
+Presumably equivalent wires: n45_gold (\n45_gold), n45_gate (\n45_gate) -> n45
+Presumably equivalent wires: n44_gold (\n44_gold), n44_gate (\n44_gate) -> n44
+Presumably equivalent wires: n43_gold (\n43_gold), n43_gate (\n43_gate) -> n43
+Presumably equivalent wires: n42_gold (\n42_gold), n42_gate (\n42_gate) -> n42
+Presumably equivalent wires: n41_gold (\n41_gold), n41_gate (\n41_gate) -> n41
+Presumably equivalent wires: n40_gold (\n40_gold), n40_gate (\n40_gate) -> n40
+Presumably equivalent wires: n39_gold (\n39_gold), n39_gate (\n39_gate) -> n39
+Presumably equivalent wires: n38_gold (\n38_gold), n38_gate (\n38_gate) -> n38
+Presumably equivalent wires: n37_gold (\n37_gold), n37_gate (\n37_gate) -> n37
+Presumably equivalent wires: n36_gold (\n36_gold), n36_gate (\n36_gate) -> n36
+Presumably equivalent wires: n35_gold (\n35_gold), n35_gate (\n35_gate) -> n35
+Presumably equivalent wires: n34_gold (\n34_gold), n34_gate (\n34_gate) -> n34
+Presumably equivalent wires: n33_gold (\n33_gold), n33_gate (\n33_gate) -> n33
+Presumably equivalent wires: n32_gold (\n32_gold), n32_gate (\n32_gate) -> n32
+Presumably equivalent wires: n31_gold (\n31_gold), n31_gate (\n31_gate) -> n31
+Presumably equivalent wires: n30_gold (\n30_gold), n30_gate (\n30_gate) -> n30
+Presumably equivalent wires: n29_gold (\n29_gold), n29_gate (\n29_gate) -> n29
+Presumably equivalent wires: n28_gold (\n28_gold), n28_gate (\n28_gate) -> n28
+Presumably equivalent wires: n27_gold (\n27_gold), n27_gate (\n27_gate) -> n27
+Presumably equivalent wires: n26_gold (\n26_gold), n26_gate (\n26_gate) -> n26
+Presumably equivalent wires: n25_gold (\n25_gold), n25_gate (\n25_gate) -> n25
+Presumably equivalent wires: n24_gold (\n24_gold), n24_gate (\n24_gate) -> n24
+Presumably equivalent wires: n23_gold (\n23_gold), n23_gate (\n23_gate) -> n23
+Presumably equivalent wires: n22_gold (\n22_gold), n22_gate (\n22_gate) -> n22
+Presumably equivalent wires: n21_gold (\n21_gold), n21_gate (\n21_gate) -> n21
+Presumably equivalent wires: n20_gold (\n20_gold), n20_gate (\n20_gate) -> n20
+Presumably equivalent wires: n19_gold (\n19_gold), n19_gate (\n19_gate) -> n19
+Presumably equivalent wires: n18_gold (\n18_gold), n18_gate (\n18_gate) -> n18
+Presumably equivalent wires: n17_gold (\n17_gold), n17_gate (\n17_gate) -> n17
+Presumably equivalent wires: n16_gold (\n16_gold), n16_gate (\n16_gate) -> n16
+Presumably equivalent wires: n15_gold (\n15_gold), n15_gate (\n15_gate) -> n15
+Presumably equivalent wires: n14_gold (\n14_gold), n14_gate (\n14_gate) -> n14
+Presumably equivalent wires: n13_gold (\n13_gold), n13_gate (\n13_gate) -> n13
+Presumably equivalent wires: n12_gold (\n12_gold), n12_gate (\n12_gate) -> n12
+Presumably equivalent wires: n11_gold (\n11_gold), n11_gate (\n11_gate) -> n11
+Presumably equivalent wires: n10_gold (\n10_gold), n10_gate (\n10_gate) -> n10
+Presumably equivalent wires: n9_gold (\n9_gold), n9_gate (\n9_gate) -> n9
+Presumably equivalent wires: n8_gold (\n8_gold), n8_gate (\n8_gate) -> n8
+Presumably equivalent wires: n7_gold (\n7_gold), n7_gate (\n7_gate) -> n7
+Presumably equivalent wires: n6_gold (\n6_gold), n6_gate (\n6_gate) -> n6
+Presumably equivalent wires: n5_gold (\n5_gold), n5_gate (\n5_gate) -> n5
+Presumably equivalent wires: n4_gold (\n4_gold), n4_gate (\n4_gate) -> n4
+Presumably equivalent wires: n3_gold (\n3_gold), n3_gate (\n3_gate) -> n3
+Presumably equivalent wires: n2_gold (\n2_gold), n2_gate (\n2_gate) -> n2
+Presumably equivalent wires: ctrl$a_reg_en*_gold (\ctrl$a_reg_en*_gold), ctrl$a_reg_en*_gate (\ctrl$a_reg_en*_gate) -> ctrl$a_reg_en*
+Presumably equivalent wires: n1_gold (\n1_gold), n1_gate (\n1_gate) -> n1
+Presumably equivalent wires: n0_gold (\n0_gold), n0_gate (\n0_gate) -> n0
+Presumably equivalent wires: net94_gold (\net94_gold), net94_gate (\net94_gate) -> net94
+Presumably equivalent wires: net76_gold (\net76_gold), net76_gate (\net76_gate) -> net76
+Presumably equivalent wires: net93_gold (\net93_gold), net93_gate (\net93_gate) -> net93
+Presumably equivalent wires: net92_gold (\net92_gold), net92_gate (\net92_gate) -> net92
+Presumably equivalent wires: net91_gold (\net91_gold), net91_gate (\net91_gate) -> net91
+Presumably equivalent wires: net90_gold (\net90_gold), net90_gate (\net90_gate) -> net90
+Presumably equivalent wires: net89_gold (\net89_gold), net89_gate (\net89_gate) -> net89
+Presumably equivalent wires: net88_gold (\net88_gold), net88_gate (\net88_gate) -> net88
+Presumably equivalent wires: net87_gold (\net87_gold), net87_gate (\net87_gate) -> net87
+Presumably equivalent wires: net86_gold (\net86_gold), net86_gate (\net86_gate) -> net86
+Presumably equivalent wires: net85_gold (\net85_gold), net85_gate (\net85_gate) -> net85
+Presumably equivalent wires: net84_gold (\net84_gold), net84_gate (\net84_gate) -> net84
+Presumably equivalent wires: net83_gold (\net83_gold), net83_gate (\net83_gate) -> net83
+Presumably equivalent wires: net82_gold (\net82_gold), net82_gate (\net82_gate) -> net82
+Presumably equivalent wires: net81_gold (\net81_gold), net81_gate (\net81_gate) -> net81
+Presumably equivalent wires: net80_gold (\net80_gold), net80_gate (\net80_gate) -> net80
+Presumably equivalent wires: net79_gold (\net79_gold), net79_gate (\net79_gate) -> net79
+Presumably equivalent wires: net78_gold (\net78_gold), net78_gate (\net78_gate) -> net78
+Presumably equivalent wires: net75_gold (\net75_gold), net75_gate (\net75_gate) -> net75
+Presumably equivalent wires: net74_gold (\net74_gold), net74_gate (\net74_gate) -> net74
+Presumably equivalent wires: net77_gold (\net77_gold), net77_gate (\net77_gate) -> net77
+Presumably equivalent wires: net73_gold (\net73_gold), net73_gate (\net73_gate) -> net73
+Presumably equivalent wires: net72_gold (\net72_gold), net72_gate (\net72_gate) -> net72
+Presumably equivalent wires: net71_gold (\net71_gold), net71_gate (\net71_gate) -> net71
+Presumably equivalent wires: net70_gold (\net70_gold), net70_gate (\net70_gate) -> net70
+Presumably equivalent wires: net69_gold (\net69_gold), net69_gate (\net69_gate) -> net69
+Presumably equivalent wires: net68_gold (\net68_gold), net68_gate (\net68_gate) -> net68
+Presumably equivalent wires: net67_gold (\net67_gold), net67_gate (\net67_gate) -> net67
+Presumably equivalent wires: net66_gold (\net66_gold), net66_gate (\net66_gate) -> net66
+Presumably equivalent wires: net65_gold (\net65_gold), net65_gate (\net65_gate) -> net65
+Presumably equivalent wires: net64_gold (\net64_gold), net64_gate (\net64_gate) -> net64
+Presumably equivalent wires: net63_gold (\net63_gold), net63_gate (\net63_gate) -> net63
+Presumably equivalent wires: net62_gold (\net62_gold), net62_gate (\net62_gate) -> net62
+Presumably equivalent wires: net61_gold (\net61_gold), net61_gate (\net61_gate) -> net61
+Presumably equivalent wires: net60_gold (\net60_gold), net60_gate (\net60_gate) -> net60
+Presumably equivalent wires: net59_gold (\net59_gold), net59_gate (\net59_gate) -> net59
+Presumably equivalent wires: net58_gold (\net58_gold), net58_gate (\net58_gate) -> net58
+Presumably equivalent wires: net57_gold (\net57_gold), net57_gate (\net57_gate) -> net57
+Presumably equivalent wires: net56_gold (\net56_gold), net56_gate (\net56_gate) -> net56
+Presumably equivalent wires: net55_gold (\net55_gold), net55_gate (\net55_gate) -> net55
+Presumably equivalent wires: net54_gold (\net54_gold), net54_gate (\net54_gate) -> net54
+Presumably equivalent wires: net53_gold (\net53_gold), net53_gate (\net53_gate) -> net53
+Presumably equivalent wires: net52_gold (\net52_gold), net52_gate (\net52_gate) -> net52
+Presumably equivalent wires: net51_gold (\net51_gold), net51_gate (\net51_gate) -> net51
+Presumably equivalent wires: net50_gold (\net50_gold), net50_gate (\net50_gate) -> net50
+Presumably equivalent wires: net49_gold (\net49_gold), net49_gate (\net49_gate) -> net49
+Presumably equivalent wires: net48_gold (\net48_gold), net48_gate (\net48_gate) -> net48
+Presumably equivalent wires: net47_gold (\net47_gold), net47_gate (\net47_gate) -> net47
+Presumably equivalent wires: net46_gold (\net46_gold), net46_gate (\net46_gate) -> net46
+Presumably equivalent wires: net45_gold (\net45_gold), net45_gate (\net45_gate) -> net45
+Presumably equivalent wires: net44_gold (\net44_gold), net44_gate (\net44_gate) -> net44
+Presumably equivalent wires: net43_gold (\net43_gold), net43_gate (\net43_gate) -> net43
+Presumably equivalent wires: net42_gold (\net42_gold), net42_gate (\net42_gate) -> net42
+Presumably equivalent wires: resp_msg_gold (\resp_msg_gold), resp_msg_gate (\resp_msg_gate) -> resp_msg
+Presumably equivalent wires: req_msg_gold (\req_msg_gold), req_msg_gate (\req_msg_gate) -> req_msg
+Presumably equivalent wires: resp_val_gold (\resp_val_gold), resp_val_gate (\resp_val_gate) -> resp_val
+Presumably equivalent wires: resp_rdy_gold (\resp_rdy_gold), resp_rdy_gate (\resp_rdy_gate) -> resp_rdy
+Presumably equivalent wires: reset_gold (\reset_gold), reset_gate (\reset_gate) -> reset
+Presumably equivalent wires: req_val_gold (\req_val_gold), req_val_gate (\req_val_gate) -> req_val
+Presumably equivalent wires: req_rdy_gold (\req_rdy_gold), req_rdy_gate (\req_rdy_gate) -> req_rdy
+Presumably equivalent wires: clk_gold (\clk_gold), clk_gate (\clk_gate) -> clk
+Changing input B of cell u98_gate (OAI21x1_ASAP7_75t_R): \n84_gate -> \n84
+Changing input A2 of cell u98_gate (OAI21x1_ASAP7_75t_R): \n83_gate -> \n83
+Changing input A1 of cell u98_gate (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gate [12] -> \dpath.a_reg$out [12]
+Changing input B of cell u97_gate (NAND2x1_ASAP7_75t_R): \n83_gate -> \n83
+Changing input A of cell u97_gate (NAND2x1_ASAP7_75t_R): \dpath.a_reg$out_gate [12] -> \dpath.a_reg$out [12]
+Changing input A of cell u96_gate (INVx3_ASAP7_75t_R): \dpath.b_reg_out_gate [12] -> \dpath.b_reg_out [12]
+Changing input D of cell u95_gate (DFFHQNx1_ASAP7_75t_R): \n82_gate -> \n82
+Changing input CLK of cell u95_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_1__leaf_clk_gate -> \clknet_2_1__leaf_clk
+Changing input D of cell u94_gate (DFFHQNx1_ASAP7_75t_R): \n81_gate -> \n81
+Changing input CLK of cell u94_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_3__leaf_clk_gate -> \clknet_2_3__leaf_clk
+Changing input B of cell u93_gate (XOR2x2_ASAP7_75t_R): \n80_gate -> \n80
+Changing input A of cell u93_gate (XOR2x2_ASAP7_75t_R): \n77_gate -> \n77
+Changing input B of cell u92_gate (XOR2x2_ASAP7_75t_R): \dpath.b_reg_out_gate [11] -> \dpath.b_reg_out [11]
+Changing input A of cell u92_gate (XOR2x2_ASAP7_75t_R): \dpath.a_reg$out_gate [11] -> \dpath.a_reg$out [11]
+Changing input D of cell u91_gate (DFFHQNx1_ASAP7_75t_R): \n79_gate -> \n79
+Changing input CLK of cell u91_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_1__leaf_clk_gate -> \clknet_2_1__leaf_clk
+Changing input D of cell u90_gate (DFFHQNx1_ASAP7_75t_R): \n78_gate -> \n78
+Changing input CLK of cell u90_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_2__leaf_clk_gate -> \clknet_2_2__leaf_clk
+Changing input B of cell u9_gate (AND2x2_ASAP7_75t_R): \dpath.b_reg_out_gate [0] -> \dpath.b_reg_out [0]
+Changing input A of cell u9_gate (AND2x2_ASAP7_75t_R): \n7_gate -> \n7
+Changing input B of cell u89_gate (OA21x2_ASAP7_75t_R): \n75_gate -> \n75
+Changing input A2 of cell u89_gate (OA21x2_ASAP7_75t_R): \n76_gate -> \n76
+Changing input A1 of cell u89_gate (OA21x2_ASAP7_75t_R): \n71_gate -> \n71
+Changing input B of cell u88_gate (XOR2x2_ASAP7_75t_R): \n76_gate -> \n76
+Changing input A of cell u88_gate (XOR2x2_ASAP7_75t_R): \n71_gate -> \n71
+Changing input B of cell u87_gate (OAI21x1_ASAP7_75t_R): \n75_gate -> \n75
+Changing input A2 of cell u87_gate (OAI21x1_ASAP7_75t_R): \n74_gate -> \n74
+Changing input A1 of cell u87_gate (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gate [10] -> \dpath.a_reg$out [10]
+Changing input B of cell u86_gate (NAND2x1_ASAP7_75t_R): \n74_gate -> \n74
+Changing input A of cell u86_gate (NAND2x1_ASAP7_75t_R): \dpath.a_reg$out_gate [10] -> \dpath.a_reg$out [10]
+Changing input A of cell u85_gate (INVx1_ASAP7_75t_R): \dpath.b_reg_out_gate [10] -> \dpath.b_reg_out [10]
+Changing input D of cell u84_gate (DFFHQNx1_ASAP7_75t_R): \n73_gate -> \n73
+Changing input CLK of cell u84_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_1__leaf_clk_gate -> \clknet_2_1__leaf_clk
+Changing input D of cell u83_gate (DFFHQNx1_ASAP7_75t_R): \n72_gate -> \n72
+Changing input CLK of cell u83_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_1__leaf_clk_gate -> \clknet_2_1__leaf_clk
+Changing input C of cell u82_gate (OA211x2_ASAP7_75t_R): \n70_gate -> \n70
+Changing input B of cell u82_gate (OA211x2_ASAP7_75t_R): \n68_gate -> \n68
+Changing input A2 of cell u82_gate (OA211x2_ASAP7_75t_R): \n67_gate -> \n67
+Changing input A1 of cell u82_gate (OA211x2_ASAP7_75t_R): \n61_gate -> \n61
+Changing input C of cell u81_gate (MAJx2_ASAP7_75t_R): \dpath.b_reg_out_gate [9] -> \dpath.b_reg_out [9]
+Changing input B of cell u81_gate (MAJx2_ASAP7_75t_R): \n69_gate -> \n69
+Changing input A of cell u81_gate (MAJx2_ASAP7_75t_R): \n56_gate -> \n56
+Changing input A of cell u80_gate (INVx1_ASAP7_75t_R): \dpath.a_reg$out_gate [9] -> \dpath.a_reg$out [9]
+Changing input A of cell u8_gate (INVx1_ASAP7_75t_R): \dpath.a_reg$out_gate [0] -> \dpath.a_reg$out [0]
+Changing input C of cell u79_gate (OR3x1_ASAP7_75t_R): \n67_gate -> \n67
+Changing input B of cell u79_gate (OR3x1_ASAP7_75t_R): \n58_gate -> \n58
+Changing input A of cell u79_gate (OR3x1_ASAP7_75t_R): \n42_gate -> \n42
+Changing input B of cell u78_gate (OR2x2_ASAP7_75t_R): \n65_gate -> \n65
+Changing input A of cell u78_gate (OR2x2_ASAP7_75t_R): \n57_gate -> \n57
+Changing input B of cell u77_gate (XNOR2x2_ASAP7_75t_R): \n66_gate -> \n66
+Changing input A of cell u77_gate (XNOR2x2_ASAP7_75t_R): \n65_gate -> \n65
+Changing input C of cell u76_gate (MAJx2_ASAP7_75t_R): \n62_gate -> \n62
+Changing input B of cell u76_gate (MAJx2_ASAP7_75t_R): \n55_gate -> \n55
+Changing input A of cell u76_gate (MAJx2_ASAP7_75t_R): \dpath.a_reg$out_gate [8] -> \dpath.a_reg$out [8]
+Changing input B of cell u75_gate (XOR2x2_ASAP7_75t_R): \dpath.b_reg_out_gate [9] -> \dpath.b_reg_out [9]
+Changing input A of cell u75_gate (XOR2x2_ASAP7_75t_R): \dpath.a_reg$out_gate [9] -> \dpath.a_reg$out [9]
+Changing input D of cell u74_gate (DFFHQNx1_ASAP7_75t_R): \n64_gate -> \n64
+Changing input CLK of cell u74_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_1__leaf_clk_gate -> \clknet_2_1__leaf_clk
+Changing input D of cell u73_gate (DFFHQNx1_ASAP7_75t_R): \n63_gate -> \n63
+Changing input CLK of cell u73_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_1__leaf_clk_gate -> \clknet_2_1__leaf_clk
+Changing input B of cell u72_gate (XNOR2x2_ASAP7_75t_R): \n62_gate -> \n62
+Changing input A of cell u72_gate (XNOR2x2_ASAP7_75t_R): \n57_gate -> \n57
+Changing input B of cell u71_gate (OAI21x1_ASAP7_75t_R): \n61_gate -> \n61
+Changing input A2 of cell u71_gate (OAI21x1_ASAP7_75t_R): \n59_gate -> \n59
+Changing input A1 of cell u71_gate (OAI21x1_ASAP7_75t_R): \n58_gate -> \n58
+Changing input C of cell u70_gate (MAJx2_ASAP7_75t_R): \dpath.b_reg_out_gate [7] -> \dpath.b_reg_out [7]
+Changing input B of cell u70_gate (MAJx2_ASAP7_75t_R): \n60_gate -> \n60
+Changing input A of cell u70_gate (MAJx2_ASAP7_75t_R): \n46_gate -> \n46
+Changing input A of cell u7_gate (INVx1_ASAP7_75t_R): \net114_gate -> \net114
+Changing input A of cell u69_gate (INVx1_ASAP7_75t_R): \dpath.a_reg$out_gate [7] -> \dpath.a_reg$out [7]
+Changing input B of cell u68_gate (OA21x2_ASAP7_75t_R): \n41_gate -> \n41
+Changing input A2 of cell u68_gate (OA21x2_ASAP7_75t_R): \n37_gate -> \n37
+Changing input A1 of cell u68_gate (OA21x2_ASAP7_75t_R): \n32_gate -> \n32
+Changing input B of cell u67_gate (OR2x2_ASAP7_75t_R): \n52_gate -> \n52
+Changing input A of cell u67_gate (OR2x2_ASAP7_75t_R): \n47_gate -> \n47
+Changing input B of cell u66_gate (OAI21x1_ASAP7_75t_R): \n56_gate -> \n56
+Changing input A2 of cell u66_gate (OAI21x1_ASAP7_75t_R): \n55_gate -> \n55
+Changing input A1 of cell u66_gate (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gate [8] -> \dpath.a_reg$out [8]
+Changing input B of cell u65_gate (NAND2x1_ASAP7_75t_R): \n55_gate -> \n55
+Changing input A of cell u65_gate (NAND2x1_ASAP7_75t_R): \dpath.a_reg$out_gate [8] -> \dpath.a_reg$out [8]
+Changing input A of cell u64_gate (INVx2_ASAP7_75t_R): \dpath.b_reg_out_gate [8] -> \dpath.b_reg_out [8]
+Changing input D of cell u63_gate (DFFHQNx1_ASAP7_75t_R): \n54_gate -> \n54
+Changing input CLK of cell u63_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_1__leaf_clk_gate -> \clknet_2_1__leaf_clk
+Changing input D of cell u62_gate (DFFHQNx1_ASAP7_75t_R): \n53_gate -> \n53
+Changing input CLK of cell u62_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_1__leaf_clk_gate -> \clknet_2_1__leaf_clk
+Changing input B of cell u61_gate (XNOR2x2_ASAP7_75t_R): \n52_gate -> \n52
+Changing input A of cell u61_gate (XNOR2x2_ASAP7_75t_R): \n49_gate -> \n49
+Changing input B of cell u60_gate (XOR2x2_ASAP7_75t_R): \dpath.b_reg_out_gate [7] -> \dpath.b_reg_out [7]
+Changing input A of cell u60_gate (XOR2x2_ASAP7_75t_R): \dpath.a_reg$out_gate [7] -> \dpath.a_reg$out [7]
+Changing input D of cell u6_gate (DFFHQNx1_ASAP7_75t_R): \n5_gate -> \n5
+Changing input CLK of cell u6_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gate -> \clknet_2_0__leaf_clk
+Changing input D of cell u59_gate (DFFHQNx1_ASAP7_75t_R): \n51_gate -> \n51
+Changing input CLK of cell u59_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_3__leaf_clk_gate -> \clknet_2_3__leaf_clk
+Changing input D of cell u58_gate (DFFHQNx1_ASAP7_75t_R): \n50_gate -> \n50
+Changing input CLK of cell u58_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_2__leaf_clk_gate -> \clknet_2_2__leaf_clk
+Changing input B of cell u57_gate (AO21x1_ASAP7_75t_R): \n48_gate -> \n48
+Changing input A2 of cell u57_gate (AO21x1_ASAP7_75t_R): \n45_gate -> \n45
+Changing input A1 of cell u57_gate (AO21x1_ASAP7_75t_R): \dpath.a_reg$out_gate [6] -> \dpath.a_reg$out [6]
+Changing input B of cell u56_gate (AOI21x1_ASAP7_75t_R): \n48_gate -> \n48
+Changing input A2 of cell u56_gate (AOI21x1_ASAP7_75t_R): \n47_gate -> \n47
+Changing input A1 of cell u56_gate (AOI21x1_ASAP7_75t_R): \n42_gate -> \n42
+Changing input B of cell u55_gate (NOR2x1_ASAP7_75t_R): \n47_gate -> \n47
+Changing input A of cell u55_gate (NOR2x1_ASAP7_75t_R): \n42_gate -> \n42
+Changing input B of cell u54_gate (OAI21x1_ASAP7_75t_R): \n46_gate -> \n46
+Changing input A2 of cell u54_gate (OAI21x1_ASAP7_75t_R): \n45_gate -> \n45
+Changing input A1 of cell u54_gate (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gate [6] -> \dpath.a_reg$out [6]
+Changing input B of cell u53_gate (NAND2x1_ASAP7_75t_R): \n45_gate -> \n45
+Changing input A of cell u53_gate (NAND2x1_ASAP7_75t_R): \dpath.a_reg$out_gate [6] -> \dpath.a_reg$out [6]
+Changing input A of cell u52_gate (INVx1_ASAP7_75t_R): \dpath.b_reg_out_gate [6] -> \dpath.b_reg_out [6]
+Changing input D of cell u51_gate (DFFHQNx1_ASAP7_75t_R): \n44_gate -> \n44
+Changing input CLK of cell u51_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_1__leaf_clk_gate -> \clknet_2_1__leaf_clk
+Changing input D of cell u50_gate (DFFHQNx1_ASAP7_75t_R): \n43_gate -> \n43
+Changing input CLK of cell u50_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gate -> \clknet_2_0__leaf_clk
+Changing input D of cell u5_gate (DFFHQNx1_ASAP7_75t_R): \n4_gate -> \n4
+Changing input CLK of cell u5_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gate -> \clknet_2_0__leaf_clk
+Changing input C of cell u49_gate (AND3x4_ASAP7_75t_R): \n41_gate -> \n41
+Changing input B of cell u49_gate (AND3x4_ASAP7_75t_R): \n39_gate -> \n39
+Changing input A of cell u49_gate (AND3x4_ASAP7_75t_R): \n38_gate -> \n38
+Changing input C of cell u48_gate (MAJx2_ASAP7_75t_R): \net116_gate -> \net116
+Changing input B of cell u48_gate (MAJx2_ASAP7_75t_R): \n40_gate -> \n40
+Changing input A of cell u48_gate (MAJx2_ASAP7_75t_R): \n28_gate -> \n28
+Changing input A of cell u47_gate (INVx1_ASAP7_75t_R): \dpath.a_reg$out_gate [5] -> \dpath.a_reg$out [5]
+Changing input C of cell u46_gate (OR3x1_ASAP7_75t_R): \n37_gate -> \n37
+Changing input B of cell u46_gate (OR3x1_ASAP7_75t_R): \n31_gate -> \n31
+Changing input A of cell u46_gate (OR3x1_ASAP7_75t_R): \n20_gate -> \n20
+Changing input C of cell u45_gate (OR3x1_ASAP7_75t_R): \n23_gate -> \n23
+Changing input B of cell u45_gate (OR3x1_ASAP7_75t_R): \n21_gate -> \n21
+Changing input A of cell u45_gate (OR3x1_ASAP7_75t_R): \n37_gate -> \n37
+Changing input B of cell u44_gate (OR2x2_ASAP7_75t_R): \n36_gate -> \n36
+Changing input A of cell u44_gate (OR2x2_ASAP7_75t_R): \n29_gate -> \n29
+Changing input B of cell u43_gate (XOR2x2_ASAP7_75t_R): \n36_gate -> \n36
+Changing input A of cell u43_gate (XOR2x2_ASAP7_75t_R): \n33_gate -> \n33
+Changing input B of cell u42_gate (XOR2x2_ASAP7_75t_R): \dpath.b_reg_out_gate [5] -> \dpath.b_reg_out [5]
+Changing input A of cell u42_gate (XOR2x2_ASAP7_75t_R): \dpath.a_reg$out_gate [5] -> \dpath.a_reg$out [5]
+Changing input D of cell u41_gate (DFFHQNx1_ASAP7_75t_R): \n35_gate -> \n35
+Changing input CLK of cell u41_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gate -> \clknet_2_0__leaf_clk
+Changing input D of cell u40_gate (DFFHQNx1_ASAP7_75t_R): \n34_gate -> \n34
+Changing input CLK of cell u40_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gate -> \clknet_2_0__leaf_clk
+Changing input B of cell u4_gate (AND2x2_ASAP7_75t_R): \n3_gate -> \n3
+Changing input A of cell u4_gate (AND2x2_ASAP7_75t_R): \n1_gate -> \n1
+Changing input B of cell u39_gate (OA21x2_ASAP7_75t_R): \n28_gate -> \n28
+Changing input A2 of cell u39_gate (OA21x2_ASAP7_75t_R): \n32_gate -> \n32
+Changing input A1 of cell u39_gate (OA21x2_ASAP7_75t_R): \n29_gate -> \n29
+Changing input B of cell u38_gate (XOR2x2_ASAP7_75t_R): \n32_gate -> \n32
+Changing input A of cell u38_gate (XOR2x2_ASAP7_75t_R): \n29_gate -> \n29
+Changing input B of cell u37_gate (AO21x1_ASAP7_75t_R): \n20_gate -> \n20
+Changing input A2 of cell u37_gate (AO21x1_ASAP7_75t_R): \n31_gate -> \n31
+Changing input A1 of cell u37_gate (AO21x1_ASAP7_75t_R): \n23_gate -> \n23
+Changing input B of cell u36_gate (OA21x2_ASAP7_75t_R): \n30_gate -> \n30
+Changing input A2 of cell u36_gate (OA21x2_ASAP7_75t_R): \dpath.b_reg_out_gate [2] -> \dpath.b_reg_out [2]
+Changing input A1 of cell u36_gate (OA21x2_ASAP7_75t_R): \n22_gate -> \n22
+Changing input B of cell u35_gate (NAND2x1_ASAP7_75t_R): \dpath.a_reg$out_gate [3] -> \dpath.a_reg$out [3]
+Changing input A of cell u35_gate (NAND2x1_ASAP7_75t_R): \n18_gate -> \n18
+Changing input B of cell u34_gate (OAI21x1_ASAP7_75t_R): \n28_gate -> \n28
+Changing input A2 of cell u34_gate (OAI21x1_ASAP7_75t_R): \n27_gate -> \n27
+Changing input A1 of cell u34_gate (OAI21x1_ASAP7_75t_R): \net118_gate -> \net118
+Changing input B of cell u33_gate (NAND2x1_ASAP7_75t_R): \n27_gate -> \n27
+Changing input A of cell u33_gate (NAND2x1_ASAP7_75t_R): \dpath.a_reg$out_gate [4] -> \dpath.a_reg$out [4]
+Changing input A of cell u32_gate (INVx1_ASAP7_75t_R): \dpath.b_reg_out_gate [4] -> \dpath.b_reg_out [4]
+Changing input D of cell u31_gate (DFFHQNx1_ASAP7_75t_R): \n26_gate -> \n26
+Changing input CLK of cell u31_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gate -> \clknet_2_0__leaf_clk
+Changing input D of cell u30_gate (DFFHQNx1_ASAP7_75t_R): \n25_gate -> \n25
+Changing input CLK of cell u30_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gate -> \clknet_2_0__leaf_clk
+Changing input A of cell u3_gate (INVx3_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B of cell u29_gate (XOR2x2_ASAP7_75t_R): \n24_gate -> \n24
+Changing input A of cell u29_gate (XOR2x2_ASAP7_75t_R): \n21_gate -> \n21
+Changing input B of cell u28_gate (OA21x2_ASAP7_75t_R): \n23_gate -> \n23
+Changing input A2 of cell u28_gate (OA21x2_ASAP7_75t_R): \dpath.b_reg_out_gate [2] -> \dpath.b_reg_out [2]
+Changing input A1 of cell u28_gate (OA21x2_ASAP7_75t_R): \n22_gate -> \n22
+Changing input B of cell u27_gate (OR2x2_ASAP7_75t_R): \n16_gate -> \n16
+Changing input A of cell u27_gate (OR2x2_ASAP7_75t_R): \n14_gate -> \n14
+Changing input B of cell u260_gate (AOI21x1_ASAP7_75t_R): \n208_gate -> \n208
+Changing input A2 of cell u260_gate (AOI21x1_ASAP7_75t_R): \n137_gate -> \n137
+Changing input A1 of cell u260_gate (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gate [15] -> \dpath.b_reg_out [15]
+Changing input A of cell u26_gate (INVx1_ASAP7_75t_R): \dpath.a_reg$out_gate [2] -> \dpath.a_reg$out [2]
+Changing input C of cell u259_gate (OA211x2_ASAP7_75t_R): \n207_gate -> \n207
+Changing input B of cell u259_gate (OA211x2_ASAP7_75t_R): \n146_gate -> \n146
+Changing input A2 of cell u259_gate (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gate [15] -> \dpath.a_reg$out [15]
+Changing input A1 of cell u259_gate (OA211x2_ASAP7_75t_R): \net77_gate -> \net77
+Changing input C of cell u258_gate (OR3x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B of cell u258_gate (OR3x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A of cell u258_gate (OR3x1_ASAP7_75t_R): \net57_gate -> \net57
+Changing input B of cell u257_gate (OA21x2_ASAP7_75t_R): \n206_gate -> \n206
+Changing input A2 of cell u257_gate (OA21x2_ASAP7_75t_R): \n129_gate -> \n129
+Changing input A1 of cell u257_gate (OA21x2_ASAP7_75t_R): \n3_gate -> \n3
+Changing input C of cell u256_gate (AO221x1_ASAP7_75t_R): \n205_gate -> \n205
+Changing input B2 of cell u256_gate (AO221x1_ASAP7_75t_R): \n204_gate -> \n204
+Changing input B1 of cell u256_gate (AO221x1_ASAP7_75t_R): \n131_gate -> \n131
+Changing input A2 of cell u256_gate (AO221x1_ASAP7_75t_R): \n134_gate -> \n134
+Changing input A1 of cell u256_gate (AO221x1_ASAP7_75t_R): \n203_gate -> \n203
+Changing input B of cell u255_gate (OAI21x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input A2 of cell u255_gate (OAI21x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A1 of cell u255_gate (OAI21x1_ASAP7_75t_R): \net73_gate -> \net73
+Changing input B of cell u254_gate (NOR2x1_ASAP7_75t_R): \dpath.b_reg_out_gate [15] -> \dpath.b_reg_out [15]
+Changing input A of cell u254_gate (NOR2x1_ASAP7_75t_R): \n1_gate -> \n1
+Changing input B of cell u253_gate (XOR2x2_ASAP7_75t_R): \n116_gate -> \n116
+Changing input A of cell u253_gate (XOR2x2_ASAP7_75t_R): \n113_gate -> \n113
+Changing input B of cell u252_gate (AOI21x1_ASAP7_75t_R): \n202_gate -> \n202
+Changing input A2 of cell u252_gate (AOI21x1_ASAP7_75t_R): \n137_gate -> \n137
+Changing input A1 of cell u252_gate (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gate [14] -> \dpath.b_reg_out [14]
+Changing input C of cell u251_gate (OA211x2_ASAP7_75t_R): \n201_gate -> \n201
+Changing input B of cell u251_gate (OA211x2_ASAP7_75t_R): \n146_gate -> \n146
+Changing input A2 of cell u251_gate (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gate [14] -> \dpath.a_reg$out [14]
+Changing input A1 of cell u251_gate (OA211x2_ASAP7_75t_R): \net77_gate -> \net77
+Changing input C of cell u250_gate (OR3x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B of cell u250_gate (OR3x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A of cell u250_gate (OR3x1_ASAP7_75t_R): \net56_gate -> \net56
+Changing input B of cell u25_gate (AO21x1_ASAP7_75t_R): \n20_gate -> \n20
+Changing input A2 of cell u25_gate (AO21x1_ASAP7_75t_R): \dpath.a_reg$out_gate [3] -> \dpath.a_reg$out [3]
+Changing input A1 of cell u25_gate (AO21x1_ASAP7_75t_R): \n18_gate -> \n18
+Changing input B of cell u249_gate (OAI21x1_ASAP7_75t_R): \n200_gate -> \n200
+Changing input A2 of cell u249_gate (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gate [14] -> \dpath.a_reg$out [14]
+Changing input A1 of cell u249_gate (OAI21x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input C of cell u248_gate (AO221x1_ASAP7_75t_R): \n199_gate -> \n199
+Changing input B2 of cell u248_gate (AO221x1_ASAP7_75t_R): \n134_gate -> \n134
+Changing input B1 of cell u248_gate (AO221x1_ASAP7_75t_R): \net92_gate -> \net92
+Changing input A2 of cell u248_gate (AO221x1_ASAP7_75t_R): \net112_gate -> \net112
+Changing input A1 of cell u248_gate (AO221x1_ASAP7_75t_R): \dpath.b_reg_out_gate [14] -> \dpath.b_reg_out [14]
+Changing input B of cell u247_gate (AO21x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input A2 of cell u247_gate (AO21x1_ASAP7_75t_R): \n1_gate -> \n1
+Changing input A1 of cell u247_gate (AO21x1_ASAP7_75t_R): \net72_gate -> \net72
+Changing input B of cell u246_gate (OA21x2_ASAP7_75t_R): \n198_gate -> \n198
+Changing input A2 of cell u246_gate (OA21x2_ASAP7_75t_R): \n110_gate -> \n110
+Changing input A1 of cell u246_gate (OA21x2_ASAP7_75t_R): \n3_gate -> \n3
+Changing input C of cell u245_gate (AO221x1_ASAP7_75t_R): \n197_gate -> \n197
+Changing input B2 of cell u245_gate (AO221x1_ASAP7_75t_R): \net111_gate -> \net111
+Changing input B1 of cell u245_gate (AO221x1_ASAP7_75t_R): \n196_gate -> \n196
+Changing input A2 of cell u245_gate (AO221x1_ASAP7_75t_R): \net112_gate -> \net112
+Changing input A1 of cell u245_gate (AO221x1_ASAP7_75t_R): \n195_gate -> \n195
+Changing input B of cell u244_gate (OAI21x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input A2 of cell u244_gate (OAI21x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A1 of cell u244_gate (OAI21x1_ASAP7_75t_R): \net71_gate -> \net71
+Changing input C of cell u243_gate (AOI221x1_ASAP7_75t_R): \n102_gate -> \n102
+Changing input B2 of cell u243_gate (AOI221x1_ASAP7_75t_R): \n98_gate -> \n98
+Changing input B1 of cell u243_gate (AOI221x1_ASAP7_75t_R): \n97_gate -> \n97
+Changing input A2 of cell u243_gate (AOI221x1_ASAP7_75t_R): \n96_gate -> \n96
+Changing input A1 of cell u243_gate (AOI221x1_ASAP7_75t_R): \n62_gate -> \n62
+Changing input A of cell u242_gate (INVx1_ASAP7_75t_R): \dpath.b_reg_out_gate [13] -> \dpath.b_reg_out [13]
+Changing input B of cell u241_gate (AOI21x1_ASAP7_75t_R): \n194_gate -> \n194
+Changing input A2 of cell u241_gate (AOI21x1_ASAP7_75t_R): \n137_gate -> \n137
+Changing input A1 of cell u241_gate (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gate [13] -> \dpath.b_reg_out [13]
+Changing input C of cell u240_gate (OA211x2_ASAP7_75t_R): \n193_gate -> \n193
+Changing input B of cell u240_gate (OA211x2_ASAP7_75t_R): \n146_gate -> \n146
+Changing input A2 of cell u240_gate (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gate [13] -> \dpath.a_reg$out [13]
+Changing input A1 of cell u240_gate (OA211x2_ASAP7_75t_R): \net77_gate -> \net77
+Changing input B of cell u24_gate (NOR2x1_ASAP7_75t_R): \dpath.a_reg$out_gate [3] -> \dpath.a_reg$out [3]
+Changing input A of cell u24_gate (NOR2x1_ASAP7_75t_R): \n18_gate -> \n18
+Changing input C of cell u239_gate (OR3x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B of cell u239_gate (OR3x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A of cell u239_gate (OR3x1_ASAP7_75t_R): \net55_gate -> \net55
+Changing input B of cell u238_gate (AOI21x1_ASAP7_75t_R): \n192_gate -> \n192
+Changing input A2 of cell u238_gate (AOI21x1_ASAP7_75t_R): \n137_gate -> \n137
+Changing input A1 of cell u238_gate (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gate [12] -> \dpath.b_reg_out [12]
+Changing input C of cell u237_gate (OA211x2_ASAP7_75t_R): \n191_gate -> \n191
+Changing input B of cell u237_gate (OA211x2_ASAP7_75t_R): \n146_gate -> \n146
+Changing input A2 of cell u237_gate (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gate [12] -> \dpath.a_reg$out [12]
+Changing input A1 of cell u237_gate (OA211x2_ASAP7_75t_R): \net77_gate -> \net77
+Changing input C of cell u236_gate (OR3x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B of cell u236_gate (OR3x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A of cell u236_gate (OR3x1_ASAP7_75t_R): \net54_gate -> \net54
+Changing input B of cell u235_gate (AOI21x1_ASAP7_75t_R): \n190_gate -> \n190
+Changing input A2 of cell u235_gate (AOI21x1_ASAP7_75t_R): \net111_gate -> \net111
+Changing input A1 of cell u235_gate (AOI21x1_ASAP7_75t_R): \net90_gate -> \net90
+Changing input B of cell u234_gate (OA21x2_ASAP7_75t_R): \n189_gate -> \n189
+Changing input A2 of cell u234_gate (OA21x2_ASAP7_75t_R): \dpath.a_reg$out_gate [12] -> \dpath.a_reg$out [12]
+Changing input A1 of cell u234_gate (OA21x2_ASAP7_75t_R): \n3_gate -> \n3
+Changing input C of cell u233_gate (AO221x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B2 of cell u233_gate (AO221x1_ASAP7_75t_R): \net112_gate -> \net112
+Changing input B1 of cell u233_gate (AO221x1_ASAP7_75t_R): \dpath.b_reg_out_gate [12] -> \dpath.b_reg_out [12]
+Changing input A2 of cell u233_gate (AO221x1_ASAP7_75t_R): \n1_gate -> \n1
+Changing input A1 of cell u233_gate (AO221x1_ASAP7_75t_R): \net70_gate -> \net70
+Changing input B of cell u232_gate (AOI21x1_ASAP7_75t_R): \n188_gate -> \n188
+Changing input A2 of cell u232_gate (AOI21x1_ASAP7_75t_R): \net110_gate -> \net110
+Changing input A1 of cell u232_gate (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gate [11] -> \dpath.b_reg_out [11]
+Changing input C of cell u231_gate (OA211x2_ASAP7_75t_R): \n187_gate -> \n187
+Changing input B of cell u231_gate (OA211x2_ASAP7_75t_R): \n146_gate -> \n146
+Changing input A2 of cell u231_gate (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gate [11] -> \dpath.a_reg$out [11]
+Changing input A1 of cell u231_gate (OA211x2_ASAP7_75t_R): \net77_gate -> \net77
+Changing input C of cell u230_gate (OR3x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B of cell u230_gate (OR3x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A of cell u230_gate (OR3x1_ASAP7_75t_R): \net53_gate -> \net53
+Changing input D of cell u23_gate (DFFHQNx1_ASAP7_75t_R): \n19_gate -> \n19
+Changing input CLK of cell u23_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_2__leaf_clk_gate -> \clknet_2_2__leaf_clk
+Changing input B of cell u229_gate (OAI21x1_ASAP7_75t_R): \n186_gate -> \n186
+Changing input A2 of cell u229_gate (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gate [11] -> \dpath.a_reg$out [11]
+Changing input A1 of cell u229_gate (OAI21x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input B of cell u228_gate (AO21x1_ASAP7_75t_R): \n185_gate -> \n185
+Changing input A2 of cell u228_gate (AO21x1_ASAP7_75t_R): \n134_gate -> \n134
+Changing input A1 of cell u228_gate (AO21x1_ASAP7_75t_R): \net89_gate -> \net89
+Changing input C of cell u227_gate (AO221x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B2 of cell u227_gate (AO221x1_ASAP7_75t_R): \net112_gate -> \net112
+Changing input B1 of cell u227_gate (AO221x1_ASAP7_75t_R): \dpath.b_reg_out_gate [11] -> \dpath.b_reg_out [11]
+Changing input A2 of cell u227_gate (AO221x1_ASAP7_75t_R): \n1_gate -> \n1
+Changing input A1 of cell u227_gate (AO221x1_ASAP7_75t_R): \net69_gate -> \net69
+Changing input B of cell u226_gate (AOI21x1_ASAP7_75t_R): \n184_gate -> \n184
+Changing input A2 of cell u226_gate (AOI21x1_ASAP7_75t_R): \n137_gate -> \n137
+Changing input A1 of cell u226_gate (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gate [10] -> \dpath.b_reg_out [10]
+Changing input C of cell u225_gate (OA211x2_ASAP7_75t_R): \n183_gate -> \n183
+Changing input B of cell u225_gate (OA211x2_ASAP7_75t_R): \n146_gate -> \n146
+Changing input A2 of cell u225_gate (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gate [10] -> \dpath.a_reg$out [10]
+Changing input A1 of cell u225_gate (OA211x2_ASAP7_75t_R): \net77_gate -> \net77
+Changing input C of cell u224_gate (OR3x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B of cell u224_gate (OR3x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A of cell u224_gate (OR3x1_ASAP7_75t_R): \net52_gate -> \net52
+Changing input B of cell u223_gate (OAI21x1_ASAP7_75t_R): \n182_gate -> \n182
+Changing input A2 of cell u223_gate (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gate [10] -> \dpath.a_reg$out [10]
+Changing input A1 of cell u223_gate (OAI21x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input C of cell u222_gate (AO221x1_ASAP7_75t_R): \n181_gate -> \n181
+Changing input B2 of cell u222_gate (AO221x1_ASAP7_75t_R): \net111_gate -> \net111
+Changing input B1 of cell u222_gate (AO221x1_ASAP7_75t_R): \net88_gate -> \net88
+Changing input A2 of cell u222_gate (AO221x1_ASAP7_75t_R): \net113_gate -> \net113
+Changing input A1 of cell u222_gate (AO221x1_ASAP7_75t_R): \dpath.b_reg_out_gate [10] -> \dpath.b_reg_out [10]
+Changing input B of cell u221_gate (AO21x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input A2 of cell u221_gate (AO21x1_ASAP7_75t_R): \n1_gate -> \n1
+Changing input A1 of cell u221_gate (AO21x1_ASAP7_75t_R): \net68_gate -> \net68
+Changing input B of cell u220_gate (AOI21x1_ASAP7_75t_R): \n180_gate -> \n180
+Changing input A2 of cell u220_gate (AOI21x1_ASAP7_75t_R): \n137_gate -> \n137
+Changing input A1 of cell u220_gate (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gate [9] -> \dpath.b_reg_out [9]
+Changing input A of cell u22_gate (INVx1_ASAP7_75t_R): \dpath.b_reg_out_gate [3] -> \dpath.b_reg_out [3]
+Changing input C of cell u219_gate (OA211x2_ASAP7_75t_R): \n179_gate -> \n179
+Changing input B of cell u219_gate (OA211x2_ASAP7_75t_R): \n146_gate -> \n146
+Changing input A2 of cell u219_gate (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gate [9] -> \dpath.a_reg$out [9]
+Changing input A1 of cell u219_gate (OA211x2_ASAP7_75t_R): \net77_gate -> \net77
+Changing input C of cell u218_gate (OR3x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B of cell u218_gate (OR3x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A of cell u218_gate (OR3x1_ASAP7_75t_R): \net51_gate -> \net51
+Changing input B of cell u217_gate (OA21x2_ASAP7_75t_R): \n178_gate -> \n178
+Changing input A2 of cell u217_gate (OA21x2_ASAP7_75t_R): \n69_gate -> \n69
+Changing input A1 of cell u217_gate (OA21x2_ASAP7_75t_R): \n3_gate -> \n3
+Changing input C of cell u216_gate (AO221x1_ASAP7_75t_R): \n177_gate -> \n177
+Changing input B2 of cell u216_gate (AO221x1_ASAP7_75t_R): \net111_gate -> \net111
+Changing input B1 of cell u216_gate (AO221x1_ASAP7_75t_R): \n176_gate -> \n176
+Changing input A2 of cell u216_gate (AO221x1_ASAP7_75t_R): \net113_gate -> \net113
+Changing input A1 of cell u216_gate (AO221x1_ASAP7_75t_R): \n175_gate -> \n175
+Changing input B of cell u215_gate (OAI21x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input A2 of cell u215_gate (OAI21x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A1 of cell u215_gate (OAI21x1_ASAP7_75t_R): \net67_gate -> \net67
+Changing input B of cell u214_gate (XOR2x2_ASAP7_75t_R): \n66_gate -> \n66
+Changing input A of cell u214_gate (XOR2x2_ASAP7_75t_R): \n65_gate -> \n65
+Changing input A of cell u213_gate (INVx1_ASAP7_75t_R): \dpath.b_reg_out_gate [9] -> \dpath.b_reg_out [9]
+Changing input B of cell u212_gate (AOI21x1_ASAP7_75t_R): \n174_gate -> \n174
+Changing input A2 of cell u212_gate (AOI21x1_ASAP7_75t_R): \n137_gate -> \n137
+Changing input A1 of cell u212_gate (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gate [8] -> \dpath.b_reg_out [8]
+Changing input C of cell u211_gate (OA211x2_ASAP7_75t_R): \n173_gate -> \n173
+Changing input B of cell u211_gate (OA211x2_ASAP7_75t_R): \n146_gate -> \n146
+Changing input A2 of cell u211_gate (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gate [8] -> \dpath.a_reg$out [8]
+Changing input A1 of cell u211_gate (OA211x2_ASAP7_75t_R): \net77_gate -> \net77
+Changing input C of cell u210_gate (OR3x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B of cell u210_gate (OR3x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A of cell u210_gate (OR3x1_ASAP7_75t_R): \net50_gate -> \net50
+Changing input D of cell u21_gate (DFFHQNx1_ASAP7_75t_R): \n17_gate -> \n17
+Changing input CLK of cell u21_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_2__leaf_clk_gate -> \clknet_2_2__leaf_clk
+Changing input B of cell u209_gate (OAI21x1_ASAP7_75t_R): \n172_gate -> \n172
+Changing input A2 of cell u209_gate (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gate [8] -> \dpath.a_reg$out [8]
+Changing input A1 of cell u209_gate (OAI21x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input C of cell u208_gate (AO221x1_ASAP7_75t_R): \n171_gate -> \n171
+Changing input B2 of cell u208_gate (AO221x1_ASAP7_75t_R): \net111_gate -> \net111
+Changing input B1 of cell u208_gate (AO221x1_ASAP7_75t_R): \net86_gate -> \net86
+Changing input A2 of cell u208_gate (AO221x1_ASAP7_75t_R): \net113_gate -> \net113
+Changing input A1 of cell u208_gate (AO221x1_ASAP7_75t_R): \dpath.b_reg_out_gate [8] -> \dpath.b_reg_out [8]
+Changing input B of cell u207_gate (AO21x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input A2 of cell u207_gate (AO21x1_ASAP7_75t_R): \n1_gate -> \n1
+Changing input A1 of cell u207_gate (AO21x1_ASAP7_75t_R): \net66_gate -> \net66
+Changing input B of cell u206_gate (AOI21x1_ASAP7_75t_R): \n170_gate -> \n170
+Changing input A2 of cell u206_gate (AOI21x1_ASAP7_75t_R): \net110_gate -> \net110
+Changing input A1 of cell u206_gate (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gate [7] -> \dpath.b_reg_out [7]
+Changing input C of cell u205_gate (OA211x2_ASAP7_75t_R): \n169_gate -> \n169
+Changing input B of cell u205_gate (OA211x2_ASAP7_75t_R): \n146_gate -> \n146
+Changing input A2 of cell u205_gate (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gate [7] -> \dpath.a_reg$out [7]
+Changing input A1 of cell u205_gate (OA211x2_ASAP7_75t_R): \net77_gate -> \net77
+Changing input C of cell u204_gate (OR3x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B of cell u204_gate (OR3x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A of cell u204_gate (OR3x1_ASAP7_75t_R): \net49_gate -> \net49
+Changing input B of cell u203_gate (OA21x2_ASAP7_75t_R): \n168_gate -> \n168
+Changing input A2 of cell u203_gate (OA21x2_ASAP7_75t_R): \n60_gate -> \n60
+Changing input A1 of cell u203_gate (OA21x2_ASAP7_75t_R): \n3_gate -> \n3
+Changing input C of cell u202_gate (AO221x1_ASAP7_75t_R): \n167_gate -> \n167
+Changing input B2 of cell u202_gate (AO221x1_ASAP7_75t_R): \n134_gate -> \n134
+Changing input B1 of cell u202_gate (AO221x1_ASAP7_75t_R): \n166_gate -> \n166
+Changing input A2 of cell u202_gate (AO221x1_ASAP7_75t_R): \net112_gate -> \net112
+Changing input A1 of cell u202_gate (AO221x1_ASAP7_75t_R): \n165_gate -> \n165
+Changing input B of cell u201_gate (OAI21x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input A2 of cell u201_gate (OAI21x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A1 of cell u201_gate (OAI21x1_ASAP7_75t_R): \net65_gate -> \net65
+Changing input B of cell u200_gate (XOR2x2_ASAP7_75t_R): \n52_gate -> \n52
+Changing input A of cell u200_gate (XOR2x2_ASAP7_75t_R): \n49_gate -> \n49
+Changing input B of cell u20_gate (XOR2x2_ASAP7_75t_R): \n16_gate -> \n16
+Changing input A of cell u20_gate (XOR2x2_ASAP7_75t_R): \n14_gate -> \n14
+Changing input D of cell u2_gate (DFFHQNx1_ASAP7_75t_R): \n2_gate -> \n2
+Changing input CLK of cell u2_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_2__leaf_clk_gate -> \clknet_2_2__leaf_clk
+Changing input A of cell u199_gate (INVx1_ASAP7_75t_R): \dpath.b_reg_out_gate [7] -> \dpath.b_reg_out [7]
+Changing input B of cell u198_gate (AOI21x1_ASAP7_75t_R): \n164_gate -> \n164
+Changing input A2 of cell u198_gate (AOI21x1_ASAP7_75t_R): \net110_gate -> \net110
+Changing input A1 of cell u198_gate (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gate [6] -> \dpath.b_reg_out [6]
+Changing input C of cell u197_gate (OA211x2_ASAP7_75t_R): \n163_gate -> \n163
+Changing input B of cell u197_gate (OA211x2_ASAP7_75t_R): \n146_gate -> \n146
+Changing input A2 of cell u197_gate (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gate [6] -> \dpath.a_reg$out [6]
+Changing input A1 of cell u197_gate (OA211x2_ASAP7_75t_R): \net77_gate -> \net77
+Changing input C of cell u196_gate (OR3x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B of cell u196_gate (OR3x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A of cell u196_gate (OR3x1_ASAP7_75t_R): \net48_gate -> \net48
+Changing input B of cell u195_gate (OAI21x1_ASAP7_75t_R): \n162_gate -> \n162
+Changing input A2 of cell u195_gate (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gate [6] -> \dpath.a_reg$out [6]
+Changing input A1 of cell u195_gate (OAI21x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input C of cell u194_gate (AO221x1_ASAP7_75t_R): \n161_gate -> \n161
+Changing input B2 of cell u194_gate (AO221x1_ASAP7_75t_R): \n134_gate -> \n134
+Changing input B1 of cell u194_gate (AO221x1_ASAP7_75t_R): \net84_gate -> \net84
+Changing input A2 of cell u194_gate (AO221x1_ASAP7_75t_R): \net113_gate -> \net113
+Changing input A1 of cell u194_gate (AO221x1_ASAP7_75t_R): \dpath.b_reg_out_gate [6] -> \dpath.b_reg_out [6]
+Changing input B of cell u193_gate (AO21x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input A2 of cell u193_gate (AO21x1_ASAP7_75t_R): \n1_gate -> \n1
+Changing input A1 of cell u193_gate (AO21x1_ASAP7_75t_R): \net64_gate -> \net64
+Changing input B of cell u192_gate (AOI21x1_ASAP7_75t_R): \n160_gate -> \n160
+Changing input A2 of cell u192_gate (AOI21x1_ASAP7_75t_R): \net110_gate -> \net110
+Changing input A1 of cell u192_gate (AOI21x1_ASAP7_75t_R): \net116_gate -> \net116
+Changing input C of cell u191_gate (OA211x2_ASAP7_75t_R): \n159_gate -> \n159
+Changing input B of cell u191_gate (OA211x2_ASAP7_75t_R): \n146_gate -> \n146
+Changing input A2 of cell u191_gate (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gate [5] -> \dpath.a_reg$out [5]
+Changing input A1 of cell u191_gate (OA211x2_ASAP7_75t_R): \net77_gate -> \net77
+Changing input C of cell u190_gate (OR3x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B of cell u190_gate (OR3x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A of cell u190_gate (OR3x1_ASAP7_75t_R): \net47_gate -> \net47
+Changing input C of cell u19_gate (MAJx2_ASAP7_75t_R): \dpath.b_reg_out_gate [1] -> \dpath.b_reg_out [1]
+Changing input B of cell u19_gate (MAJx2_ASAP7_75t_R): \n15_gate -> \n15
+Changing input A of cell u19_gate (MAJx2_ASAP7_75t_R): \n8_gate -> \n8
+Changing input B of cell u189_gate (OAI21x1_ASAP7_75t_R): \n158_gate -> \n158
+Changing input A2 of cell u189_gate (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gate [5] -> \dpath.a_reg$out [5]
+Changing input A1 of cell u189_gate (OAI21x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input B of cell u188_gate (AO21x1_ASAP7_75t_R): \n157_gate -> \n157
+Changing input A2 of cell u188_gate (AO21x1_ASAP7_75t_R): \n134_gate -> \n134
+Changing input A1 of cell u188_gate (AO21x1_ASAP7_75t_R): \net83_gate -> \net83
+Changing input C of cell u187_gate (AO221x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B2 of cell u187_gate (AO221x1_ASAP7_75t_R): \net113_gate -> \net113
+Changing input B1 of cell u187_gate (AO221x1_ASAP7_75t_R): \net116_gate -> \net116
+Changing input A2 of cell u187_gate (AO221x1_ASAP7_75t_R): \n1_gate -> \n1
+Changing input A1 of cell u187_gate (AO221x1_ASAP7_75t_R): \net63_gate -> \net63
+Changing input B of cell u186_gate (AOI21x1_ASAP7_75t_R): \n156_gate -> \n156
+Changing input A2 of cell u186_gate (AOI21x1_ASAP7_75t_R): \net110_gate -> \net110
+Changing input A1 of cell u186_gate (AOI21x1_ASAP7_75t_R): \net117_gate -> \net117
+Changing input C of cell u185_gate (OA211x2_ASAP7_75t_R): \n155_gate -> \n155
+Changing input B of cell u185_gate (OA211x2_ASAP7_75t_R): \n146_gate -> \n146
+Changing input A2 of cell u185_gate (OA211x2_ASAP7_75t_R): \net118_gate -> \net118
+Changing input A1 of cell u185_gate (OA211x2_ASAP7_75t_R): \net77_gate -> \net77
+Changing input C of cell u184_gate (OR3x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B of cell u184_gate (OR3x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A of cell u184_gate (OR3x1_ASAP7_75t_R): \net46_gate -> \net46
+Changing input B of cell u183_gate (OAI21x1_ASAP7_75t_R): \n154_gate -> \n154
+Changing input A2 of cell u183_gate (OAI21x1_ASAP7_75t_R): \net118_gate -> \net118
+Changing input A1 of cell u183_gate (OAI21x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input B of cell u182_gate (AO21x1_ASAP7_75t_R): \n153_gate -> \n153
+Changing input A2 of cell u182_gate (AO21x1_ASAP7_75t_R): \net113_gate -> \net113
+Changing input A1 of cell u182_gate (AO21x1_ASAP7_75t_R): \net117_gate -> \net117
+Changing input C of cell u181_gate (AO221x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B2 of cell u181_gate (AO221x1_ASAP7_75t_R): \n134_gate -> \n134
+Changing input B1 of cell u181_gate (AO221x1_ASAP7_75t_R): \net82_gate -> \net82
+Changing input A2 of cell u181_gate (AO221x1_ASAP7_75t_R): \n1_gate -> \n1
+Changing input A1 of cell u181_gate (AO221x1_ASAP7_75t_R): \net62_gate -> \net62
+Changing input B of cell u180_gate (OAI21x1_ASAP7_75t_R): \n152_gate -> \n152
+Changing input A2 of cell u180_gate (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gate [3] -> \dpath.a_reg$out [3]
+Changing input A1 of cell u180_gate (OAI21x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input A of cell u18_gate (INVx1_ASAP7_75t_R): \dpath.a_reg$out_gate [1] -> \dpath.a_reg$out [1]
+Changing input B of cell u179_gate (AO21x1_ASAP7_75t_R): \n151_gate -> \n151
+Changing input A2 of cell u179_gate (AO21x1_ASAP7_75t_R): \n134_gate -> \n134
+Changing input A1 of cell u179_gate (AO21x1_ASAP7_75t_R): \net81_gate -> \net81
+Changing input C of cell u178_gate (AO221x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B2 of cell u178_gate (AO221x1_ASAP7_75t_R): \net112_gate -> \net112
+Changing input B1 of cell u178_gate (AO221x1_ASAP7_75t_R): \dpath.b_reg_out_gate [3] -> \dpath.b_reg_out [3]
+Changing input A2 of cell u178_gate (AO221x1_ASAP7_75t_R): \n1_gate -> \n1
+Changing input A1 of cell u178_gate (AO221x1_ASAP7_75t_R): \net61_gate -> \net61
+Changing input B of cell u177_gate (AOI21x1_ASAP7_75t_R): \n150_gate -> \n150
+Changing input A2 of cell u177_gate (AOI21x1_ASAP7_75t_R): \net110_gate -> \net110
+Changing input A1 of cell u177_gate (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gate [3] -> \dpath.b_reg_out [3]
+Changing input C of cell u176_gate (OA211x2_ASAP7_75t_R): \n149_gate -> \n149
+Changing input B of cell u176_gate (OA211x2_ASAP7_75t_R): \n146_gate -> \n146
+Changing input A2 of cell u176_gate (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gate [3] -> \dpath.a_reg$out [3]
+Changing input A1 of cell u176_gate (OA211x2_ASAP7_75t_R): \net77_gate -> \net77
+Changing input C of cell u175_gate (OR3x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B of cell u175_gate (OR3x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A of cell u175_gate (OR3x1_ASAP7_75t_R): \net45_gate -> \net45
+Changing input B of cell u174_gate (AOI21x1_ASAP7_75t_R): \n148_gate -> \n148
+Changing input A2 of cell u174_gate (AOI21x1_ASAP7_75t_R): \net110_gate -> \net110
+Changing input A1 of cell u174_gate (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gate [2] -> \dpath.b_reg_out [2]
+Changing input C of cell u173_gate (OA211x2_ASAP7_75t_R): \n147_gate -> \n147
+Changing input B of cell u173_gate (OA211x2_ASAP7_75t_R): \n146_gate -> \n146
+Changing input A2 of cell u173_gate (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gate [2] -> \dpath.a_reg$out [2]
+Changing input A1 of cell u173_gate (OA211x2_ASAP7_75t_R): \net77_gate -> \net77
+Changing input C of cell u172_gate (OR3x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B of cell u172_gate (OR3x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A of cell u172_gate (OR3x1_ASAP7_75t_R): \net44_gate -> \net44
+Changing input B of cell u171_gate (OR2x2_ASAP7_75t_R): \n132_gate -> \n132
+Changing input A of cell u171_gate (OR2x2_ASAP7_75t_R): \net77_gate -> \net77
+Changing input B of cell u170_gate (OAI21x1_ASAP7_75t_R): \n145_gate -> \n145
+Changing input A2 of cell u170_gate (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gate [2] -> \dpath.a_reg$out [2]
+Changing input A1 of cell u170_gate (OAI21x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input B of cell u17_gate (XOR2x2_ASAP7_75t_R): \dpath.b_reg_out_gate [2] -> \dpath.b_reg_out [2]
+Changing input A of cell u17_gate (XOR2x2_ASAP7_75t_R): \dpath.a_reg$out_gate [2] -> \dpath.a_reg$out [2]
+Changing input B of cell u169_gate (AO21x1_ASAP7_75t_R): \n144_gate -> \n144
+Changing input A2 of cell u169_gate (AO21x1_ASAP7_75t_R): \net112_gate -> \net112
+Changing input A1 of cell u169_gate (AO21x1_ASAP7_75t_R): \dpath.b_reg_out_gate [2] -> \dpath.b_reg_out [2]
+Changing input C of cell u168_gate (AO221x1_ASAP7_75t_R): \net119_gate -> \net119
+Changing input B2 of cell u168_gate (AO221x1_ASAP7_75t_R): \n134_gate -> \n134
+Changing input B1 of cell u168_gate (AO221x1_ASAP7_75t_R): \net80_gate -> \net80
+Changing input A2 of cell u168_gate (AO221x1_ASAP7_75t_R): \n1_gate -> \n1
+Changing input A1 of cell u168_gate (AO221x1_ASAP7_75t_R): \net60_gate -> \net60
+Changing input B of cell u167_gate (AOI21x1_ASAP7_75t_R): \n143_gate -> \n143
+Changing input A2 of cell u167_gate (AOI21x1_ASAP7_75t_R): \net110_gate -> \net110
+Changing input A1 of cell u167_gate (AOI21x1_ASAP7_75t_R): \net120_gate -> \net120
+Changing input B2 of cell u166_gate (AO32x1_ASAP7_75t_R): \net113_gate -> \net113
+Changing input B1 of cell u166_gate (AO32x1_ASAP7_75t_R): \dpath.a_reg$out_gate [1] -> \dpath.a_reg$out [1]
+Changing input A3 of cell u166_gate (AO32x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input A2 of cell u166_gate (AO32x1_ASAP7_75t_R): \n1_gate -> \n1
+Changing input A1 of cell u166_gate (AO32x1_ASAP7_75t_R): \net43_gate -> \net43
+Changing input B of cell u165_gate (OA21x2_ASAP7_75t_R): \n142_gate -> \n142
+Changing input A2 of cell u165_gate (OA21x2_ASAP7_75t_R): \n15_gate -> \n15
+Changing input A1 of cell u165_gate (OA21x2_ASAP7_75t_R): \n3_gate -> \n3
+Changing input C of cell u164_gate (AO221x1_ASAP7_75t_R): \n141_gate -> \n141
+Changing input B2 of cell u164_gate (AO221x1_ASAP7_75t_R): \n134_gate -> \n134
+Changing input B1 of cell u164_gate (AO221x1_ASAP7_75t_R): \n140_gate -> \n140
+Changing input A2 of cell u164_gate (AO221x1_ASAP7_75t_R): \net113_gate -> \net113
+Changing input A1 of cell u164_gate (AO221x1_ASAP7_75t_R): \n139_gate -> \n139
+Changing input B of cell u163_gate (OAI21x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input A2 of cell u163_gate (OAI21x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A1 of cell u163_gate (OAI21x1_ASAP7_75t_R): \net59_gate -> \net59
+Changing input B of cell u162_gate (XNOR2x2_ASAP7_75t_R): \n11_gate -> \n11
+Changing input A of cell u162_gate (XNOR2x2_ASAP7_75t_R): \n8_gate -> \n8
+Changing input A of cell u161_gate (INVx1_ASAP7_75t_R): \net120_gate -> \net120
+Changing input B of cell u160_gate (AOI21x1_ASAP7_75t_R): \n138_gate -> \n138
+Changing input A2 of cell u160_gate (AOI21x1_ASAP7_75t_R): \net110_gate -> \net110
+Changing input A1 of cell u160_gate (AOI21x1_ASAP7_75t_R): \net114_gate -> \net114
+Changing input D of cell u16_gate (DFFHQNx1_ASAP7_75t_R): \n13_gate -> \n13
+Changing input CLK of cell u16_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gate -> \clknet_2_0__leaf_clk
+Changing input B2 of cell u159_gate (AO32x1_ASAP7_75t_R): \net113_gate -> \net113
+Changing input B1 of cell u159_gate (AO32x1_ASAP7_75t_R): \net115_gate -> \net115
+Changing input A3 of cell u159_gate (AO32x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input A2 of cell u159_gate (AO32x1_ASAP7_75t_R): \n1_gate -> \n1
+Changing input A1 of cell u159_gate (AO32x1_ASAP7_75t_R): \net42_gate -> \net42
+Changing input B of cell u158_gate (NOR2x1_ASAP7_75t_R): \n132_gate -> \n132
+Changing input A of cell u158_gate (NOR2x1_ASAP7_75t_R): \net77_gate -> \net77
+Changing input B of cell u157_gate (OA21x2_ASAP7_75t_R): \n136_gate -> \n136
+Changing input A2 of cell u157_gate (OA21x2_ASAP7_75t_R): \n7_gate -> \n7
+Changing input A1 of cell u157_gate (OA21x2_ASAP7_75t_R): \n3_gate -> \n3
+Changing input C of cell u156_gate (AO221x1_ASAP7_75t_R): \n135_gate -> \n135
+Changing input B2 of cell u156_gate (AO221x1_ASAP7_75t_R): \n134_gate -> \n134
+Changing input B1 of cell u156_gate (AO221x1_ASAP7_75t_R): \n133_gate -> \n133
+Changing input A2 of cell u156_gate (AO221x1_ASAP7_75t_R): \net113_gate -> \net113
+Changing input A1 of cell u156_gate (AO221x1_ASAP7_75t_R): \n6_gate -> \n6
+Changing input B of cell u155_gate (OAI21x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input A2 of cell u155_gate (OAI21x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A1 of cell u155_gate (OAI21x1_ASAP7_75t_R): \net58_gate -> \net58
+Changing input B of cell u154_gate (NOR2x1_ASAP7_75t_R): \n131_gate -> \n131
+Changing input A of cell u154_gate (NOR2x1_ASAP7_75t_R): \n119_gate -> \n119
+Changing input B of cell u153_gate (AOI21x1_ASAP7_75t_R): \n8_gate -> \n8
+Changing input A2 of cell u153_gate (AOI21x1_ASAP7_75t_R): \n6_gate -> \n6
+Changing input A1 of cell u153_gate (AOI21x1_ASAP7_75t_R): \net115_gate -> \net115
+Changing input C of cell u152_gate (AND3x1_ASAP7_75t_R): \n131_gate -> \n131
+Changing input B of cell u152_gate (AND3x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input A of cell u152_gate (AND3x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input D of cell u151_gate (AND4x1_ASAP7_75t_R): \n130_gate -> \n130
+Changing input C of cell u151_gate (AND4x1_ASAP7_75t_R): \n128_gate -> \n128
+Changing input B of cell u151_gate (AND4x1_ASAP7_75t_R): \n127_gate -> \n127
+Changing input A of cell u151_gate (AND4x1_ASAP7_75t_R): \n126_gate -> \n126
+Changing input C of cell u150_gate (MAJx2_ASAP7_75t_R): \dpath.b_reg_out_gate [15] -> \dpath.b_reg_out [15]
+Changing input B of cell u150_gate (MAJx2_ASAP7_75t_R): \n129_gate -> \n129
+Changing input A of cell u150_gate (MAJx2_ASAP7_75t_R): \n106_gate -> \n106
+Changing input D of cell u15_gate (DFFHQNx1_ASAP7_75t_R): \n12_gate -> \n12
+Changing input CLK of cell u15_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_2__leaf_clk_gate -> \clknet_2_2__leaf_clk
+Changing input A of cell u149_gate (INVx1_ASAP7_75t_R): \dpath.a_reg$out_gate [15] -> \dpath.a_reg$out [15]
+Changing input C of cell u148_gate (OR3x1_ASAP7_75t_R): \n116_gate -> \n116
+Changing input B of cell u148_gate (OR3x1_ASAP7_75t_R): \n111_gate -> \n111
+Changing input A of cell u148_gate (OR3x1_ASAP7_75t_R): \n107_gate -> \n107
+Changing input B of cell u147_gate (NAND2x1_ASAP7_75t_R): \n125_gate -> \n125
+Changing input A of cell u147_gate (NAND2x1_ASAP7_75t_R): \n90_gate -> \n90
+Changing input C of cell u146_gate (NAND3x1_ASAP7_75t_R): \n125_gate -> \n125
+Changing input B of cell u146_gate (NAND3x1_ASAP7_75t_R): \n87_gate -> \n87
+Changing input A of cell u146_gate (NAND3x1_ASAP7_75t_R): \n62_gate -> \n62
+Changing input C of cell u145_gate (NOR3x1_ASAP7_75t_R): \n116_gate -> \n116
+Changing input B of cell u145_gate (NOR3x1_ASAP7_75t_R): \n108_gate -> \n108
+Changing input A of cell u145_gate (NOR3x1_ASAP7_75t_R): \n107_gate -> \n107
+Changing input C of cell u144_gate (AO221x1_ASAP7_75t_R): \net75_gate -> \net75
+Changing input B2 of cell u144_gate (AO221x1_ASAP7_75t_R): \n124_gate -> \n124
+Changing input B1 of cell u144_gate (AO221x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input A2 of cell u144_gate (AO221x1_ASAP7_75t_R): \net94_gate -> \net94
+Changing input A1 of cell u144_gate (AO221x1_ASAP7_75t_R): \net76_gate -> \net76
+Changing input C of cell u143_gate (NAND3x1_ASAP7_75t_R): \n124_gate -> \n124
+Changing input B of cell u143_gate (NAND3x1_ASAP7_75t_R): \n118_gate -> \n118
+Changing input A of cell u143_gate (NAND3x1_ASAP7_75t_R): \n117_gate -> \n117
+Changing input C of cell u142_gate (OR3x1_ASAP7_75t_R): \n123_gate -> \n123
+Changing input B of cell u142_gate (OR3x1_ASAP7_75t_R): \n121_gate -> \n121
+Changing input A of cell u142_gate (OR3x1_ASAP7_75t_R): \n120_gate -> \n120
+Changing input E of cell u141_gate (OR5x1_ASAP7_75t_R): \n122_gate -> \n122
+Changing input D of cell u141_gate (OR5x1_ASAP7_75t_R): \dpath.b_reg_out_gate [7] -> \dpath.b_reg_out [7]
+Changing input C of cell u141_gate (OR5x1_ASAP7_75t_R): \dpath.b_reg_out_gate [6] -> \dpath.b_reg_out [6]
+Changing input B of cell u141_gate (OR5x1_ASAP7_75t_R): \net116_gate -> \net116
+Changing input A of cell u141_gate (OR5x1_ASAP7_75t_R): \net117_gate -> \net117
+Changing input D of cell u140_gate (OR4x1_ASAP7_75t_R): \dpath.b_reg_out_gate [11] -> \dpath.b_reg_out [11]
+Changing input C of cell u140_gate (OR4x1_ASAP7_75t_R): \dpath.b_reg_out_gate [10] -> \dpath.b_reg_out [10]
+Changing input B of cell u140_gate (OR4x1_ASAP7_75t_R): \dpath.b_reg_out_gate [9] -> \dpath.b_reg_out [9]
+Changing input A of cell u140_gate (OR4x1_ASAP7_75t_R): \dpath.b_reg_out_gate [8] -> \dpath.b_reg_out [8]
+Changing input B of cell u14_gate (XOR2x2_ASAP7_75t_R): \n11_gate -> \n11
+Changing input A of cell u14_gate (XOR2x2_ASAP7_75t_R): \n8_gate -> \n8
+Changing input D of cell u139_gate (OR4x1_ASAP7_75t_R): \dpath.b_reg_out_gate [15] -> \dpath.b_reg_out [15]
+Changing input C of cell u139_gate (OR4x1_ASAP7_75t_R): \dpath.b_reg_out_gate [14] -> \dpath.b_reg_out [14]
+Changing input B of cell u139_gate (OR4x1_ASAP7_75t_R): \dpath.b_reg_out_gate [13] -> \dpath.b_reg_out [13]
+Changing input A of cell u139_gate (OR4x1_ASAP7_75t_R): \dpath.b_reg_out_gate [12] -> \dpath.b_reg_out [12]
+Changing input E of cell u138_gate (OR5x1_ASAP7_75t_R): \n119_gate -> \n119
+Changing input D of cell u138_gate (OR5x1_ASAP7_75t_R): \dpath.b_reg_out_gate [3] -> \dpath.b_reg_out [3]
+Changing input C of cell u138_gate (OR5x1_ASAP7_75t_R): \dpath.b_reg_out_gate [2] -> \dpath.b_reg_out [2]
+Changing input B of cell u138_gate (OR5x1_ASAP7_75t_R): \net120_gate -> \net120
+Changing input A of cell u138_gate (OR5x1_ASAP7_75t_R): \net114_gate -> \net114
+Changing input B of cell u137_gate (NAND2x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input A of cell u137_gate (NAND2x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input B of cell u136_gate (AO21x1_ASAP7_75t_R): \net121_gate -> \net121
+Changing input A2 of cell u136_gate (AO21x1_ASAP7_75t_R): \n3_gate -> \n3
+Changing input A1 of cell u136_gate (AO21x1_ASAP7_75t_R): \net74_gate -> \net74
+Changing input A of cell u135_gate (INVx1_ASAP7_75t_R): \net75_gate -> \net75
+Changing input B of cell u134_gate (AND2x2_ASAP7_75t_R): \net119_gate -> \net119
+Changing input A of cell u134_gate (AND2x2_ASAP7_75t_R): \n1_gate -> \n1
+Changing input B of cell u133_gate (XNOR2x2_ASAP7_75t_R): \n116_gate -> \n116
+Changing input A of cell u133_gate (XNOR2x2_ASAP7_75t_R): \n113_gate -> \n113
+Changing input B of cell u132_gate (XOR2x2_ASAP7_75t_R): \dpath.b_reg_out_gate [15] -> \dpath.b_reg_out [15]
+Changing input A of cell u132_gate (XOR2x2_ASAP7_75t_R): \dpath.a_reg$out_gate [15] -> \dpath.a_reg$out [15]
+Changing input D of cell u131_gate (DFFHQNx1_ASAP7_75t_R): \n115_gate -> \n115
+Changing input CLK of cell u131_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_3__leaf_clk_gate -> \clknet_2_3__leaf_clk
+Changing input D of cell u130_gate (DFFHQNx1_ASAP7_75t_R): \n114_gate -> \n114
+Changing input CLK of cell u130_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_3__leaf_clk_gate -> \clknet_2_3__leaf_clk
+Changing input B of cell u13_gate (XOR2x2_ASAP7_75t_R): \net120_gate -> \net120
+Changing input A of cell u13_gate (XOR2x2_ASAP7_75t_R): \dpath.a_reg$out_gate [1] -> \dpath.a_reg$out [1]
+Changing input B of cell u129_gate (OAI21x1_ASAP7_75t_R): \n106_gate -> \n106
+Changing input A2 of cell u129_gate (OAI21x1_ASAP7_75t_R): \n112_gate -> \n112
+Changing input A1 of cell u129_gate (OAI21x1_ASAP7_75t_R): \n107_gate -> \n107
+Changing input B of cell u128_gate (XOR2x2_ASAP7_75t_R): \n112_gate -> \n112
+Changing input A of cell u128_gate (XOR2x2_ASAP7_75t_R): \n107_gate -> \n107
+Changing input C of cell u127_gate (OA211x2_ASAP7_75t_R): \n111_gate -> \n111
+Changing input B of cell u127_gate (OA211x2_ASAP7_75t_R): \n109_gate -> \n109
+Changing input A2 of cell u127_gate (OA211x2_ASAP7_75t_R): \n108_gate -> \n108
+Changing input A1 of cell u127_gate (OA211x2_ASAP7_75t_R): \n89_gate -> \n89
+Changing input C of cell u126_gate (MAJx2_ASAP7_75t_R): \n110_gate -> \n110
+Changing input B of cell u126_gate (MAJx2_ASAP7_75t_R): \dpath.b_reg_out_gate [13] -> \dpath.b_reg_out [13]
+Changing input A of cell u126_gate (MAJx2_ASAP7_75t_R): \n84_gate -> \n84
+Changing input A of cell u125_gate (INVx1_ASAP7_75t_R): \dpath.a_reg$out_gate [13] -> \dpath.a_reg$out [13]
+Changing input C of cell u124_gate (OR3x1_ASAP7_75t_R): \n108_gate -> \n108
+Changing input B of cell u124_gate (OR3x1_ASAP7_75t_R): \n86_gate -> \n86
+Changing input A of cell u124_gate (OR3x1_ASAP7_75t_R): \n71_gate -> \n71
+Changing input B of cell u123_gate (OR2x6_ASAP7_75t_R): \n95_gate -> \n95
+Changing input A of cell u123_gate (OR2x6_ASAP7_75t_R): \n85_gate -> \n85
+Changing input B of cell u122_gate (OAI21x1_ASAP7_75t_R): \n106_gate -> \n106
+Changing input A2 of cell u122_gate (OAI21x1_ASAP7_75t_R): \n105_gate -> \n105
+Changing input A1 of cell u122_gate (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gate [14] -> \dpath.a_reg$out [14]
+Changing input B of cell u121_gate (NAND2x1_ASAP7_75t_R): \n105_gate -> \n105
+Changing input A of cell u121_gate (NAND2x1_ASAP7_75t_R): \dpath.a_reg$out_gate [14] -> \dpath.a_reg$out [14]
+Changing input A of cell u120_gate (INVx1_ASAP7_75t_R): \dpath.b_reg_out_gate [14] -> \dpath.b_reg_out [14]
+Changing input D of cell u12_gate (DFFHQNx1_ASAP7_75t_R): \n10_gate -> \n10
+Changing input CLK of cell u12_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gate -> \clknet_2_0__leaf_clk
+Changing input D of cell u119_gate (DFFHQNx1_ASAP7_75t_R): \n104_gate -> \n104
+Changing input CLK of cell u119_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_3__leaf_clk_gate -> \clknet_2_3__leaf_clk
+Changing input D of cell u118_gate (DFFHQNx1_ASAP7_75t_R): \n103_gate -> \n103
+Changing input CLK of cell u118_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_2__leaf_clk_gate -> \clknet_2_2__leaf_clk
+Changing input C of cell u117_gate (AO221x1_ASAP7_75t_R): \n102_gate -> \n102
+Changing input B2 of cell u117_gate (AO221x1_ASAP7_75t_R): \n98_gate -> \n98
+Changing input B1 of cell u117_gate (AO221x1_ASAP7_75t_R): \n97_gate -> \n97
+Changing input A2 of cell u117_gate (AO221x1_ASAP7_75t_R): \n96_gate -> \n96
+Changing input A1 of cell u117_gate (AO221x1_ASAP7_75t_R): \n62_gate -> \n62
+Changing input B of cell u116_gate (AO21x1_ASAP7_75t_R): \n101_gate -> \n101
+Changing input A2 of cell u116_gate (AO21x1_ASAP7_75t_R): \n99_gate -> \n99
+Changing input A1 of cell u116_gate (AO21x1_ASAP7_75t_R): \n98_gate -> \n98
+Changing input C of cell u115_gate (OA211x2_ASAP7_75t_R): \n100_gate -> \n100
+Changing input B of cell u115_gate (OA211x2_ASAP7_75t_R): \n95_gate -> \n95
+Changing input A2 of cell u115_gate (OA211x2_ASAP7_75t_R): \n83_gate -> \n83
+Changing input A1 of cell u115_gate (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gate [12] -> \dpath.a_reg$out [12]
+Changing input B of cell u114_gate (AO21x1_ASAP7_75t_R): \n90_gate -> \n90
+Changing input A2 of cell u114_gate (AO21x1_ASAP7_75t_R): \n83_gate -> \n83
+Changing input A1 of cell u114_gate (AO21x1_ASAP7_75t_R): \dpath.a_reg$out_gate [12] -> \dpath.a_reg$out [12]
+Changing input B2 of cell u113_gate (OAI22x1_ASAP7_75t_R): \n87_gate -> \n87
+Changing input B1 of cell u113_gate (OAI22x1_ASAP7_75t_R): \n90_gate -> \n90
+Changing input A2 of cell u113_gate (OAI22x1_ASAP7_75t_R): \n83_gate -> \n83
+Changing input A1 of cell u113_gate (OAI22x1_ASAP7_75t_R): \dpath.a_reg$out_gate [12] -> \dpath.a_reg$out [12]
+Changing input B of cell u112_gate (AOI21x1_ASAP7_75t_R): \n95_gate -> \n95
+Changing input A2 of cell u112_gate (AOI21x1_ASAP7_75t_R): \n83_gate -> \n83
+Changing input A1 of cell u112_gate (AOI21x1_ASAP7_75t_R): \dpath.a_reg$out_gate [12] -> \dpath.a_reg$out [12]
+Changing input B of cell u111_gate (NOR2x1_ASAP7_75t_R): \n90_gate -> \n90
+Changing input A of cell u111_gate (NOR2x1_ASAP7_75t_R): \n62_gate -> \n62
+Changing input C of cell u110_gate (AND3x1_ASAP7_75t_R): \n95_gate -> \n95
+Changing input B of cell u110_gate (AND3x1_ASAP7_75t_R): \n87_gate -> \n87
+Changing input A of cell u110_gate (AND3x1_ASAP7_75t_R): \n92_gate -> \n92
+Changing input D of cell u11_gate (DFFHQNx1_ASAP7_75t_R): \n9_gate -> \n9
+Changing input CLK of cell u11_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gate -> \clknet_2_0__leaf_clk
+Changing input B of cell u109_gate (XOR2x2_ASAP7_75t_R): \dpath.a_reg$out_gate [13] -> \dpath.a_reg$out [13]
+Changing input A of cell u109_gate (XOR2x2_ASAP7_75t_R): \dpath.b_reg_out_gate [13] -> \dpath.b_reg_out [13]
+Changing input D of cell u108_gate (DFFHQNx1_ASAP7_75t_R): \n94_gate -> \n94
+Changing input CLK of cell u108_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_3__leaf_clk_gate -> \clknet_2_3__leaf_clk
+Changing input D of cell u107_gate (DFFHQNx1_ASAP7_75t_R): \n93_gate -> \n93
+Changing input CLK of cell u107_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_3__leaf_clk_gate -> \clknet_2_3__leaf_clk
+Changing input B of cell u106_gate (OA21x2_ASAP7_75t_R): \n84_gate -> \n84
+Changing input A2 of cell u106_gate (OA21x2_ASAP7_75t_R): \n83_gate -> \n83
+Changing input A1 of cell u106_gate (OA21x2_ASAP7_75t_R): \dpath.a_reg$out_gate [12] -> \dpath.a_reg$out [12]
+Changing input B of cell u105_gate (XNOR2x2_ASAP7_75t_R): \n91_gate -> \n91
+Changing input A of cell u105_gate (XNOR2x2_ASAP7_75t_R): \n85_gate -> \n85
+Changing input B of cell u104_gate (AO21x1_ASAP7_75t_R): \n90_gate -> \n90
+Changing input A2 of cell u104_gate (AO21x1_ASAP7_75t_R): \n87_gate -> \n87
+Changing input A1 of cell u104_gate (AO21x1_ASAP7_75t_R): \n62_gate -> \n62
+Changing input B of cell u103_gate (OAI21x1_ASAP7_75t_R): \n89_gate -> \n89
+Changing input A2 of cell u103_gate (OAI21x1_ASAP7_75t_R): \n86_gate -> \n86
+Changing input A1 of cell u103_gate (OAI21x1_ASAP7_75t_R): \n70_gate -> \n70
+Changing input C of cell u102_gate (MAJx2_ASAP7_75t_R): \dpath.b_reg_out_gate [11] -> \dpath.b_reg_out [11]
+Changing input B of cell u102_gate (MAJx2_ASAP7_75t_R): \n88_gate -> \n88
+Changing input A of cell u102_gate (MAJx2_ASAP7_75t_R): \n75_gate -> \n75
+Changing input A of cell u101_gate (INVx1_ASAP7_75t_R): \dpath.a_reg$out_gate [11] -> \dpath.a_reg$out [11]
+Changing input B of cell u100_gate (NOR2x1_ASAP7_75t_R): \n86_gate -> \n86
+Changing input A of cell u100_gate (NOR2x1_ASAP7_75t_R): \n67_gate -> \n67
+Changing input B of cell u10_gate (AO21x1_ASAP7_75t_R): \n8_gate -> \n8
+Changing input A2 of cell u10_gate (AO21x1_ASAP7_75t_R): \n6_gate -> \n6
+Changing input A1 of cell u10_gate (AO21x1_ASAP7_75t_R): \net115_gate -> \net115
+Changing input A of cell u1_gate (INVx4_ASAP7_75t_R): \ctrl.curr_state__0_gate -> \ctrl.curr_state__0
+Changing input D of cell u0_gate (DFFHQNx1_ASAP7_75t_R): \n0_gate -> \n0
+Changing input CLK of cell u0_gate (DFFHQNx1_ASAP7_75t_R): \clknet_2_2__leaf_clk_gate -> \clknet_2_2__leaf_clk
+Changing input A of cell place121_gate (BUFx2_ASAP7_75t_R): \ctrl.curr_state__0_gate -> \ctrl.curr_state__0
+Changing input A of cell place120_gate (BUFx2_ASAP7_75t_R): \dpath.b_reg_out_gate [1] -> \dpath.b_reg_out [1]
+Changing input A of cell place119_gate (BUFx2_ASAP7_75t_R): \ctrl$a_reg_en*_gate -> \ctrl$a_reg_en*
+Changing input A of cell place118_gate (BUFx2_ASAP7_75t_R): \dpath.a_reg$out_gate [4] -> \dpath.a_reg$out [4]
+Changing input A of cell place117_gate (BUFx2_ASAP7_75t_R): \dpath.b_reg_out_gate [4] -> \dpath.b_reg_out [4]
+Changing input A of cell place116_gate (BUFx2_ASAP7_75t_R): \dpath.b_reg_out_gate [5] -> \dpath.b_reg_out [5]
+Changing input A of cell place115_gate (BUFx2_ASAP7_75t_R): \dpath.a_reg$out_gate [0] -> \dpath.a_reg$out [0]
+Changing input A of cell place114_gate (BUFx2_ASAP7_75t_R): \dpath.b_reg_out_gate [0] -> \dpath.b_reg_out [0]
+Changing input A of cell place113_gate (BUFx2_ASAP7_75t_R): \n132_gate -> \n132
+Changing input A of cell place112_gate (BUFx2_ASAP7_75t_R): \n132_gate -> \n132
+Changing input A of cell place111_gate (BUFx2_ASAP7_75t_R): \n134_gate -> \n134
+Changing input A of cell place110_gate (BUFx6f_ASAP7_75t_R): \n137_gate -> \n137
+Changing input A of cell output94_gate (BUFx2_ASAP7_75t_R): \net94_gate -> \net94
+Changing input A of cell output93_gate (BUFx2_ASAP7_75t_R): \net93_gate -> \net93
+Changing input A of cell output92_gate (BUFx2_ASAP7_75t_R): \net92_gate -> \net92
+Changing input A of cell output91_gate (BUFx2_ASAP7_75t_R): \net91_gate -> \net91
+Changing input A of cell output90_gate (BUFx2_ASAP7_75t_R): \net90_gate -> \net90
+Changing input A of cell output89_gate (BUFx2_ASAP7_75t_R): \net89_gate -> \net89
+Changing input A of cell output88_gate (BUFx2_ASAP7_75t_R): \net88_gate -> \net88
+Changing input A of cell output87_gate (BUFx2_ASAP7_75t_R): \net87_gate -> \net87
+Changing input A of cell output86_gate (BUFx2_ASAP7_75t_R): \net86_gate -> \net86
+Changing input A of cell output85_gate (BUFx2_ASAP7_75t_R): \net85_gate -> \net85
+Changing input A of cell output84_gate (BUFx2_ASAP7_75t_R): \net84_gate -> \net84
+Changing input A of cell output83_gate (BUFx2_ASAP7_75t_R): \net83_gate -> \net83
+Changing input A of cell output82_gate (BUFx2_ASAP7_75t_R): \net82_gate -> \net82
+Changing input A of cell output81_gate (BUFx2_ASAP7_75t_R): \net81_gate -> \net81
+Changing input A of cell output80_gate (BUFx2_ASAP7_75t_R): \net80_gate -> \net80
+Changing input A of cell output79_gate (BUFx2_ASAP7_75t_R): \net79_gate -> \net79
+Changing input A of cell output78_gate (BUFx2_ASAP7_75t_R): \net78_gate -> \net78
+Changing input A of cell output77_gate (BUFx2_ASAP7_75t_R): \net77_gate -> \net77
+Changing input A of cell clkload2_gate (BUFx10_ASAP7_75t_R): \clknet_2_3__leaf_clk_gate -> \clknet_2_3__leaf_clk
+Changing input A of cell clkload1_gate (BUFx8_ASAP7_75t_R): \clknet_2_2__leaf_clk_gate -> \clknet_2_2__leaf_clk
+Changing input A of cell clkload0_gate (BUFx2_ASAP7_75t_R): \clknet_2_1__leaf_clk_gate -> \clknet_2_1__leaf_clk
+Changing input A of cell clkbuf_2_3__f_clk_gate (BUFx2_ASAP7_75t_R): \clknet_0_clk_gate -> \clknet_0_clk
+Changing input A of cell clkbuf_2_2__f_clk_gate (BUFx2_ASAP7_75t_R): \clknet_0_clk_gate -> \clknet_0_clk
+Changing input A of cell clkbuf_2_1__f_clk_gate (BUFx2_ASAP7_75t_R): \clknet_0_clk_gate -> \clknet_0_clk
+Changing input A of cell clkbuf_2_0__f_clk_gate (BUFx2_ASAP7_75t_R): \clknet_0_clk_gate -> \clknet_0_clk
+Changing input B of cell u99_gate (OR2x6_ASAP7_75t_R): \n80_gate -> \n80
+Changing input A of cell u99_gate (OR2x6_ASAP7_75t_R): \n76_gate -> \n76
+Changing input B of cell u98_gold (OAI21x1_ASAP7_75t_R): \n84_gold -> \n84
+Changing input A2 of cell u98_gold (OAI21x1_ASAP7_75t_R): \n83_gold -> \n83
+Changing input A1 of cell u98_gold (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gold [12] -> \dpath.a_reg$out [12]
+Changing input B of cell u97_gold (NAND2x1_ASAP7_75t_R): \n83_gold -> \n83
+Changing input A of cell u97_gold (NAND2x1_ASAP7_75t_R): \dpath.a_reg$out_gold [12] -> \dpath.a_reg$out [12]
+Changing input A of cell u96_gold (INVx3_ASAP7_75t_R): \dpath.b_reg_out_gold [12] -> \dpath.b_reg_out [12]
+Changing input D of cell u95_gold (DFFHQNx1_ASAP7_75t_R): \n82_gold -> \n82
+Changing input CLK of cell u95_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_1__leaf_clk_gold -> \clknet_2_1__leaf_clk
+Changing input D of cell u94_gold (DFFHQNx1_ASAP7_75t_R): \n81_gold -> \n81
+Changing input CLK of cell u94_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_3__leaf_clk_gold -> \clknet_2_3__leaf_clk
+Changing input B of cell u93_gold (XOR2x2_ASAP7_75t_R): \n80_gold -> \n80
+Changing input A of cell u93_gold (XOR2x2_ASAP7_75t_R): \n77_gold -> \n77
+Changing input B of cell u92_gold (XOR2x2_ASAP7_75t_R): \dpath.b_reg_out_gold [11] -> \dpath.b_reg_out [11]
+Changing input A of cell u92_gold (XOR2x2_ASAP7_75t_R): \dpath.a_reg$out_gold [11] -> \dpath.a_reg$out [11]
+Changing input D of cell u91_gold (DFFHQNx1_ASAP7_75t_R): \n79_gold -> \n79
+Changing input CLK of cell u91_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_1__leaf_clk_gold -> \clknet_2_1__leaf_clk
+Changing input D of cell u90_gold (DFFHQNx1_ASAP7_75t_R): \n78_gold -> \n78
+Changing input CLK of cell u90_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_2__leaf_clk_gold -> \clknet_2_2__leaf_clk
+Changing input B of cell u9_gold (AND2x2_ASAP7_75t_R): \dpath.b_reg_out_gold [0] -> \dpath.b_reg_out [0]
+Changing input A of cell u9_gold (AND2x2_ASAP7_75t_R): \n7_gold -> \n7
+Changing input B of cell u89_gold (OA21x2_ASAP7_75t_R): \n75_gold -> \n75
+Changing input A2 of cell u89_gold (OA21x2_ASAP7_75t_R): \n76_gold -> \n76
+Changing input A1 of cell u89_gold (OA21x2_ASAP7_75t_R): \n71_gold -> \n71
+Changing input B of cell u88_gold (XOR2x2_ASAP7_75t_R): \n76_gold -> \n76
+Changing input A of cell u88_gold (XOR2x2_ASAP7_75t_R): \n71_gold -> \n71
+Changing input B of cell u87_gold (OAI21x1_ASAP7_75t_R): \n75_gold -> \n75
+Changing input A2 of cell u87_gold (OAI21x1_ASAP7_75t_R): \n74_gold -> \n74
+Changing input A1 of cell u87_gold (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gold [10] -> \dpath.a_reg$out [10]
+Changing input B of cell u86_gold (NAND2x1_ASAP7_75t_R): \n74_gold -> \n74
+Changing input A of cell u86_gold (NAND2x1_ASAP7_75t_R): \dpath.a_reg$out_gold [10] -> \dpath.a_reg$out [10]
+Changing input A of cell u85_gold (INVx1_ASAP7_75t_R): \dpath.b_reg_out_gold [10] -> \dpath.b_reg_out [10]
+Changing input D of cell u84_gold (DFFHQNx1_ASAP7_75t_R): \n73_gold -> \n73
+Changing input CLK of cell u84_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_1__leaf_clk_gold -> \clknet_2_1__leaf_clk
+Changing input D of cell u83_gold (DFFHQNx1_ASAP7_75t_R): \n72_gold -> \n72
+Changing input CLK of cell u83_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_1__leaf_clk_gold -> \clknet_2_1__leaf_clk
+Changing input C of cell u82_gold (OA211x2_ASAP7_75t_R): \n70_gold -> \n70
+Changing input B of cell u82_gold (OA211x2_ASAP7_75t_R): \n68_gold -> \n68
+Changing input A2 of cell u82_gold (OA211x2_ASAP7_75t_R): \n67_gold -> \n67
+Changing input A1 of cell u82_gold (OA211x2_ASAP7_75t_R): \n61_gold -> \n61
+Changing input C of cell u81_gold (MAJx2_ASAP7_75t_R): \dpath.b_reg_out_gold [9] -> \dpath.b_reg_out [9]
+Changing input B of cell u81_gold (MAJx2_ASAP7_75t_R): \n69_gold -> \n69
+Changing input A of cell u81_gold (MAJx2_ASAP7_75t_R): \n56_gold -> \n56
+Changing input A of cell u80_gold (INVx1_ASAP7_75t_R): \dpath.a_reg$out_gold [9] -> \dpath.a_reg$out [9]
+Changing input A of cell u8_gold (INVx1_ASAP7_75t_R): \dpath.a_reg$out_gold [0] -> \dpath.a_reg$out [0]
+Changing input C of cell u79_gold (OR3x1_ASAP7_75t_R): \n67_gold -> \n67
+Changing input B of cell u79_gold (OR3x1_ASAP7_75t_R): \n58_gold -> \n58
+Changing input A of cell u79_gold (OR3x1_ASAP7_75t_R): \n42_gold -> \n42
+Changing input B of cell u78_gold (OR2x2_ASAP7_75t_R): \n65_gold -> \n65
+Changing input A of cell u78_gold (OR2x2_ASAP7_75t_R): \n57_gold -> \n57
+Changing input B of cell u77_gold (XNOR2x2_ASAP7_75t_R): \n66_gold -> \n66
+Changing input A of cell u77_gold (XNOR2x2_ASAP7_75t_R): \n65_gold -> \n65
+Changing input C of cell u76_gold (MAJx2_ASAP7_75t_R): \n62_gold -> \n62
+Changing input B of cell u76_gold (MAJx2_ASAP7_75t_R): \n55_gold -> \n55
+Changing input A of cell u76_gold (MAJx2_ASAP7_75t_R): \dpath.a_reg$out_gold [8] -> \dpath.a_reg$out [8]
+Changing input B of cell u75_gold (XOR2x2_ASAP7_75t_R): \dpath.b_reg_out_gold [9] -> \dpath.b_reg_out [9]
+Changing input A of cell u75_gold (XOR2x2_ASAP7_75t_R): \dpath.a_reg$out_gold [9] -> \dpath.a_reg$out [9]
+Changing input D of cell u74_gold (DFFHQNx1_ASAP7_75t_R): \n64_gold -> \n64
+Changing input CLK of cell u74_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_1__leaf_clk_gold -> \clknet_2_1__leaf_clk
+Changing input D of cell u73_gold (DFFHQNx1_ASAP7_75t_R): \n63_gold -> \n63
+Changing input CLK of cell u73_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_1__leaf_clk_gold -> \clknet_2_1__leaf_clk
+Changing input B of cell u72_gold (XNOR2x2_ASAP7_75t_R): \n62_gold -> \n62
+Changing input A of cell u72_gold (XNOR2x2_ASAP7_75t_R): \n57_gold -> \n57
+Changing input B of cell u71_gold (OAI21x1_ASAP7_75t_R): \n61_gold -> \n61
+Changing input A2 of cell u71_gold (OAI21x1_ASAP7_75t_R): \n59_gold -> \n59
+Changing input A1 of cell u71_gold (OAI21x1_ASAP7_75t_R): \n58_gold -> \n58
+Changing input C of cell u70_gold (MAJx2_ASAP7_75t_R): \dpath.b_reg_out_gold [7] -> \dpath.b_reg_out [7]
+Changing input B of cell u70_gold (MAJx2_ASAP7_75t_R): \n60_gold -> \n60
+Changing input A of cell u70_gold (MAJx2_ASAP7_75t_R): \n46_gold -> \n46
+Changing input A of cell u7_gold (INVx1_ASAP7_75t_R): \net114_gold -> \net114
+Changing input A of cell u69_gold (INVx1_ASAP7_75t_R): \dpath.a_reg$out_gold [7] -> \dpath.a_reg$out [7]
+Changing input B of cell u68_gold (OA21x2_ASAP7_75t_R): \n41_gold -> \n41
+Changing input A2 of cell u68_gold (OA21x2_ASAP7_75t_R): \n37_gold -> \n37
+Changing input A1 of cell u68_gold (OA21x2_ASAP7_75t_R): \n32_gold -> \n32
+Changing input B of cell u67_gold (OR2x2_ASAP7_75t_R): \n52_gold -> \n52
+Changing input A of cell u67_gold (OR2x2_ASAP7_75t_R): \n47_gold -> \n47
+Changing input B of cell u66_gold (OAI21x1_ASAP7_75t_R): \n56_gold -> \n56
+Changing input A2 of cell u66_gold (OAI21x1_ASAP7_75t_R): \n55_gold -> \n55
+Changing input A1 of cell u66_gold (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gold [8] -> \dpath.a_reg$out [8]
+Changing input B of cell u65_gold (NAND2x1_ASAP7_75t_R): \n55_gold -> \n55
+Changing input A of cell u65_gold (NAND2x1_ASAP7_75t_R): \dpath.a_reg$out_gold [8] -> \dpath.a_reg$out [8]
+Changing input A of cell u64_gold (INVx2_ASAP7_75t_R): \dpath.b_reg_out_gold [8] -> \dpath.b_reg_out [8]
+Changing input D of cell u63_gold (DFFHQNx1_ASAP7_75t_R): \n54_gold -> \n54
+Changing input CLK of cell u63_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_1__leaf_clk_gold -> \clknet_2_1__leaf_clk
+Changing input D of cell u62_gold (DFFHQNx1_ASAP7_75t_R): \n53_gold -> \n53
+Changing input CLK of cell u62_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_1__leaf_clk_gold -> \clknet_2_1__leaf_clk
+Changing input B of cell u61_gold (XNOR2x2_ASAP7_75t_R): \n52_gold -> \n52
+Changing input A of cell u61_gold (XNOR2x2_ASAP7_75t_R): \n49_gold -> \n49
+Changing input B of cell u60_gold (XOR2x2_ASAP7_75t_R): \dpath.b_reg_out_gold [7] -> \dpath.b_reg_out [7]
+Changing input A of cell u60_gold (XOR2x2_ASAP7_75t_R): \dpath.a_reg$out_gold [7] -> \dpath.a_reg$out [7]
+Changing input D of cell u6_gold (DFFHQNx1_ASAP7_75t_R): \n5_gold -> \n5
+Changing input CLK of cell u6_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gold -> \clknet_2_0__leaf_clk
+Changing input D of cell u59_gold (DFFHQNx1_ASAP7_75t_R): \n51_gold -> \n51
+Changing input CLK of cell u59_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_3__leaf_clk_gold -> \clknet_2_3__leaf_clk
+Changing input D of cell u58_gold (DFFHQNx1_ASAP7_75t_R): \n50_gold -> \n50
+Changing input CLK of cell u58_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_2__leaf_clk_gold -> \clknet_2_2__leaf_clk
+Changing input B of cell u57_gold (AO21x1_ASAP7_75t_R): \n48_gold -> \n48
+Changing input A2 of cell u57_gold (AO21x1_ASAP7_75t_R): \n45_gold -> \n45
+Changing input A1 of cell u57_gold (AO21x1_ASAP7_75t_R): \dpath.a_reg$out_gold [6] -> \dpath.a_reg$out [6]
+Changing input B of cell u56_gold (AOI21x1_ASAP7_75t_R): \n48_gold -> \n48
+Changing input A2 of cell u56_gold (AOI21x1_ASAP7_75t_R): \n47_gold -> \n47
+Changing input A1 of cell u56_gold (AOI21x1_ASAP7_75t_R): \n42_gold -> \n42
+Changing input B of cell u55_gold (NOR2x1_ASAP7_75t_R): \n47_gold -> \n47
+Changing input A of cell u55_gold (NOR2x1_ASAP7_75t_R): \n42_gold -> \n42
+Changing input B of cell u54_gold (OAI21x1_ASAP7_75t_R): \n46_gold -> \n46
+Changing input A2 of cell u54_gold (OAI21x1_ASAP7_75t_R): \n45_gold -> \n45
+Changing input A1 of cell u54_gold (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gold [6] -> \dpath.a_reg$out [6]
+Changing input B of cell u53_gold (NAND2x1_ASAP7_75t_R): \n45_gold -> \n45
+Changing input A of cell u53_gold (NAND2x1_ASAP7_75t_R): \dpath.a_reg$out_gold [6] -> \dpath.a_reg$out [6]
+Changing input A of cell u52_gold (INVx1_ASAP7_75t_R): \dpath.b_reg_out_gold [6] -> \dpath.b_reg_out [6]
+Changing input D of cell u51_gold (DFFHQNx1_ASAP7_75t_R): \n44_gold -> \n44
+Changing input CLK of cell u51_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_1__leaf_clk_gold -> \clknet_2_1__leaf_clk
+Changing input D of cell u50_gold (DFFHQNx1_ASAP7_75t_R): \n43_gold -> \n43
+Changing input CLK of cell u50_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gold -> \clknet_2_0__leaf_clk
+Changing input D of cell u5_gold (DFFHQNx1_ASAP7_75t_R): \n4_gold -> \n4
+Changing input CLK of cell u5_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gold -> \clknet_2_0__leaf_clk
+Changing input C of cell u49_gold (AND3x4_ASAP7_75t_R): \n41_gold -> \n41
+Changing input B of cell u49_gold (AND3x4_ASAP7_75t_R): \n39_gold -> \n39
+Changing input A of cell u49_gold (AND3x4_ASAP7_75t_R): \n38_gold -> \n38
+Changing input C of cell u48_gold (MAJx2_ASAP7_75t_R): \net116_gold -> \net116
+Changing input B of cell u48_gold (MAJx2_ASAP7_75t_R): \n40_gold -> \n40
+Changing input A of cell u48_gold (MAJx2_ASAP7_75t_R): \n28_gold -> \n28
+Changing input A of cell u47_gold (INVx1_ASAP7_75t_R): \dpath.a_reg$out_gold [5] -> \dpath.a_reg$out [5]
+Changing input C of cell u46_gold (OR3x1_ASAP7_75t_R): \n37_gold -> \n37
+Changing input B of cell u46_gold (OR3x1_ASAP7_75t_R): \n31_gold -> \n31
+Changing input A of cell u46_gold (OR3x1_ASAP7_75t_R): \n20_gold -> \n20
+Changing input C of cell u45_gold (OR3x1_ASAP7_75t_R): \n23_gold -> \n23
+Changing input B of cell u45_gold (OR3x1_ASAP7_75t_R): \n21_gold -> \n21
+Changing input A of cell u45_gold (OR3x1_ASAP7_75t_R): \n37_gold -> \n37
+Changing input B of cell u44_gold (OR2x2_ASAP7_75t_R): \n36_gold -> \n36
+Changing input A of cell u44_gold (OR2x2_ASAP7_75t_R): \n29_gold -> \n29
+Changing input B of cell u43_gold (XOR2x2_ASAP7_75t_R): \n36_gold -> \n36
+Changing input A of cell u43_gold (XOR2x2_ASAP7_75t_R): \n33_gold -> \n33
+Changing input B of cell u42_gold (XOR2x2_ASAP7_75t_R): \dpath.b_reg_out_gold [5] -> \dpath.b_reg_out [5]
+Changing input A of cell u42_gold (XOR2x2_ASAP7_75t_R): \dpath.a_reg$out_gold [5] -> \dpath.a_reg$out [5]
+Changing input D of cell u41_gold (DFFHQNx1_ASAP7_75t_R): \n35_gold -> \n35
+Changing input CLK of cell u41_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gold -> \clknet_2_0__leaf_clk
+Changing input D of cell u40_gold (DFFHQNx1_ASAP7_75t_R): \n34_gold -> \n34
+Changing input CLK of cell u40_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gold -> \clknet_2_0__leaf_clk
+Changing input B of cell u4_gold (AND2x2_ASAP7_75t_R): \n3_gold -> \n3
+Changing input A of cell u4_gold (AND2x2_ASAP7_75t_R): \n1_gold -> \n1
+Changing input B of cell u39_gold (OA21x2_ASAP7_75t_R): \n28_gold -> \n28
+Changing input A2 of cell u39_gold (OA21x2_ASAP7_75t_R): \n32_gold -> \n32
+Changing input A1 of cell u39_gold (OA21x2_ASAP7_75t_R): \n29_gold -> \n29
+Changing input B of cell u38_gold (XOR2x2_ASAP7_75t_R): \n32_gold -> \n32
+Changing input A of cell u38_gold (XOR2x2_ASAP7_75t_R): \n29_gold -> \n29
+Changing input B of cell u37_gold (AO21x1_ASAP7_75t_R): \n20_gold -> \n20
+Changing input A2 of cell u37_gold (AO21x1_ASAP7_75t_R): \n31_gold -> \n31
+Changing input A1 of cell u37_gold (AO21x1_ASAP7_75t_R): \n23_gold -> \n23
+Changing input B of cell u36_gold (OA21x2_ASAP7_75t_R): \n30_gold -> \n30
+Changing input A2 of cell u36_gold (OA21x2_ASAP7_75t_R): \dpath.b_reg_out_gold [2] -> \dpath.b_reg_out [2]
+Changing input A1 of cell u36_gold (OA21x2_ASAP7_75t_R): \n22_gold -> \n22
+Changing input B of cell u35_gold (NAND2x1_ASAP7_75t_R): \dpath.a_reg$out_gold [3] -> \dpath.a_reg$out [3]
+Changing input A of cell u35_gold (NAND2x1_ASAP7_75t_R): \n18_gold -> \n18
+Changing input B of cell u34_gold (OAI21x1_ASAP7_75t_R): \n28_gold -> \n28
+Changing input A2 of cell u34_gold (OAI21x1_ASAP7_75t_R): \n27_gold -> \n27
+Changing input A1 of cell u34_gold (OAI21x1_ASAP7_75t_R): \net118_gold -> \net118
+Changing input B of cell u33_gold (NAND2x1_ASAP7_75t_R): \n27_gold -> \n27
+Changing input A of cell u33_gold (NAND2x1_ASAP7_75t_R): \dpath.a_reg$out_gold [4] -> \dpath.a_reg$out [4]
+Changing input A of cell u32_gold (INVx1_ASAP7_75t_R): \dpath.b_reg_out_gold [4] -> \dpath.b_reg_out [4]
+Changing input D of cell u31_gold (DFFHQNx1_ASAP7_75t_R): \n26_gold -> \n26
+Changing input CLK of cell u31_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gold -> \clknet_2_0__leaf_clk
+Changing input D of cell u30_gold (DFFHQNx1_ASAP7_75t_R): \n25_gold -> \n25
+Changing input CLK of cell u30_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gold -> \clknet_2_0__leaf_clk
+Changing input A of cell u3_gold (INVx3_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B of cell u29_gold (XOR2x2_ASAP7_75t_R): \n24_gold -> \n24
+Changing input A of cell u29_gold (XOR2x2_ASAP7_75t_R): \n21_gold -> \n21
+Changing input B of cell u28_gold (OA21x2_ASAP7_75t_R): \n23_gold -> \n23
+Changing input A2 of cell u28_gold (OA21x2_ASAP7_75t_R): \dpath.b_reg_out_gold [2] -> \dpath.b_reg_out [2]
+Changing input A1 of cell u28_gold (OA21x2_ASAP7_75t_R): \n22_gold -> \n22
+Changing input B of cell u27_gold (OR2x2_ASAP7_75t_R): \n16_gold -> \n16
+Changing input A of cell u27_gold (OR2x2_ASAP7_75t_R): \n14_gold -> \n14
+Changing input B of cell u260_gold (AOI21x1_ASAP7_75t_R): \n208_gold -> \n208
+Changing input A2 of cell u260_gold (AOI21x1_ASAP7_75t_R): \n137_gold -> \n137
+Changing input A1 of cell u260_gold (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gold [15] -> \dpath.b_reg_out [15]
+Changing input A of cell u26_gold (INVx1_ASAP7_75t_R): \dpath.a_reg$out_gold [2] -> \dpath.a_reg$out [2]
+Changing input C of cell u259_gold (OA211x2_ASAP7_75t_R): \n207_gold -> \n207
+Changing input B of cell u259_gold (OA211x2_ASAP7_75t_R): \n146_gold -> \n146
+Changing input A2 of cell u259_gold (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gold [15] -> \dpath.a_reg$out [15]
+Changing input A1 of cell u259_gold (OA211x2_ASAP7_75t_R): \net77_gold -> \net77
+Changing input C of cell u258_gold (OR3x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B of cell u258_gold (OR3x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A of cell u258_gold (OR3x1_ASAP7_75t_R): \net57_gold -> \net57
+Changing input B of cell u257_gold (OA21x2_ASAP7_75t_R): \n206_gold -> \n206
+Changing input A2 of cell u257_gold (OA21x2_ASAP7_75t_R): \n129_gold -> \n129
+Changing input A1 of cell u257_gold (OA21x2_ASAP7_75t_R): \n3_gold -> \n3
+Changing input C of cell u256_gold (AO221x1_ASAP7_75t_R): \n205_gold -> \n205
+Changing input B2 of cell u256_gold (AO221x1_ASAP7_75t_R): \n204_gold -> \n204
+Changing input B1 of cell u256_gold (AO221x1_ASAP7_75t_R): \n131_gold -> \n131
+Changing input A2 of cell u256_gold (AO221x1_ASAP7_75t_R): \n134_gold -> \n134
+Changing input A1 of cell u256_gold (AO221x1_ASAP7_75t_R): \n203_gold -> \n203
+Changing input B of cell u255_gold (OAI21x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input A2 of cell u255_gold (OAI21x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A1 of cell u255_gold (OAI21x1_ASAP7_75t_R): \net73_gold -> \net73
+Changing input B of cell u254_gold (NOR2x1_ASAP7_75t_R): \dpath.b_reg_out_gold [15] -> \dpath.b_reg_out [15]
+Changing input A of cell u254_gold (NOR2x1_ASAP7_75t_R): \n1_gold -> \n1
+Changing input B of cell u253_gold (XOR2x2_ASAP7_75t_R): \n116_gold -> \n116
+Changing input A of cell u253_gold (XOR2x2_ASAP7_75t_R): \n113_gold -> \n113
+Changing input B of cell u252_gold (AOI21x1_ASAP7_75t_R): \n202_gold -> \n202
+Changing input A2 of cell u252_gold (AOI21x1_ASAP7_75t_R): \n137_gold -> \n137
+Changing input A1 of cell u252_gold (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gold [14] -> \dpath.b_reg_out [14]
+Changing input C of cell u251_gold (OA211x2_ASAP7_75t_R): \n201_gold -> \n201
+Changing input B of cell u251_gold (OA211x2_ASAP7_75t_R): \n146_gold -> \n146
+Changing input A2 of cell u251_gold (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gold [14] -> \dpath.a_reg$out [14]
+Changing input A1 of cell u251_gold (OA211x2_ASAP7_75t_R): \net77_gold -> \net77
+Changing input C of cell u250_gold (OR3x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B of cell u250_gold (OR3x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A of cell u250_gold (OR3x1_ASAP7_75t_R): \net56_gold -> \net56
+Changing input B of cell u25_gold (AO21x1_ASAP7_75t_R): \n20_gold -> \n20
+Changing input A2 of cell u25_gold (AO21x1_ASAP7_75t_R): \dpath.a_reg$out_gold [3] -> \dpath.a_reg$out [3]
+Changing input A1 of cell u25_gold (AO21x1_ASAP7_75t_R): \n18_gold -> \n18
+Changing input B of cell u249_gold (OAI21x1_ASAP7_75t_R): \n200_gold -> \n200
+Changing input A2 of cell u249_gold (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gold [14] -> \dpath.a_reg$out [14]
+Changing input A1 of cell u249_gold (OAI21x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input C of cell u248_gold (AO221x1_ASAP7_75t_R): \n199_gold -> \n199
+Changing input B2 of cell u248_gold (AO221x1_ASAP7_75t_R): \n134_gold -> \n134
+Changing input B1 of cell u248_gold (AO221x1_ASAP7_75t_R): \net92_gold -> \net92
+Changing input A2 of cell u248_gold (AO221x1_ASAP7_75t_R): \net112_gold -> \net112
+Changing input A1 of cell u248_gold (AO221x1_ASAP7_75t_R): \dpath.b_reg_out_gold [14] -> \dpath.b_reg_out [14]
+Changing input B of cell u247_gold (AO21x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input A2 of cell u247_gold (AO21x1_ASAP7_75t_R): \n1_gold -> \n1
+Changing input A1 of cell u247_gold (AO21x1_ASAP7_75t_R): \net72_gold -> \net72
+Changing input B of cell u246_gold (OA21x2_ASAP7_75t_R): \n198_gold -> \n198
+Changing input A2 of cell u246_gold (OA21x2_ASAP7_75t_R): \n110_gold -> \n110
+Changing input A1 of cell u246_gold (OA21x2_ASAP7_75t_R): \n3_gold -> \n3
+Changing input C of cell u245_gold (AO221x1_ASAP7_75t_R): \n197_gold -> \n197
+Changing input B2 of cell u245_gold (AO221x1_ASAP7_75t_R): \net111_gold -> \net111
+Changing input B1 of cell u245_gold (AO221x1_ASAP7_75t_R): \n196_gold -> \n196
+Changing input A2 of cell u245_gold (AO221x1_ASAP7_75t_R): \net112_gold -> \net112
+Changing input A1 of cell u245_gold (AO221x1_ASAP7_75t_R): \n195_gold -> \n195
+Changing input B of cell u244_gold (OAI21x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input A2 of cell u244_gold (OAI21x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A1 of cell u244_gold (OAI21x1_ASAP7_75t_R): \net71_gold -> \net71
+Changing input C of cell u243_gold (AOI221x1_ASAP7_75t_R): \n102_gold -> \n102
+Changing input B2 of cell u243_gold (AOI221x1_ASAP7_75t_R): \n98_gold -> \n98
+Changing input B1 of cell u243_gold (AOI221x1_ASAP7_75t_R): \n97_gold -> \n97
+Changing input A2 of cell u243_gold (AOI221x1_ASAP7_75t_R): \n96_gold -> \n96
+Changing input A1 of cell u243_gold (AOI221x1_ASAP7_75t_R): \n62_gold -> \n62
+Changing input A of cell u242_gold (INVx1_ASAP7_75t_R): \dpath.b_reg_out_gold [13] -> \dpath.b_reg_out [13]
+Changing input B of cell u241_gold (AOI21x1_ASAP7_75t_R): \n194_gold -> \n194
+Changing input A2 of cell u241_gold (AOI21x1_ASAP7_75t_R): \n137_gold -> \n137
+Changing input A1 of cell u241_gold (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gold [13] -> \dpath.b_reg_out [13]
+Changing input C of cell u240_gold (OA211x2_ASAP7_75t_R): \n193_gold -> \n193
+Changing input B of cell u240_gold (OA211x2_ASAP7_75t_R): \n146_gold -> \n146
+Changing input A2 of cell u240_gold (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gold [13] -> \dpath.a_reg$out [13]
+Changing input A1 of cell u240_gold (OA211x2_ASAP7_75t_R): \net77_gold -> \net77
+Changing input B of cell u24_gold (NOR2x1_ASAP7_75t_R): \dpath.a_reg$out_gold [3] -> \dpath.a_reg$out [3]
+Changing input A of cell u24_gold (NOR2x1_ASAP7_75t_R): \n18_gold -> \n18
+Changing input C of cell u239_gold (OR3x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B of cell u239_gold (OR3x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A of cell u239_gold (OR3x1_ASAP7_75t_R): \net55_gold -> \net55
+Changing input B of cell u238_gold (AOI21x1_ASAP7_75t_R): \n192_gold -> \n192
+Changing input A2 of cell u238_gold (AOI21x1_ASAP7_75t_R): \n137_gold -> \n137
+Changing input A1 of cell u238_gold (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gold [12] -> \dpath.b_reg_out [12]
+Changing input C of cell u237_gold (OA211x2_ASAP7_75t_R): \n191_gold -> \n191
+Changing input B of cell u237_gold (OA211x2_ASAP7_75t_R): \n146_gold -> \n146
+Changing input A2 of cell u237_gold (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gold [12] -> \dpath.a_reg$out [12]
+Changing input A1 of cell u237_gold (OA211x2_ASAP7_75t_R): \net77_gold -> \net77
+Changing input C of cell u236_gold (OR3x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B of cell u236_gold (OR3x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A of cell u236_gold (OR3x1_ASAP7_75t_R): \net54_gold -> \net54
+Changing input B of cell u235_gold (AOI21x1_ASAP7_75t_R): \n190_gold -> \n190
+Changing input A2 of cell u235_gold (AOI21x1_ASAP7_75t_R): \net111_gold -> \net111
+Changing input A1 of cell u235_gold (AOI21x1_ASAP7_75t_R): \net90_gold -> \net90
+Changing input B of cell u234_gold (OA21x2_ASAP7_75t_R): \n189_gold -> \n189
+Changing input A2 of cell u234_gold (OA21x2_ASAP7_75t_R): \dpath.a_reg$out_gold [12] -> \dpath.a_reg$out [12]
+Changing input A1 of cell u234_gold (OA21x2_ASAP7_75t_R): \n3_gold -> \n3
+Changing input C of cell u233_gold (AO221x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B2 of cell u233_gold (AO221x1_ASAP7_75t_R): \net112_gold -> \net112
+Changing input B1 of cell u233_gold (AO221x1_ASAP7_75t_R): \dpath.b_reg_out_gold [12] -> \dpath.b_reg_out [12]
+Changing input A2 of cell u233_gold (AO221x1_ASAP7_75t_R): \n1_gold -> \n1
+Changing input A1 of cell u233_gold (AO221x1_ASAP7_75t_R): \net70_gold -> \net70
+Changing input B of cell u232_gold (AOI21x1_ASAP7_75t_R): \n188_gold -> \n188
+Changing input A2 of cell u232_gold (AOI21x1_ASAP7_75t_R): \net110_gold -> \net110
+Changing input A1 of cell u232_gold (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gold [11] -> \dpath.b_reg_out [11]
+Changing input C of cell u231_gold (OA211x2_ASAP7_75t_R): \n187_gold -> \n187
+Changing input B of cell u231_gold (OA211x2_ASAP7_75t_R): \n146_gold -> \n146
+Changing input A2 of cell u231_gold (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gold [11] -> \dpath.a_reg$out [11]
+Changing input A1 of cell u231_gold (OA211x2_ASAP7_75t_R): \net77_gold -> \net77
+Changing input C of cell u230_gold (OR3x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B of cell u230_gold (OR3x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A of cell u230_gold (OR3x1_ASAP7_75t_R): \net53_gold -> \net53
+Changing input D of cell u23_gold (DFFHQNx1_ASAP7_75t_R): \n19_gold -> \n19
+Changing input CLK of cell u23_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_2__leaf_clk_gold -> \clknet_2_2__leaf_clk
+Changing input B of cell u229_gold (OAI21x1_ASAP7_75t_R): \n186_gold -> \n186
+Changing input A2 of cell u229_gold (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gold [11] -> \dpath.a_reg$out [11]
+Changing input A1 of cell u229_gold (OAI21x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input B of cell u228_gold (AO21x1_ASAP7_75t_R): \n185_gold -> \n185
+Changing input A2 of cell u228_gold (AO21x1_ASAP7_75t_R): \n134_gold -> \n134
+Changing input A1 of cell u228_gold (AO21x1_ASAP7_75t_R): \net89_gold -> \net89
+Changing input C of cell u227_gold (AO221x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B2 of cell u227_gold (AO221x1_ASAP7_75t_R): \net112_gold -> \net112
+Changing input B1 of cell u227_gold (AO221x1_ASAP7_75t_R): \dpath.b_reg_out_gold [11] -> \dpath.b_reg_out [11]
+Changing input A2 of cell u227_gold (AO221x1_ASAP7_75t_R): \n1_gold -> \n1
+Changing input A1 of cell u227_gold (AO221x1_ASAP7_75t_R): \net69_gold -> \net69
+Changing input B of cell u226_gold (AOI21x1_ASAP7_75t_R): \n184_gold -> \n184
+Changing input A2 of cell u226_gold (AOI21x1_ASAP7_75t_R): \n137_gold -> \n137
+Changing input A1 of cell u226_gold (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gold [10] -> \dpath.b_reg_out [10]
+Changing input C of cell u225_gold (OA211x2_ASAP7_75t_R): \n183_gold -> \n183
+Changing input B of cell u225_gold (OA211x2_ASAP7_75t_R): \n146_gold -> \n146
+Changing input A2 of cell u225_gold (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gold [10] -> \dpath.a_reg$out [10]
+Changing input A1 of cell u225_gold (OA211x2_ASAP7_75t_R): \net77_gold -> \net77
+Changing input C of cell u224_gold (OR3x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B of cell u224_gold (OR3x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A of cell u224_gold (OR3x1_ASAP7_75t_R): \net52_gold -> \net52
+Changing input B of cell u223_gold (OAI21x1_ASAP7_75t_R): \n182_gold -> \n182
+Changing input A2 of cell u223_gold (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gold [10] -> \dpath.a_reg$out [10]
+Changing input A1 of cell u223_gold (OAI21x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input C of cell u222_gold (AO221x1_ASAP7_75t_R): \n181_gold -> \n181
+Changing input B2 of cell u222_gold (AO221x1_ASAP7_75t_R): \net111_gold -> \net111
+Changing input B1 of cell u222_gold (AO221x1_ASAP7_75t_R): \net88_gold -> \net88
+Changing input A2 of cell u222_gold (AO221x1_ASAP7_75t_R): \net113_gold -> \net113
+Changing input A1 of cell u222_gold (AO221x1_ASAP7_75t_R): \dpath.b_reg_out_gold [10] -> \dpath.b_reg_out [10]
+Changing input B of cell u221_gold (AO21x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input A2 of cell u221_gold (AO21x1_ASAP7_75t_R): \n1_gold -> \n1
+Changing input A1 of cell u221_gold (AO21x1_ASAP7_75t_R): \net68_gold -> \net68
+Changing input B of cell u220_gold (AOI21x1_ASAP7_75t_R): \n180_gold -> \n180
+Changing input A2 of cell u220_gold (AOI21x1_ASAP7_75t_R): \n137_gold -> \n137
+Changing input A1 of cell u220_gold (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gold [9] -> \dpath.b_reg_out [9]
+Changing input A of cell u22_gold (INVx1_ASAP7_75t_R): \dpath.b_reg_out_gold [3] -> \dpath.b_reg_out [3]
+Changing input C of cell u219_gold (OA211x2_ASAP7_75t_R): \n179_gold -> \n179
+Changing input B of cell u219_gold (OA211x2_ASAP7_75t_R): \n146_gold -> \n146
+Changing input A2 of cell u219_gold (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gold [9] -> \dpath.a_reg$out [9]
+Changing input A1 of cell u219_gold (OA211x2_ASAP7_75t_R): \net77_gold -> \net77
+Changing input C of cell u218_gold (OR3x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B of cell u218_gold (OR3x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A of cell u218_gold (OR3x1_ASAP7_75t_R): \net51_gold -> \net51
+Changing input B of cell u217_gold (OA21x2_ASAP7_75t_R): \n178_gold -> \n178
+Changing input A2 of cell u217_gold (OA21x2_ASAP7_75t_R): \n69_gold -> \n69
+Changing input A1 of cell u217_gold (OA21x2_ASAP7_75t_R): \n3_gold -> \n3
+Changing input C of cell u216_gold (AO221x1_ASAP7_75t_R): \n177_gold -> \n177
+Changing input B2 of cell u216_gold (AO221x1_ASAP7_75t_R): \net111_gold -> \net111
+Changing input B1 of cell u216_gold (AO221x1_ASAP7_75t_R): \n176_gold -> \n176
+Changing input A2 of cell u216_gold (AO221x1_ASAP7_75t_R): \net113_gold -> \net113
+Changing input A1 of cell u216_gold (AO221x1_ASAP7_75t_R): \n175_gold -> \n175
+Changing input B of cell u215_gold (OAI21x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input A2 of cell u215_gold (OAI21x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A1 of cell u215_gold (OAI21x1_ASAP7_75t_R): \net67_gold -> \net67
+Changing input B of cell u214_gold (XOR2x2_ASAP7_75t_R): \n66_gold -> \n66
+Changing input A of cell u214_gold (XOR2x2_ASAP7_75t_R): \n65_gold -> \n65
+Changing input A of cell u213_gold (INVx1_ASAP7_75t_R): \dpath.b_reg_out_gold [9] -> \dpath.b_reg_out [9]
+Changing input B of cell u212_gold (AOI21x1_ASAP7_75t_R): \n174_gold -> \n174
+Changing input A2 of cell u212_gold (AOI21x1_ASAP7_75t_R): \n137_gold -> \n137
+Changing input A1 of cell u212_gold (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gold [8] -> \dpath.b_reg_out [8]
+Changing input C of cell u211_gold (OA211x2_ASAP7_75t_R): \n173_gold -> \n173
+Changing input B of cell u211_gold (OA211x2_ASAP7_75t_R): \n146_gold -> \n146
+Changing input A2 of cell u211_gold (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gold [8] -> \dpath.a_reg$out [8]
+Changing input A1 of cell u211_gold (OA211x2_ASAP7_75t_R): \net77_gold -> \net77
+Changing input C of cell u210_gold (OR3x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B of cell u210_gold (OR3x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A of cell u210_gold (OR3x1_ASAP7_75t_R): \net50_gold -> \net50
+Changing input D of cell u21_gold (DFFHQNx1_ASAP7_75t_R): \n17_gold -> \n17
+Changing input CLK of cell u21_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_2__leaf_clk_gold -> \clknet_2_2__leaf_clk
+Changing input B of cell u209_gold (OAI21x1_ASAP7_75t_R): \n172_gold -> \n172
+Changing input A2 of cell u209_gold (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gold [8] -> \dpath.a_reg$out [8]
+Changing input A1 of cell u209_gold (OAI21x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input C of cell u208_gold (AO221x1_ASAP7_75t_R): \n171_gold -> \n171
+Changing input B2 of cell u208_gold (AO221x1_ASAP7_75t_R): \net111_gold -> \net111
+Changing input B1 of cell u208_gold (AO221x1_ASAP7_75t_R): \net86_gold -> \net86
+Changing input A2 of cell u208_gold (AO221x1_ASAP7_75t_R): \net113_gold -> \net113
+Changing input A1 of cell u208_gold (AO221x1_ASAP7_75t_R): \dpath.b_reg_out_gold [8] -> \dpath.b_reg_out [8]
+Changing input B of cell u207_gold (AO21x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input A2 of cell u207_gold (AO21x1_ASAP7_75t_R): \n1_gold -> \n1
+Changing input A1 of cell u207_gold (AO21x1_ASAP7_75t_R): \net66_gold -> \net66
+Changing input B of cell u206_gold (AOI21x1_ASAP7_75t_R): \n170_gold -> \n170
+Changing input A2 of cell u206_gold (AOI21x1_ASAP7_75t_R): \net110_gold -> \net110
+Changing input A1 of cell u206_gold (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gold [7] -> \dpath.b_reg_out [7]
+Changing input C of cell u205_gold (OA211x2_ASAP7_75t_R): \n169_gold -> \n169
+Changing input B of cell u205_gold (OA211x2_ASAP7_75t_R): \n146_gold -> \n146
+Changing input A2 of cell u205_gold (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gold [7] -> \dpath.a_reg$out [7]
+Changing input A1 of cell u205_gold (OA211x2_ASAP7_75t_R): \net77_gold -> \net77
+Changing input C of cell u204_gold (OR3x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B of cell u204_gold (OR3x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A of cell u204_gold (OR3x1_ASAP7_75t_R): \net49_gold -> \net49
+Changing input B of cell u203_gold (OA21x2_ASAP7_75t_R): \n168_gold -> \n168
+Changing input A2 of cell u203_gold (OA21x2_ASAP7_75t_R): \n60_gold -> \n60
+Changing input A1 of cell u203_gold (OA21x2_ASAP7_75t_R): \n3_gold -> \n3
+Changing input C of cell u202_gold (AO221x1_ASAP7_75t_R): \n167_gold -> \n167
+Changing input B2 of cell u202_gold (AO221x1_ASAP7_75t_R): \n134_gold -> \n134
+Changing input B1 of cell u202_gold (AO221x1_ASAP7_75t_R): \n166_gold -> \n166
+Changing input A2 of cell u202_gold (AO221x1_ASAP7_75t_R): \net112_gold -> \net112
+Changing input A1 of cell u202_gold (AO221x1_ASAP7_75t_R): \n165_gold -> \n165
+Changing input B of cell u201_gold (OAI21x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input A2 of cell u201_gold (OAI21x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A1 of cell u201_gold (OAI21x1_ASAP7_75t_R): \net65_gold -> \net65
+Changing input B of cell u200_gold (XOR2x2_ASAP7_75t_R): \n52_gold -> \n52
+Changing input A of cell u200_gold (XOR2x2_ASAP7_75t_R): \n49_gold -> \n49
+Changing input B of cell u20_gold (XOR2x2_ASAP7_75t_R): \n16_gold -> \n16
+Changing input A of cell u20_gold (XOR2x2_ASAP7_75t_R): \n14_gold -> \n14
+Changing input D of cell u2_gold (DFFHQNx1_ASAP7_75t_R): \n2_gold -> \n2
+Changing input CLK of cell u2_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_2__leaf_clk_gold -> \clknet_2_2__leaf_clk
+Changing input A of cell u199_gold (INVx1_ASAP7_75t_R): \dpath.b_reg_out_gold [7] -> \dpath.b_reg_out [7]
+Changing input B of cell u198_gold (AOI21x1_ASAP7_75t_R): \n164_gold -> \n164
+Changing input A2 of cell u198_gold (AOI21x1_ASAP7_75t_R): \net110_gold -> \net110
+Changing input A1 of cell u198_gold (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gold [6] -> \dpath.b_reg_out [6]
+Changing input C of cell u197_gold (OA211x2_ASAP7_75t_R): \n163_gold -> \n163
+Changing input B of cell u197_gold (OA211x2_ASAP7_75t_R): \n146_gold -> \n146
+Changing input A2 of cell u197_gold (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gold [6] -> \dpath.a_reg$out [6]
+Changing input A1 of cell u197_gold (OA211x2_ASAP7_75t_R): \net77_gold -> \net77
+Changing input C of cell u196_gold (OR3x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B of cell u196_gold (OR3x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A of cell u196_gold (OR3x1_ASAP7_75t_R): \net48_gold -> \net48
+Changing input B of cell u195_gold (OAI21x1_ASAP7_75t_R): \n162_gold -> \n162
+Changing input A2 of cell u195_gold (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gold [6] -> \dpath.a_reg$out [6]
+Changing input A1 of cell u195_gold (OAI21x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input C of cell u194_gold (AO221x1_ASAP7_75t_R): \n161_gold -> \n161
+Changing input B2 of cell u194_gold (AO221x1_ASAP7_75t_R): \n134_gold -> \n134
+Changing input B1 of cell u194_gold (AO221x1_ASAP7_75t_R): \net84_gold -> \net84
+Changing input A2 of cell u194_gold (AO221x1_ASAP7_75t_R): \net113_gold -> \net113
+Changing input A1 of cell u194_gold (AO221x1_ASAP7_75t_R): \dpath.b_reg_out_gold [6] -> \dpath.b_reg_out [6]
+Changing input B of cell u193_gold (AO21x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input A2 of cell u193_gold (AO21x1_ASAP7_75t_R): \n1_gold -> \n1
+Changing input A1 of cell u193_gold (AO21x1_ASAP7_75t_R): \net64_gold -> \net64
+Changing input B of cell u192_gold (AOI21x1_ASAP7_75t_R): \n160_gold -> \n160
+Changing input A2 of cell u192_gold (AOI21x1_ASAP7_75t_R): \net110_gold -> \net110
+Changing input A1 of cell u192_gold (AOI21x1_ASAP7_75t_R): \net116_gold -> \net116
+Changing input C of cell u191_gold (OA211x2_ASAP7_75t_R): \n159_gold -> \n159
+Changing input B of cell u191_gold (OA211x2_ASAP7_75t_R): \n146_gold -> \n146
+Changing input A2 of cell u191_gold (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gold [5] -> \dpath.a_reg$out [5]
+Changing input A1 of cell u191_gold (OA211x2_ASAP7_75t_R): \net77_gold -> \net77
+Changing input C of cell u190_gold (OR3x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B of cell u190_gold (OR3x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A of cell u190_gold (OR3x1_ASAP7_75t_R): \net47_gold -> \net47
+Changing input C of cell u19_gold (MAJx2_ASAP7_75t_R): \dpath.b_reg_out_gold [1] -> \dpath.b_reg_out [1]
+Changing input B of cell u19_gold (MAJx2_ASAP7_75t_R): \n15_gold -> \n15
+Changing input A of cell u19_gold (MAJx2_ASAP7_75t_R): \n8_gold -> \n8
+Changing input B of cell u189_gold (OAI21x1_ASAP7_75t_R): \n158_gold -> \n158
+Changing input A2 of cell u189_gold (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gold [5] -> \dpath.a_reg$out [5]
+Changing input A1 of cell u189_gold (OAI21x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input B of cell u188_gold (AO21x1_ASAP7_75t_R): \n157_gold -> \n157
+Changing input A2 of cell u188_gold (AO21x1_ASAP7_75t_R): \n134_gold -> \n134
+Changing input A1 of cell u188_gold (AO21x1_ASAP7_75t_R): \net83_gold -> \net83
+Changing input C of cell u187_gold (AO221x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B2 of cell u187_gold (AO221x1_ASAP7_75t_R): \net113_gold -> \net113
+Changing input B1 of cell u187_gold (AO221x1_ASAP7_75t_R): \net116_gold -> \net116
+Changing input A2 of cell u187_gold (AO221x1_ASAP7_75t_R): \n1_gold -> \n1
+Changing input A1 of cell u187_gold (AO221x1_ASAP7_75t_R): \net63_gold -> \net63
+Changing input B of cell u186_gold (AOI21x1_ASAP7_75t_R): \n156_gold -> \n156
+Changing input A2 of cell u186_gold (AOI21x1_ASAP7_75t_R): \net110_gold -> \net110
+Changing input A1 of cell u186_gold (AOI21x1_ASAP7_75t_R): \net117_gold -> \net117
+Changing input C of cell u185_gold (OA211x2_ASAP7_75t_R): \n155_gold -> \n155
+Changing input B of cell u185_gold (OA211x2_ASAP7_75t_R): \n146_gold -> \n146
+Changing input A2 of cell u185_gold (OA211x2_ASAP7_75t_R): \net118_gold -> \net118
+Changing input A1 of cell u185_gold (OA211x2_ASAP7_75t_R): \net77_gold -> \net77
+Changing input C of cell u184_gold (OR3x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B of cell u184_gold (OR3x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A of cell u184_gold (OR3x1_ASAP7_75t_R): \net46_gold -> \net46
+Changing input B of cell u183_gold (OAI21x1_ASAP7_75t_R): \n154_gold -> \n154
+Changing input A2 of cell u183_gold (OAI21x1_ASAP7_75t_R): \net118_gold -> \net118
+Changing input A1 of cell u183_gold (OAI21x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input B of cell u182_gold (AO21x1_ASAP7_75t_R): \n153_gold -> \n153
+Changing input A2 of cell u182_gold (AO21x1_ASAP7_75t_R): \net113_gold -> \net113
+Changing input A1 of cell u182_gold (AO21x1_ASAP7_75t_R): \net117_gold -> \net117
+Changing input C of cell u181_gold (AO221x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B2 of cell u181_gold (AO221x1_ASAP7_75t_R): \n134_gold -> \n134
+Changing input B1 of cell u181_gold (AO221x1_ASAP7_75t_R): \net82_gold -> \net82
+Changing input A2 of cell u181_gold (AO221x1_ASAP7_75t_R): \n1_gold -> \n1
+Changing input A1 of cell u181_gold (AO221x1_ASAP7_75t_R): \net62_gold -> \net62
+Changing input B of cell u180_gold (OAI21x1_ASAP7_75t_R): \n152_gold -> \n152
+Changing input A2 of cell u180_gold (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gold [3] -> \dpath.a_reg$out [3]
+Changing input A1 of cell u180_gold (OAI21x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input A of cell u18_gold (INVx1_ASAP7_75t_R): \dpath.a_reg$out_gold [1] -> \dpath.a_reg$out [1]
+Changing input B of cell u179_gold (AO21x1_ASAP7_75t_R): \n151_gold -> \n151
+Changing input A2 of cell u179_gold (AO21x1_ASAP7_75t_R): \n134_gold -> \n134
+Changing input A1 of cell u179_gold (AO21x1_ASAP7_75t_R): \net81_gold -> \net81
+Changing input C of cell u178_gold (AO221x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B2 of cell u178_gold (AO221x1_ASAP7_75t_R): \net112_gold -> \net112
+Changing input B1 of cell u178_gold (AO221x1_ASAP7_75t_R): \dpath.b_reg_out_gold [3] -> \dpath.b_reg_out [3]
+Changing input A2 of cell u178_gold (AO221x1_ASAP7_75t_R): \n1_gold -> \n1
+Changing input A1 of cell u178_gold (AO221x1_ASAP7_75t_R): \net61_gold -> \net61
+Changing input B of cell u177_gold (AOI21x1_ASAP7_75t_R): \n150_gold -> \n150
+Changing input A2 of cell u177_gold (AOI21x1_ASAP7_75t_R): \net110_gold -> \net110
+Changing input A1 of cell u177_gold (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gold [3] -> \dpath.b_reg_out [3]
+Changing input C of cell u176_gold (OA211x2_ASAP7_75t_R): \n149_gold -> \n149
+Changing input B of cell u176_gold (OA211x2_ASAP7_75t_R): \n146_gold -> \n146
+Changing input A2 of cell u176_gold (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gold [3] -> \dpath.a_reg$out [3]
+Changing input A1 of cell u176_gold (OA211x2_ASAP7_75t_R): \net77_gold -> \net77
+Changing input C of cell u175_gold (OR3x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B of cell u175_gold (OR3x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A of cell u175_gold (OR3x1_ASAP7_75t_R): \net45_gold -> \net45
+Changing input B of cell u174_gold (AOI21x1_ASAP7_75t_R): \n148_gold -> \n148
+Changing input A2 of cell u174_gold (AOI21x1_ASAP7_75t_R): \net110_gold -> \net110
+Changing input A1 of cell u174_gold (AOI21x1_ASAP7_75t_R): \dpath.b_reg_out_gold [2] -> \dpath.b_reg_out [2]
+Changing input C of cell u173_gold (OA211x2_ASAP7_75t_R): \n147_gold -> \n147
+Changing input B of cell u173_gold (OA211x2_ASAP7_75t_R): \n146_gold -> \n146
+Changing input A2 of cell u173_gold (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gold [2] -> \dpath.a_reg$out [2]
+Changing input A1 of cell u173_gold (OA211x2_ASAP7_75t_R): \net77_gold -> \net77
+Changing input C of cell u172_gold (OR3x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B of cell u172_gold (OR3x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A of cell u172_gold (OR3x1_ASAP7_75t_R): \net44_gold -> \net44
+Changing input B of cell u171_gold (OR2x2_ASAP7_75t_R): \n132_gold -> \n132
+Changing input A of cell u171_gold (OR2x2_ASAP7_75t_R): \net77_gold -> \net77
+Changing input B of cell u170_gold (OAI21x1_ASAP7_75t_R): \n145_gold -> \n145
+Changing input A2 of cell u170_gold (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gold [2] -> \dpath.a_reg$out [2]
+Changing input A1 of cell u170_gold (OAI21x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input B of cell u17_gold (XOR2x2_ASAP7_75t_R): \dpath.b_reg_out_gold [2] -> \dpath.b_reg_out [2]
+Changing input A of cell u17_gold (XOR2x2_ASAP7_75t_R): \dpath.a_reg$out_gold [2] -> \dpath.a_reg$out [2]
+Changing input B of cell u169_gold (AO21x1_ASAP7_75t_R): \n144_gold -> \n144
+Changing input A2 of cell u169_gold (AO21x1_ASAP7_75t_R): \net112_gold -> \net112
+Changing input A1 of cell u169_gold (AO21x1_ASAP7_75t_R): \dpath.b_reg_out_gold [2] -> \dpath.b_reg_out [2]
+Changing input C of cell u168_gold (AO221x1_ASAP7_75t_R): \net119_gold -> \net119
+Changing input B2 of cell u168_gold (AO221x1_ASAP7_75t_R): \n134_gold -> \n134
+Changing input B1 of cell u168_gold (AO221x1_ASAP7_75t_R): \net80_gold -> \net80
+Changing input A2 of cell u168_gold (AO221x1_ASAP7_75t_R): \n1_gold -> \n1
+Changing input A1 of cell u168_gold (AO221x1_ASAP7_75t_R): \net60_gold -> \net60
+Changing input B of cell u167_gold (AOI21x1_ASAP7_75t_R): \n143_gold -> \n143
+Changing input A2 of cell u167_gold (AOI21x1_ASAP7_75t_R): \net110_gold -> \net110
+Changing input A1 of cell u167_gold (AOI21x1_ASAP7_75t_R): \net120_gold -> \net120
+Changing input B2 of cell u166_gold (AO32x1_ASAP7_75t_R): \net113_gold -> \net113
+Changing input B1 of cell u166_gold (AO32x1_ASAP7_75t_R): \dpath.a_reg$out_gold [1] -> \dpath.a_reg$out [1]
+Changing input A3 of cell u166_gold (AO32x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input A2 of cell u166_gold (AO32x1_ASAP7_75t_R): \n1_gold -> \n1
+Changing input A1 of cell u166_gold (AO32x1_ASAP7_75t_R): \net43_gold -> \net43
+Changing input B of cell u165_gold (OA21x2_ASAP7_75t_R): \n142_gold -> \n142
+Changing input A2 of cell u165_gold (OA21x2_ASAP7_75t_R): \n15_gold -> \n15
+Changing input A1 of cell u165_gold (OA21x2_ASAP7_75t_R): \n3_gold -> \n3
+Changing input C of cell u164_gold (AO221x1_ASAP7_75t_R): \n141_gold -> \n141
+Changing input B2 of cell u164_gold (AO221x1_ASAP7_75t_R): \n134_gold -> \n134
+Changing input B1 of cell u164_gold (AO221x1_ASAP7_75t_R): \n140_gold -> \n140
+Changing input A2 of cell u164_gold (AO221x1_ASAP7_75t_R): \net113_gold -> \net113
+Changing input A1 of cell u164_gold (AO221x1_ASAP7_75t_R): \n139_gold -> \n139
+Changing input B of cell u163_gold (OAI21x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input A2 of cell u163_gold (OAI21x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A1 of cell u163_gold (OAI21x1_ASAP7_75t_R): \net59_gold -> \net59
+Changing input B of cell u162_gold (XNOR2x2_ASAP7_75t_R): \n11_gold -> \n11
+Changing input A of cell u162_gold (XNOR2x2_ASAP7_75t_R): \n8_gold -> \n8
+Changing input A of cell u161_gold (INVx1_ASAP7_75t_R): \net120_gold -> \net120
+Changing input B of cell u160_gold (AOI21x1_ASAP7_75t_R): \n138_gold -> \n138
+Changing input A2 of cell u160_gold (AOI21x1_ASAP7_75t_R): \net110_gold -> \net110
+Changing input A1 of cell u160_gold (AOI21x1_ASAP7_75t_R): \net114_gold -> \net114
+Changing input D of cell u16_gold (DFFHQNx1_ASAP7_75t_R): \n13_gold -> \n13
+Changing input CLK of cell u16_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gold -> \clknet_2_0__leaf_clk
+Changing input B2 of cell u159_gold (AO32x1_ASAP7_75t_R): \net113_gold -> \net113
+Changing input B1 of cell u159_gold (AO32x1_ASAP7_75t_R): \net115_gold -> \net115
+Changing input A3 of cell u159_gold (AO32x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input A2 of cell u159_gold (AO32x1_ASAP7_75t_R): \n1_gold -> \n1
+Changing input A1 of cell u159_gold (AO32x1_ASAP7_75t_R): \net42_gold -> \net42
+Changing input B of cell u158_gold (NOR2x1_ASAP7_75t_R): \n132_gold -> \n132
+Changing input A of cell u158_gold (NOR2x1_ASAP7_75t_R): \net77_gold -> \net77
+Changing input B of cell u157_gold (OA21x2_ASAP7_75t_R): \n136_gold -> \n136
+Changing input A2 of cell u157_gold (OA21x2_ASAP7_75t_R): \n7_gold -> \n7
+Changing input A1 of cell u157_gold (OA21x2_ASAP7_75t_R): \n3_gold -> \n3
+Changing input C of cell u156_gold (AO221x1_ASAP7_75t_R): \n135_gold -> \n135
+Changing input B2 of cell u156_gold (AO221x1_ASAP7_75t_R): \n134_gold -> \n134
+Changing input B1 of cell u156_gold (AO221x1_ASAP7_75t_R): \n133_gold -> \n133
+Changing input A2 of cell u156_gold (AO221x1_ASAP7_75t_R): \net113_gold -> \net113
+Changing input A1 of cell u156_gold (AO221x1_ASAP7_75t_R): \n6_gold -> \n6
+Changing input B of cell u155_gold (OAI21x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input A2 of cell u155_gold (OAI21x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A1 of cell u155_gold (OAI21x1_ASAP7_75t_R): \net58_gold -> \net58
+Changing input B of cell u154_gold (NOR2x1_ASAP7_75t_R): \n131_gold -> \n131
+Changing input A of cell u154_gold (NOR2x1_ASAP7_75t_R): \n119_gold -> \n119
+Changing input B of cell u153_gold (AOI21x1_ASAP7_75t_R): \n8_gold -> \n8
+Changing input A2 of cell u153_gold (AOI21x1_ASAP7_75t_R): \n6_gold -> \n6
+Changing input A1 of cell u153_gold (AOI21x1_ASAP7_75t_R): \net115_gold -> \net115
+Changing input C of cell u152_gold (AND3x1_ASAP7_75t_R): \n131_gold -> \n131
+Changing input B of cell u152_gold (AND3x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input A of cell u152_gold (AND3x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input D of cell u151_gold (AND4x1_ASAP7_75t_R): \n130_gold -> \n130
+Changing input C of cell u151_gold (AND4x1_ASAP7_75t_R): \n128_gold -> \n128
+Changing input B of cell u151_gold (AND4x1_ASAP7_75t_R): \n127_gold -> \n127
+Changing input A of cell u151_gold (AND4x1_ASAP7_75t_R): \n126_gold -> \n126
+Changing input C of cell u150_gold (MAJx2_ASAP7_75t_R): \dpath.b_reg_out_gold [15] -> \dpath.b_reg_out [15]
+Changing input B of cell u150_gold (MAJx2_ASAP7_75t_R): \n129_gold -> \n129
+Changing input A of cell u150_gold (MAJx2_ASAP7_75t_R): \n106_gold -> \n106
+Changing input D of cell u15_gold (DFFHQNx1_ASAP7_75t_R): \n12_gold -> \n12
+Changing input CLK of cell u15_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_2__leaf_clk_gold -> \clknet_2_2__leaf_clk
+Changing input A of cell u149_gold (INVx1_ASAP7_75t_R): \dpath.a_reg$out_gold [15] -> \dpath.a_reg$out [15]
+Changing input C of cell u148_gold (OR3x1_ASAP7_75t_R): \n116_gold -> \n116
+Changing input B of cell u148_gold (OR3x1_ASAP7_75t_R): \n111_gold -> \n111
+Changing input A of cell u148_gold (OR3x1_ASAP7_75t_R): \n107_gold -> \n107
+Changing input B of cell u147_gold (NAND2x1_ASAP7_75t_R): \n125_gold -> \n125
+Changing input A of cell u147_gold (NAND2x1_ASAP7_75t_R): \n90_gold -> \n90
+Changing input C of cell u146_gold (NAND3x1_ASAP7_75t_R): \n125_gold -> \n125
+Changing input B of cell u146_gold (NAND3x1_ASAP7_75t_R): \n87_gold -> \n87
+Changing input A of cell u146_gold (NAND3x1_ASAP7_75t_R): \n62_gold -> \n62
+Changing input C of cell u145_gold (NOR3x1_ASAP7_75t_R): \n116_gold -> \n116
+Changing input B of cell u145_gold (NOR3x1_ASAP7_75t_R): \n108_gold -> \n108
+Changing input A of cell u145_gold (NOR3x1_ASAP7_75t_R): \n107_gold -> \n107
+Changing input C of cell u144_gold (AO221x1_ASAP7_75t_R): \net75_gold -> \net75
+Changing input B2 of cell u144_gold (AO221x1_ASAP7_75t_R): \n124_gold -> \n124
+Changing input B1 of cell u144_gold (AO221x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input A2 of cell u144_gold (AO221x1_ASAP7_75t_R): \net94_gold -> \net94
+Changing input A1 of cell u144_gold (AO221x1_ASAP7_75t_R): \net76_gold -> \net76
+Changing input C of cell u143_gold (NAND3x1_ASAP7_75t_R): \n124_gold -> \n124
+Changing input B of cell u143_gold (NAND3x1_ASAP7_75t_R): \n118_gold -> \n118
+Changing input A of cell u143_gold (NAND3x1_ASAP7_75t_R): \n117_gold -> \n117
+Changing input C of cell u142_gold (OR3x1_ASAP7_75t_R): \n123_gold -> \n123
+Changing input B of cell u142_gold (OR3x1_ASAP7_75t_R): \n121_gold -> \n121
+Changing input A of cell u142_gold (OR3x1_ASAP7_75t_R): \n120_gold -> \n120
+Changing input E of cell u141_gold (OR5x1_ASAP7_75t_R): \n122_gold -> \n122
+Changing input D of cell u141_gold (OR5x1_ASAP7_75t_R): \dpath.b_reg_out_gold [7] -> \dpath.b_reg_out [7]
+Changing input C of cell u141_gold (OR5x1_ASAP7_75t_R): \dpath.b_reg_out_gold [6] -> \dpath.b_reg_out [6]
+Changing input B of cell u141_gold (OR5x1_ASAP7_75t_R): \net116_gold -> \net116
+Changing input A of cell u141_gold (OR5x1_ASAP7_75t_R): \net117_gold -> \net117
+Changing input D of cell u140_gold (OR4x1_ASAP7_75t_R): \dpath.b_reg_out_gold [11] -> \dpath.b_reg_out [11]
+Changing input C of cell u140_gold (OR4x1_ASAP7_75t_R): \dpath.b_reg_out_gold [10] -> \dpath.b_reg_out [10]
+Changing input B of cell u140_gold (OR4x1_ASAP7_75t_R): \dpath.b_reg_out_gold [9] -> \dpath.b_reg_out [9]
+Changing input A of cell u140_gold (OR4x1_ASAP7_75t_R): \dpath.b_reg_out_gold [8] -> \dpath.b_reg_out [8]
+Changing input B of cell u14_gold (XOR2x2_ASAP7_75t_R): \n11_gold -> \n11
+Changing input A of cell u14_gold (XOR2x2_ASAP7_75t_R): \n8_gold -> \n8
+Changing input D of cell u139_gold (OR4x1_ASAP7_75t_R): \dpath.b_reg_out_gold [15] -> \dpath.b_reg_out [15]
+Changing input C of cell u139_gold (OR4x1_ASAP7_75t_R): \dpath.b_reg_out_gold [14] -> \dpath.b_reg_out [14]
+Changing input B of cell u139_gold (OR4x1_ASAP7_75t_R): \dpath.b_reg_out_gold [13] -> \dpath.b_reg_out [13]
+Changing input A of cell u139_gold (OR4x1_ASAP7_75t_R): \dpath.b_reg_out_gold [12] -> \dpath.b_reg_out [12]
+Changing input E of cell u138_gold (OR5x1_ASAP7_75t_R): \n119_gold -> \n119
+Changing input D of cell u138_gold (OR5x1_ASAP7_75t_R): \dpath.b_reg_out_gold [3] -> \dpath.b_reg_out [3]
+Changing input C of cell u138_gold (OR5x1_ASAP7_75t_R): \dpath.b_reg_out_gold [2] -> \dpath.b_reg_out [2]
+Changing input B of cell u138_gold (OR5x1_ASAP7_75t_R): \net120_gold -> \net120
+Changing input A of cell u138_gold (OR5x1_ASAP7_75t_R): \net114_gold -> \net114
+Changing input B of cell u137_gold (NAND2x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input A of cell u137_gold (NAND2x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input B of cell u136_gold (AO21x1_ASAP7_75t_R): \net121_gold -> \net121
+Changing input A2 of cell u136_gold (AO21x1_ASAP7_75t_R): \n3_gold -> \n3
+Changing input A1 of cell u136_gold (AO21x1_ASAP7_75t_R): \net74_gold -> \net74
+Changing input A of cell u135_gold (INVx1_ASAP7_75t_R): \net75_gold -> \net75
+Changing input B of cell u134_gold (AND2x2_ASAP7_75t_R): \net119_gold -> \net119
+Changing input A of cell u134_gold (AND2x2_ASAP7_75t_R): \n1_gold -> \n1
+Changing input B of cell u133_gold (XNOR2x2_ASAP7_75t_R): \n116_gold -> \n116
+Changing input A of cell u133_gold (XNOR2x2_ASAP7_75t_R): \n113_gold -> \n113
+Changing input B of cell u132_gold (XOR2x2_ASAP7_75t_R): \dpath.b_reg_out_gold [15] -> \dpath.b_reg_out [15]
+Changing input A of cell u132_gold (XOR2x2_ASAP7_75t_R): \dpath.a_reg$out_gold [15] -> \dpath.a_reg$out [15]
+Changing input D of cell u131_gold (DFFHQNx1_ASAP7_75t_R): \n115_gold -> \n115
+Changing input CLK of cell u131_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_3__leaf_clk_gold -> \clknet_2_3__leaf_clk
+Changing input D of cell u130_gold (DFFHQNx1_ASAP7_75t_R): \n114_gold -> \n114
+Changing input CLK of cell u130_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_3__leaf_clk_gold -> \clknet_2_3__leaf_clk
+Changing input B of cell u13_gold (XOR2x2_ASAP7_75t_R): \net120_gold -> \net120
+Changing input A of cell u13_gold (XOR2x2_ASAP7_75t_R): \dpath.a_reg$out_gold [1] -> \dpath.a_reg$out [1]
+Changing input B of cell u129_gold (OAI21x1_ASAP7_75t_R): \n106_gold -> \n106
+Changing input A2 of cell u129_gold (OAI21x1_ASAP7_75t_R): \n112_gold -> \n112
+Changing input A1 of cell u129_gold (OAI21x1_ASAP7_75t_R): \n107_gold -> \n107
+Changing input B of cell u128_gold (XOR2x2_ASAP7_75t_R): \n112_gold -> \n112
+Changing input A of cell u128_gold (XOR2x2_ASAP7_75t_R): \n107_gold -> \n107
+Changing input C of cell u127_gold (OA211x2_ASAP7_75t_R): \n111_gold -> \n111
+Changing input B of cell u127_gold (OA211x2_ASAP7_75t_R): \n109_gold -> \n109
+Changing input A2 of cell u127_gold (OA211x2_ASAP7_75t_R): \n108_gold -> \n108
+Changing input A1 of cell u127_gold (OA211x2_ASAP7_75t_R): \n89_gold -> \n89
+Changing input C of cell u126_gold (MAJx2_ASAP7_75t_R): \n110_gold -> \n110
+Changing input B of cell u126_gold (MAJx2_ASAP7_75t_R): \dpath.b_reg_out_gold [13] -> \dpath.b_reg_out [13]
+Changing input A of cell u126_gold (MAJx2_ASAP7_75t_R): \n84_gold -> \n84
+Changing input A of cell u125_gold (INVx1_ASAP7_75t_R): \dpath.a_reg$out_gold [13] -> \dpath.a_reg$out [13]
+Changing input C of cell u124_gold (OR3x1_ASAP7_75t_R): \n108_gold -> \n108
+Changing input B of cell u124_gold (OR3x1_ASAP7_75t_R): \n86_gold -> \n86
+Changing input A of cell u124_gold (OR3x1_ASAP7_75t_R): \n71_gold -> \n71
+Changing input B of cell u123_gold (OR2x6_ASAP7_75t_R): \n95_gold -> \n95
+Changing input A of cell u123_gold (OR2x6_ASAP7_75t_R): \n85_gold -> \n85
+Changing input B of cell u122_gold (OAI21x1_ASAP7_75t_R): \n106_gold -> \n106
+Changing input A2 of cell u122_gold (OAI21x1_ASAP7_75t_R): \n105_gold -> \n105
+Changing input A1 of cell u122_gold (OAI21x1_ASAP7_75t_R): \dpath.a_reg$out_gold [14] -> \dpath.a_reg$out [14]
+Changing input B of cell u121_gold (NAND2x1_ASAP7_75t_R): \n105_gold -> \n105
+Changing input A of cell u121_gold (NAND2x1_ASAP7_75t_R): \dpath.a_reg$out_gold [14] -> \dpath.a_reg$out [14]
+Changing input A of cell u120_gold (INVx1_ASAP7_75t_R): \dpath.b_reg_out_gold [14] -> \dpath.b_reg_out [14]
+Changing input D of cell u12_gold (DFFHQNx1_ASAP7_75t_R): \n10_gold -> \n10
+Changing input CLK of cell u12_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gold -> \clknet_2_0__leaf_clk
+Changing input D of cell u119_gold (DFFHQNx1_ASAP7_75t_R): \n104_gold -> \n104
+Changing input CLK of cell u119_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_3__leaf_clk_gold -> \clknet_2_3__leaf_clk
+Changing input D of cell u118_gold (DFFHQNx1_ASAP7_75t_R): \n103_gold -> \n103
+Changing input CLK of cell u118_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_2__leaf_clk_gold -> \clknet_2_2__leaf_clk
+Changing input C of cell u117_gold (AO221x1_ASAP7_75t_R): \n102_gold -> \n102
+Changing input B2 of cell u117_gold (AO221x1_ASAP7_75t_R): \n98_gold -> \n98
+Changing input B1 of cell u117_gold (AO221x1_ASAP7_75t_R): \n97_gold -> \n97
+Changing input A2 of cell u117_gold (AO221x1_ASAP7_75t_R): \n96_gold -> \n96
+Changing input A1 of cell u117_gold (AO221x1_ASAP7_75t_R): \n62_gold -> \n62
+Changing input B of cell u116_gold (AO21x1_ASAP7_75t_R): \n101_gold -> \n101
+Changing input A2 of cell u116_gold (AO21x1_ASAP7_75t_R): \n99_gold -> \n99
+Changing input A1 of cell u116_gold (AO21x1_ASAP7_75t_R): \n98_gold -> \n98
+Changing input C of cell u115_gold (OA211x2_ASAP7_75t_R): \n100_gold -> \n100
+Changing input B of cell u115_gold (OA211x2_ASAP7_75t_R): \n95_gold -> \n95
+Changing input A2 of cell u115_gold (OA211x2_ASAP7_75t_R): \n83_gold -> \n83
+Changing input A1 of cell u115_gold (OA211x2_ASAP7_75t_R): \dpath.a_reg$out_gold [12] -> \dpath.a_reg$out [12]
+Changing input B of cell u114_gold (AO21x1_ASAP7_75t_R): \n90_gold -> \n90
+Changing input A2 of cell u114_gold (AO21x1_ASAP7_75t_R): \n83_gold -> \n83
+Changing input A1 of cell u114_gold (AO21x1_ASAP7_75t_R): \dpath.a_reg$out_gold [12] -> \dpath.a_reg$out [12]
+Changing input B2 of cell u113_gold (OAI22x1_ASAP7_75t_R): \n87_gold -> \n87
+Changing input B1 of cell u113_gold (OAI22x1_ASAP7_75t_R): \n90_gold -> \n90
+Changing input A2 of cell u113_gold (OAI22x1_ASAP7_75t_R): \n83_gold -> \n83
+Changing input A1 of cell u113_gold (OAI22x1_ASAP7_75t_R): \dpath.a_reg$out_gold [12] -> \dpath.a_reg$out [12]
+Changing input B of cell u112_gold (AOI21x1_ASAP7_75t_R): \n95_gold -> \n95
+Changing input A2 of cell u112_gold (AOI21x1_ASAP7_75t_R): \n83_gold -> \n83
+Changing input A1 of cell u112_gold (AOI21x1_ASAP7_75t_R): \dpath.a_reg$out_gold [12] -> \dpath.a_reg$out [12]
+Changing input B of cell u111_gold (NOR2x1_ASAP7_75t_R): \n90_gold -> \n90
+Changing input A of cell u111_gold (NOR2x1_ASAP7_75t_R): \n62_gold -> \n62
+Changing input C of cell u110_gold (AND3x1_ASAP7_75t_R): \n95_gold -> \n95
+Changing input B of cell u110_gold (AND3x1_ASAP7_75t_R): \n87_gold -> \n87
+Changing input A of cell u110_gold (AND3x1_ASAP7_75t_R): \n92_gold -> \n92
+Changing input D of cell u11_gold (DFFHQNx1_ASAP7_75t_R): \n9_gold -> \n9
+Changing input CLK of cell u11_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_0__leaf_clk_gold -> \clknet_2_0__leaf_clk
+Changing input B of cell u109_gold (XOR2x2_ASAP7_75t_R): \dpath.a_reg$out_gold [13] -> \dpath.a_reg$out [13]
+Changing input A of cell u109_gold (XOR2x2_ASAP7_75t_R): \dpath.b_reg_out_gold [13] -> \dpath.b_reg_out [13]
+Changing input D of cell u108_gold (DFFHQNx1_ASAP7_75t_R): \n94_gold -> \n94
+Changing input CLK of cell u108_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_3__leaf_clk_gold -> \clknet_2_3__leaf_clk
+Changing input D of cell u107_gold (DFFHQNx1_ASAP7_75t_R): \n93_gold -> \n93
+Changing input CLK of cell u107_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_3__leaf_clk_gold -> \clknet_2_3__leaf_clk
+Changing input B of cell u106_gold (OA21x2_ASAP7_75t_R): \n84_gold -> \n84
+Changing input A2 of cell u106_gold (OA21x2_ASAP7_75t_R): \n83_gold -> \n83
+Changing input A1 of cell u106_gold (OA21x2_ASAP7_75t_R): \dpath.a_reg$out_gold [12] -> \dpath.a_reg$out [12]
+Changing input B of cell u105_gold (XNOR2x2_ASAP7_75t_R): \n91_gold -> \n91
+Changing input A of cell u105_gold (XNOR2x2_ASAP7_75t_R): \n85_gold -> \n85
+Changing input B of cell u104_gold (AO21x1_ASAP7_75t_R): \n90_gold -> \n90
+Changing input A2 of cell u104_gold (AO21x1_ASAP7_75t_R): \n87_gold -> \n87
+Changing input A1 of cell u104_gold (AO21x1_ASAP7_75t_R): \n62_gold -> \n62
+Changing input B of cell u103_gold (OAI21x1_ASAP7_75t_R): \n89_gold -> \n89
+Changing input A2 of cell u103_gold (OAI21x1_ASAP7_75t_R): \n86_gold -> \n86
+Changing input A1 of cell u103_gold (OAI21x1_ASAP7_75t_R): \n70_gold -> \n70
+Changing input C of cell u102_gold (MAJx2_ASAP7_75t_R): \dpath.b_reg_out_gold [11] -> \dpath.b_reg_out [11]
+Changing input B of cell u102_gold (MAJx2_ASAP7_75t_R): \n88_gold -> \n88
+Changing input A of cell u102_gold (MAJx2_ASAP7_75t_R): \n75_gold -> \n75
+Changing input A of cell u101_gold (INVx1_ASAP7_75t_R): \dpath.a_reg$out_gold [11] -> \dpath.a_reg$out [11]
+Changing input B of cell u100_gold (NOR2x1_ASAP7_75t_R): \n86_gold -> \n86
+Changing input A of cell u100_gold (NOR2x1_ASAP7_75t_R): \n67_gold -> \n67
+Changing input B of cell u10_gold (AO21x1_ASAP7_75t_R): \n8_gold -> \n8
+Changing input A2 of cell u10_gold (AO21x1_ASAP7_75t_R): \n6_gold -> \n6
+Changing input A1 of cell u10_gold (AO21x1_ASAP7_75t_R): \net115_gold -> \net115
+Changing input A of cell u1_gold (INVx4_ASAP7_75t_R): \ctrl.curr_state__0_gold -> \ctrl.curr_state__0
+Changing input D of cell u0_gold (DFFHQNx1_ASAP7_75t_R): \n0_gold -> \n0
+Changing input CLK of cell u0_gold (DFFHQNx1_ASAP7_75t_R): \clknet_2_2__leaf_clk_gold -> \clknet_2_2__leaf_clk
+Changing input A of cell place121_gold (BUFx2_ASAP7_75t_R): \ctrl.curr_state__0_gold -> \ctrl.curr_state__0
+Changing input A of cell place120_gold (BUFx2_ASAP7_75t_R): \dpath.b_reg_out_gold [1] -> \dpath.b_reg_out [1]
+Changing input A of cell place119_gold (BUFx2_ASAP7_75t_R): \ctrl$a_reg_en*_gold -> \ctrl$a_reg_en*
+Changing input A of cell place118_gold (BUFx2_ASAP7_75t_R): \dpath.a_reg$out_gold [4] -> \dpath.a_reg$out [4]
+Changing input A of cell place117_gold (BUFx2_ASAP7_75t_R): \dpath.b_reg_out_gold [4] -> \dpath.b_reg_out [4]
+Changing input A of cell place116_gold (BUFx2_ASAP7_75t_R): \dpath.b_reg_out_gold [5] -> \dpath.b_reg_out [5]
+Changing input A of cell place115_gold (BUFx2_ASAP7_75t_R): \dpath.a_reg$out_gold [0] -> \dpath.a_reg$out [0]
+Changing input A of cell place114_gold (BUFx2_ASAP7_75t_R): \dpath.b_reg_out_gold [0] -> \dpath.b_reg_out [0]
+Changing input A of cell place113_gold (BUFx2_ASAP7_75t_R): \n132_gold -> \n132
+Changing input A of cell place112_gold (BUFx2_ASAP7_75t_R): \n132_gold -> \n132
+Changing input A of cell place111_gold (BUFx2_ASAP7_75t_R): \n134_gold -> \n134
+Changing input A of cell place110_gold (BUFx6f_ASAP7_75t_R): \n137_gold -> \n137
+Changing input A of cell output94_gold (BUFx2_ASAP7_75t_R): \net94_gold -> \net94
+Changing input A of cell output93_gold (BUFx2_ASAP7_75t_R): \net93_gold -> \net93
+Changing input A of cell output92_gold (BUFx2_ASAP7_75t_R): \net92_gold -> \net92
+Changing input A of cell output91_gold (BUFx2_ASAP7_75t_R): \net91_gold -> \net91
+Changing input A of cell output90_gold (BUFx2_ASAP7_75t_R): \net90_gold -> \net90
+Changing input A of cell output89_gold (BUFx2_ASAP7_75t_R): \net89_gold -> \net89
+Changing input A of cell output88_gold (BUFx2_ASAP7_75t_R): \net88_gold -> \net88
+Changing input A of cell output87_gold (BUFx2_ASAP7_75t_R): \net87_gold -> \net87
+Changing input A of cell output86_gold (BUFx2_ASAP7_75t_R): \net86_gold -> \net86
+Changing input A of cell output85_gold (BUFx2_ASAP7_75t_R): \net85_gold -> \net85
+Changing input A of cell output84_gold (BUFx2_ASAP7_75t_R): \net84_gold -> \net84
+Changing input A of cell output83_gold (BUFx2_ASAP7_75t_R): \net83_gold -> \net83
+Changing input A of cell output82_gold (BUFx2_ASAP7_75t_R): \net82_gold -> \net82
+Changing input A of cell output81_gold (BUFx2_ASAP7_75t_R): \net81_gold -> \net81
+Changing input A of cell output80_gold (BUFx2_ASAP7_75t_R): \net80_gold -> \net80
+Changing input A of cell output79_gold (BUFx2_ASAP7_75t_R): \net79_gold -> \net79
+Changing input A of cell output78_gold (BUFx2_ASAP7_75t_R): \net78_gold -> \net78
+Changing input A of cell output77_gold (BUFx2_ASAP7_75t_R): \net77_gold -> \net77
+Changing input A of cell clkload2_gold (BUFx10_ASAP7_75t_R): \clknet_2_3__leaf_clk_gold -> \clknet_2_3__leaf_clk
+Changing input A of cell clkload1_gold (BUFx8_ASAP7_75t_R): \clknet_2_2__leaf_clk_gold -> \clknet_2_2__leaf_clk
+Changing input A of cell clkload0_gold (BUFx2_ASAP7_75t_R): \clknet_2_1__leaf_clk_gold -> \clknet_2_1__leaf_clk
+Changing input A of cell clkbuf_2_3__f_clk_gold (BUFx2_ASAP7_75t_R): \clknet_0_clk_gold -> \clknet_0_clk
+Changing input A of cell clkbuf_2_2__f_clk_gold (BUFx2_ASAP7_75t_R): \clknet_0_clk_gold -> \clknet_0_clk
+Changing input A of cell clkbuf_2_1__f_clk_gold (BUFx2_ASAP7_75t_R): \clknet_0_clk_gold -> \clknet_0_clk
+Changing input A of cell clkbuf_2_0__f_clk_gold (BUFx2_ASAP7_75t_R): \clknet_0_clk_gold -> \clknet_0_clk
+Changing input B of cell u99_gold (OR2x6_ASAP7_75t_R): \n80_gold -> \n80
+Changing input A of cell u99_gold (OR2x6_ASAP7_75t_R): \n76_gold -> \n76
+Presumably equivalent cells: u99_gold u99_gate (OR2x6_ASAP7_75t_R) -> u99
+Presumably equivalent cells: u98_gold u98_gate (OAI21x1_ASAP7_75t_R) -> u98
+Presumably equivalent cells: u97_gold u97_gate (NAND2x1_ASAP7_75t_R) -> u97
+Presumably equivalent cells: u96_gold u96_gate (INVx3_ASAP7_75t_R) -> u96
+Presumably equivalent cells: u95_gold u95_gate (DFFHQNx1_ASAP7_75t_R) -> u95
+Presumably equivalent cells: u94_gold u94_gate (DFFHQNx1_ASAP7_75t_R) -> u94
+Presumably equivalent cells: u93_gold u93_gate (XOR2x2_ASAP7_75t_R) -> u93
+Presumably equivalent cells: u92_gold u92_gate (XOR2x2_ASAP7_75t_R) -> u92
+Presumably equivalent cells: u91_gold u91_gate (DFFHQNx1_ASAP7_75t_R) -> u91
+Presumably equivalent cells: u90_gold u90_gate (DFFHQNx1_ASAP7_75t_R) -> u90
+Presumably equivalent cells: u9_gold u9_gate (AND2x2_ASAP7_75t_R) -> u9
+Presumably equivalent cells: u89_gold u89_gate (OA21x2_ASAP7_75t_R) -> u89
+Presumably equivalent cells: u88_gold u88_gate (XOR2x2_ASAP7_75t_R) -> u88
+Presumably equivalent cells: u87_gold u87_gate (OAI21x1_ASAP7_75t_R) -> u87
+Presumably equivalent cells: u86_gold u86_gate (NAND2x1_ASAP7_75t_R) -> u86
+Presumably equivalent cells: u85_gold u85_gate (INVx1_ASAP7_75t_R) -> u85
+Presumably equivalent cells: u84_gold u84_gate (DFFHQNx1_ASAP7_75t_R) -> u84
+Presumably equivalent cells: u83_gold u83_gate (DFFHQNx1_ASAP7_75t_R) -> u83
+Presumably equivalent cells: u82_gold u82_gate (OA211x2_ASAP7_75t_R) -> u82
+Presumably equivalent cells: u81_gold u81_gate (MAJx2_ASAP7_75t_R) -> u81
+Presumably equivalent cells: u80_gold u80_gate (INVx1_ASAP7_75t_R) -> u80
+Presumably equivalent cells: u8_gold u8_gate (INVx1_ASAP7_75t_R) -> u8
+Presumably equivalent cells: u79_gold u79_gate (OR3x1_ASAP7_75t_R) -> u79
+Presumably equivalent cells: u78_gold u78_gate (OR2x2_ASAP7_75t_R) -> u78
+Presumably equivalent cells: u77_gold u77_gate (XNOR2x2_ASAP7_75t_R) -> u77
+Presumably equivalent cells: u76_gold u76_gate (MAJx2_ASAP7_75t_R) -> u76
+Presumably equivalent cells: u75_gold u75_gate (XOR2x2_ASAP7_75t_R) -> u75
+Presumably equivalent cells: u74_gold u74_gate (DFFHQNx1_ASAP7_75t_R) -> u74
+Presumably equivalent cells: u73_gold u73_gate (DFFHQNx1_ASAP7_75t_R) -> u73
+Presumably equivalent cells: u72_gold u72_gate (XNOR2x2_ASAP7_75t_R) -> u72
+Presumably equivalent cells: u71_gold u71_gate (OAI21x1_ASAP7_75t_R) -> u71
+Presumably equivalent cells: u70_gold u70_gate (MAJx2_ASAP7_75t_R) -> u70
+Presumably equivalent cells: u7_gold u7_gate (INVx1_ASAP7_75t_R) -> u7
+Presumably equivalent cells: u69_gold u69_gate (INVx1_ASAP7_75t_R) -> u69
+Presumably equivalent cells: u68_gold u68_gate (OA21x2_ASAP7_75t_R) -> u68
+Presumably equivalent cells: u67_gold u67_gate (OR2x2_ASAP7_75t_R) -> u67
+Presumably equivalent cells: u66_gold u66_gate (OAI21x1_ASAP7_75t_R) -> u66
+Presumably equivalent cells: u65_gold u65_gate (NAND2x1_ASAP7_75t_R) -> u65
+Presumably equivalent cells: u64_gold u64_gate (INVx2_ASAP7_75t_R) -> u64
+Presumably equivalent cells: u63_gold u63_gate (DFFHQNx1_ASAP7_75t_R) -> u63
+Presumably equivalent cells: u62_gold u62_gate (DFFHQNx1_ASAP7_75t_R) -> u62
+Presumably equivalent cells: u61_gold u61_gate (XNOR2x2_ASAP7_75t_R) -> u61
+Presumably equivalent cells: u60_gold u60_gate (XOR2x2_ASAP7_75t_R) -> u60
+Presumably equivalent cells: u6_gold u6_gate (DFFHQNx1_ASAP7_75t_R) -> u6
+Presumably equivalent cells: u59_gold u59_gate (DFFHQNx1_ASAP7_75t_R) -> u59
+Presumably equivalent cells: u58_gold u58_gate (DFFHQNx1_ASAP7_75t_R) -> u58
+Presumably equivalent cells: u57_gold u57_gate (AO21x1_ASAP7_75t_R) -> u57
+Presumably equivalent cells: u56_gold u56_gate (AOI21x1_ASAP7_75t_R) -> u56
+Presumably equivalent cells: u55_gold u55_gate (NOR2x1_ASAP7_75t_R) -> u55
+Presumably equivalent cells: u54_gold u54_gate (OAI21x1_ASAP7_75t_R) -> u54
+Presumably equivalent cells: u53_gold u53_gate (NAND2x1_ASAP7_75t_R) -> u53
+Presumably equivalent cells: u52_gold u52_gate (INVx1_ASAP7_75t_R) -> u52
+Presumably equivalent cells: u51_gold u51_gate (DFFHQNx1_ASAP7_75t_R) -> u51
+Presumably equivalent cells: u50_gold u50_gate (DFFHQNx1_ASAP7_75t_R) -> u50
+Presumably equivalent cells: u5_gold u5_gate (DFFHQNx1_ASAP7_75t_R) -> u5
+Presumably equivalent cells: u49_gold u49_gate (AND3x4_ASAP7_75t_R) -> u49
+Presumably equivalent cells: u48_gold u48_gate (MAJx2_ASAP7_75t_R) -> u48
+Presumably equivalent cells: u47_gold u47_gate (INVx1_ASAP7_75t_R) -> u47
+Presumably equivalent cells: u46_gold u46_gate (OR3x1_ASAP7_75t_R) -> u46
+Presumably equivalent cells: u45_gold u45_gate (OR3x1_ASAP7_75t_R) -> u45
+Presumably equivalent cells: u44_gold u44_gate (OR2x2_ASAP7_75t_R) -> u44
+Presumably equivalent cells: u43_gold u43_gate (XOR2x2_ASAP7_75t_R) -> u43
+Presumably equivalent cells: u42_gold u42_gate (XOR2x2_ASAP7_75t_R) -> u42
+Presumably equivalent cells: u41_gold u41_gate (DFFHQNx1_ASAP7_75t_R) -> u41
+Presumably equivalent cells: u40_gold u40_gate (DFFHQNx1_ASAP7_75t_R) -> u40
+Presumably equivalent cells: u4_gold u4_gate (AND2x2_ASAP7_75t_R) -> u4
+Presumably equivalent cells: u39_gold u39_gate (OA21x2_ASAP7_75t_R) -> u39
+Presumably equivalent cells: u38_gold u38_gate (XOR2x2_ASAP7_75t_R) -> u38
+Presumably equivalent cells: u37_gold u37_gate (AO21x1_ASAP7_75t_R) -> u37
+Presumably equivalent cells: u36_gold u36_gate (OA21x2_ASAP7_75t_R) -> u36
+Presumably equivalent cells: u35_gold u35_gate (NAND2x1_ASAP7_75t_R) -> u35
+Presumably equivalent cells: u34_gold u34_gate (OAI21x1_ASAP7_75t_R) -> u34
+Presumably equivalent cells: u33_gold u33_gate (NAND2x1_ASAP7_75t_R) -> u33
+Presumably equivalent cells: u32_gold u32_gate (INVx1_ASAP7_75t_R) -> u32
+Presumably equivalent cells: u31_gold u31_gate (DFFHQNx1_ASAP7_75t_R) -> u31
+Presumably equivalent cells: u30_gold u30_gate (DFFHQNx1_ASAP7_75t_R) -> u30
+Presumably equivalent cells: u3_gold u3_gate (INVx3_ASAP7_75t_R) -> u3
+Presumably equivalent cells: u29_gold u29_gate (XOR2x2_ASAP7_75t_R) -> u29
+Presumably equivalent cells: u28_gold u28_gate (OA21x2_ASAP7_75t_R) -> u28
+Presumably equivalent cells: u27_gold u27_gate (OR2x2_ASAP7_75t_R) -> u27
+Presumably equivalent cells: u260_gold u260_gate (AOI21x1_ASAP7_75t_R) -> u260
+Presumably equivalent cells: u26_gold u26_gate (INVx1_ASAP7_75t_R) -> u26
+Presumably equivalent cells: u259_gold u259_gate (OA211x2_ASAP7_75t_R) -> u259
+Presumably equivalent cells: u258_gold u258_gate (OR3x1_ASAP7_75t_R) -> u258
+Presumably equivalent cells: u257_gold u257_gate (OA21x2_ASAP7_75t_R) -> u257
+Presumably equivalent cells: u256_gold u256_gate (AO221x1_ASAP7_75t_R) -> u256
+Presumably equivalent cells: u255_gold u255_gate (OAI21x1_ASAP7_75t_R) -> u255
+Presumably equivalent cells: u254_gold u254_gate (NOR2x1_ASAP7_75t_R) -> u254
+Presumably equivalent cells: u253_gold u253_gate (XOR2x2_ASAP7_75t_R) -> u253
+Presumably equivalent cells: u252_gold u252_gate (AOI21x1_ASAP7_75t_R) -> u252
+Presumably equivalent cells: u251_gold u251_gate (OA211x2_ASAP7_75t_R) -> u251
+Presumably equivalent cells: u250_gold u250_gate (OR3x1_ASAP7_75t_R) -> u250
+Presumably equivalent cells: u25_gold u25_gate (AO21x1_ASAP7_75t_R) -> u25
+Presumably equivalent cells: u249_gold u249_gate (OAI21x1_ASAP7_75t_R) -> u249
+Presumably equivalent cells: u248_gold u248_gate (AO221x1_ASAP7_75t_R) -> u248
+Presumably equivalent cells: u247_gold u247_gate (AO21x1_ASAP7_75t_R) -> u247
+Presumably equivalent cells: u246_gold u246_gate (OA21x2_ASAP7_75t_R) -> u246
+Presumably equivalent cells: u245_gold u245_gate (AO221x1_ASAP7_75t_R) -> u245
+Presumably equivalent cells: u244_gold u244_gate (OAI21x1_ASAP7_75t_R) -> u244
+Presumably equivalent cells: u243_gold u243_gate (AOI221x1_ASAP7_75t_R) -> u243
+Presumably equivalent cells: u242_gold u242_gate (INVx1_ASAP7_75t_R) -> u242
+Presumably equivalent cells: u241_gold u241_gate (AOI21x1_ASAP7_75t_R) -> u241
+Presumably equivalent cells: u240_gold u240_gate (OA211x2_ASAP7_75t_R) -> u240
+Presumably equivalent cells: u24_gold u24_gate (NOR2x1_ASAP7_75t_R) -> u24
+Presumably equivalent cells: u239_gold u239_gate (OR3x1_ASAP7_75t_R) -> u239
+Presumably equivalent cells: u238_gold u238_gate (AOI21x1_ASAP7_75t_R) -> u238
+Presumably equivalent cells: u237_gold u237_gate (OA211x2_ASAP7_75t_R) -> u237
+Presumably equivalent cells: u236_gold u236_gate (OR3x1_ASAP7_75t_R) -> u236
+Presumably equivalent cells: u235_gold u235_gate (AOI21x1_ASAP7_75t_R) -> u235
+Presumably equivalent cells: u234_gold u234_gate (OA21x2_ASAP7_75t_R) -> u234
+Presumably equivalent cells: u233_gold u233_gate (AO221x1_ASAP7_75t_R) -> u233
+Presumably equivalent cells: u232_gold u232_gate (AOI21x1_ASAP7_75t_R) -> u232
+Presumably equivalent cells: u231_gold u231_gate (OA211x2_ASAP7_75t_R) -> u231
+Presumably equivalent cells: u230_gold u230_gate (OR3x1_ASAP7_75t_R) -> u230
+Presumably equivalent cells: u23_gold u23_gate (DFFHQNx1_ASAP7_75t_R) -> u23
+Presumably equivalent cells: u229_gold u229_gate (OAI21x1_ASAP7_75t_R) -> u229
+Presumably equivalent cells: u228_gold u228_gate (AO21x1_ASAP7_75t_R) -> u228
+Presumably equivalent cells: u227_gold u227_gate (AO221x1_ASAP7_75t_R) -> u227
+Presumably equivalent cells: u226_gold u226_gate (AOI21x1_ASAP7_75t_R) -> u226
+Presumably equivalent cells: u225_gold u225_gate (OA211x2_ASAP7_75t_R) -> u225
+Presumably equivalent cells: u224_gold u224_gate (OR3x1_ASAP7_75t_R) -> u224
+Presumably equivalent cells: u223_gold u223_gate (OAI21x1_ASAP7_75t_R) -> u223
+Presumably equivalent cells: u222_gold u222_gate (AO221x1_ASAP7_75t_R) -> u222
+Presumably equivalent cells: u221_gold u221_gate (AO21x1_ASAP7_75t_R) -> u221
+Presumably equivalent cells: u220_gold u220_gate (AOI21x1_ASAP7_75t_R) -> u220
+Presumably equivalent cells: u22_gold u22_gate (INVx1_ASAP7_75t_R) -> u22
+Presumably equivalent cells: u219_gold u219_gate (OA211x2_ASAP7_75t_R) -> u219
+Presumably equivalent cells: u218_gold u218_gate (OR3x1_ASAP7_75t_R) -> u218
+Presumably equivalent cells: u217_gold u217_gate (OA21x2_ASAP7_75t_R) -> u217
+Presumably equivalent cells: u216_gold u216_gate (AO221x1_ASAP7_75t_R) -> u216
+Presumably equivalent cells: u215_gold u215_gate (OAI21x1_ASAP7_75t_R) -> u215
+Presumably equivalent cells: u214_gold u214_gate (XOR2x2_ASAP7_75t_R) -> u214
+Presumably equivalent cells: u213_gold u213_gate (INVx1_ASAP7_75t_R) -> u213
+Presumably equivalent cells: u212_gold u212_gate (AOI21x1_ASAP7_75t_R) -> u212
+Presumably equivalent cells: u211_gold u211_gate (OA211x2_ASAP7_75t_R) -> u211
+Presumably equivalent cells: u210_gold u210_gate (OR3x1_ASAP7_75t_R) -> u210
+Presumably equivalent cells: u21_gold u21_gate (DFFHQNx1_ASAP7_75t_R) -> u21
+Presumably equivalent cells: u209_gold u209_gate (OAI21x1_ASAP7_75t_R) -> u209
+Presumably equivalent cells: u208_gold u208_gate (AO221x1_ASAP7_75t_R) -> u208
+Presumably equivalent cells: u207_gold u207_gate (AO21x1_ASAP7_75t_R) -> u207
+Presumably equivalent cells: u206_gold u206_gate (AOI21x1_ASAP7_75t_R) -> u206
+Presumably equivalent cells: u205_gold u205_gate (OA211x2_ASAP7_75t_R) -> u205
+Presumably equivalent cells: u204_gold u204_gate (OR3x1_ASAP7_75t_R) -> u204
+Presumably equivalent cells: u203_gold u203_gate (OA21x2_ASAP7_75t_R) -> u203
+Presumably equivalent cells: u202_gold u202_gate (AO221x1_ASAP7_75t_R) -> u202
+Presumably equivalent cells: u201_gold u201_gate (OAI21x1_ASAP7_75t_R) -> u201
+Presumably equivalent cells: u200_gold u200_gate (XOR2x2_ASAP7_75t_R) -> u200
+Presumably equivalent cells: u20_gold u20_gate (XOR2x2_ASAP7_75t_R) -> u20
+Presumably equivalent cells: u2_gold u2_gate (DFFHQNx1_ASAP7_75t_R) -> u2
+Presumably equivalent cells: u199_gold u199_gate (INVx1_ASAP7_75t_R) -> u199
+Presumably equivalent cells: u198_gold u198_gate (AOI21x1_ASAP7_75t_R) -> u198
+Presumably equivalent cells: u197_gold u197_gate (OA211x2_ASAP7_75t_R) -> u197
+Presumably equivalent cells: u196_gold u196_gate (OR3x1_ASAP7_75t_R) -> u196
+Presumably equivalent cells: u195_gold u195_gate (OAI21x1_ASAP7_75t_R) -> u195
+Presumably equivalent cells: u194_gold u194_gate (AO221x1_ASAP7_75t_R) -> u194
+Presumably equivalent cells: u193_gold u193_gate (AO21x1_ASAP7_75t_R) -> u193
+Presumably equivalent cells: u192_gold u192_gate (AOI21x1_ASAP7_75t_R) -> u192
+Presumably equivalent cells: u191_gold u191_gate (OA211x2_ASAP7_75t_R) -> u191
+Presumably equivalent cells: u190_gold u190_gate (OR3x1_ASAP7_75t_R) -> u190
+Presumably equivalent cells: u19_gold u19_gate (MAJx2_ASAP7_75t_R) -> u19
+Presumably equivalent cells: u189_gold u189_gate (OAI21x1_ASAP7_75t_R) -> u189
+Presumably equivalent cells: u188_gold u188_gate (AO21x1_ASAP7_75t_R) -> u188
+Presumably equivalent cells: u187_gold u187_gate (AO221x1_ASAP7_75t_R) -> u187
+Presumably equivalent cells: u186_gold u186_gate (AOI21x1_ASAP7_75t_R) -> u186
+Presumably equivalent cells: u185_gold u185_gate (OA211x2_ASAP7_75t_R) -> u185
+Presumably equivalent cells: u184_gold u184_gate (OR3x1_ASAP7_75t_R) -> u184
+Presumably equivalent cells: u183_gold u183_gate (OAI21x1_ASAP7_75t_R) -> u183
+Presumably equivalent cells: u182_gold u182_gate (AO21x1_ASAP7_75t_R) -> u182
+Presumably equivalent cells: u181_gold u181_gate (AO221x1_ASAP7_75t_R) -> u181
+Presumably equivalent cells: u180_gold u180_gate (OAI21x1_ASAP7_75t_R) -> u180
+Presumably equivalent cells: u18_gold u18_gate (INVx1_ASAP7_75t_R) -> u18
+Presumably equivalent cells: u179_gold u179_gate (AO21x1_ASAP7_75t_R) -> u179
+Presumably equivalent cells: u178_gold u178_gate (AO221x1_ASAP7_75t_R) -> u178
+Presumably equivalent cells: u177_gold u177_gate (AOI21x1_ASAP7_75t_R) -> u177
+Presumably equivalent cells: u176_gold u176_gate (OA211x2_ASAP7_75t_R) -> u176
+Presumably equivalent cells: u175_gold u175_gate (OR3x1_ASAP7_75t_R) -> u175
+Presumably equivalent cells: u174_gold u174_gate (AOI21x1_ASAP7_75t_R) -> u174
+Presumably equivalent cells: u173_gold u173_gate (OA211x2_ASAP7_75t_R) -> u173
+Presumably equivalent cells: u172_gold u172_gate (OR3x1_ASAP7_75t_R) -> u172
+Presumably equivalent cells: u171_gold u171_gate (OR2x2_ASAP7_75t_R) -> u171
+Presumably equivalent cells: u170_gold u170_gate (OAI21x1_ASAP7_75t_R) -> u170
+Presumably equivalent cells: u17_gold u17_gate (XOR2x2_ASAP7_75t_R) -> u17
+Presumably equivalent cells: u169_gold u169_gate (AO21x1_ASAP7_75t_R) -> u169
+Presumably equivalent cells: u168_gold u168_gate (AO221x1_ASAP7_75t_R) -> u168
+Presumably equivalent cells: u167_gold u167_gate (AOI21x1_ASAP7_75t_R) -> u167
+Presumably equivalent cells: u166_gold u166_gate (AO32x1_ASAP7_75t_R) -> u166
+Presumably equivalent cells: u165_gold u165_gate (OA21x2_ASAP7_75t_R) -> u165
+Presumably equivalent cells: u164_gold u164_gate (AO221x1_ASAP7_75t_R) -> u164
+Presumably equivalent cells: u163_gold u163_gate (OAI21x1_ASAP7_75t_R) -> u163
+Presumably equivalent cells: u162_gold u162_gate (XNOR2x2_ASAP7_75t_R) -> u162
+Presumably equivalent cells: u161_gold u161_gate (INVx1_ASAP7_75t_R) -> u161
+Presumably equivalent cells: u160_gold u160_gate (AOI21x1_ASAP7_75t_R) -> u160
+Presumably equivalent cells: u16_gold u16_gate (DFFHQNx1_ASAP7_75t_R) -> u16
+Presumably equivalent cells: u159_gold u159_gate (AO32x1_ASAP7_75t_R) -> u159
+Presumably equivalent cells: u158_gold u158_gate (NOR2x1_ASAP7_75t_R) -> u158
+Presumably equivalent cells: u157_gold u157_gate (OA21x2_ASAP7_75t_R) -> u157
+Presumably equivalent cells: u156_gold u156_gate (AO221x1_ASAP7_75t_R) -> u156
+Presumably equivalent cells: u155_gold u155_gate (OAI21x1_ASAP7_75t_R) -> u155
+Presumably equivalent cells: u154_gold u154_gate (NOR2x1_ASAP7_75t_R) -> u154
+Presumably equivalent cells: u153_gold u153_gate (AOI21x1_ASAP7_75t_R) -> u153
+Presumably equivalent cells: u152_gold u152_gate (AND3x1_ASAP7_75t_R) -> u152
+Presumably equivalent cells: u151_gold u151_gate (AND4x1_ASAP7_75t_R) -> u151
+Presumably equivalent cells: u150_gold u150_gate (MAJx2_ASAP7_75t_R) -> u150
+Presumably equivalent cells: u15_gold u15_gate (DFFHQNx1_ASAP7_75t_R) -> u15
+Presumably equivalent cells: u149_gold u149_gate (INVx1_ASAP7_75t_R) -> u149
+Presumably equivalent cells: u148_gold u148_gate (OR3x1_ASAP7_75t_R) -> u148
+Presumably equivalent cells: u147_gold u147_gate (NAND2x1_ASAP7_75t_R) -> u147
+Presumably equivalent cells: u146_gold u146_gate (NAND3x1_ASAP7_75t_R) -> u146
+Presumably equivalent cells: u145_gold u145_gate (NOR3x1_ASAP7_75t_R) -> u145
+Presumably equivalent cells: u144_gold u144_gate (AO221x1_ASAP7_75t_R) -> u144
+Presumably equivalent cells: u143_gold u143_gate (NAND3x1_ASAP7_75t_R) -> u143
+Presumably equivalent cells: u142_gold u142_gate (OR3x1_ASAP7_75t_R) -> u142
+Presumably equivalent cells: u141_gold u141_gate (OR5x1_ASAP7_75t_R) -> u141
+Presumably equivalent cells: u140_gold u140_gate (OR4x1_ASAP7_75t_R) -> u140
+Presumably equivalent cells: u14_gold u14_gate (XOR2x2_ASAP7_75t_R) -> u14
+Presumably equivalent cells: u139_gold u139_gate (OR4x1_ASAP7_75t_R) -> u139
+Presumably equivalent cells: u138_gold u138_gate (OR5x1_ASAP7_75t_R) -> u138
+Presumably equivalent cells: u137_gold u137_gate (NAND2x1_ASAP7_75t_R) -> u137
+Presumably equivalent cells: u136_gold u136_gate (AO21x1_ASAP7_75t_R) -> u136
+Presumably equivalent cells: u135_gold u135_gate (INVx1_ASAP7_75t_R) -> u135
+Presumably equivalent cells: u134_gold u134_gate (AND2x2_ASAP7_75t_R) -> u134
+Presumably equivalent cells: u133_gold u133_gate (XNOR2x2_ASAP7_75t_R) -> u133
+Presumably equivalent cells: u132_gold u132_gate (XOR2x2_ASAP7_75t_R) -> u132
+Presumably equivalent cells: u131_gold u131_gate (DFFHQNx1_ASAP7_75t_R) -> u131
+Presumably equivalent cells: u130_gold u130_gate (DFFHQNx1_ASAP7_75t_R) -> u130
+Presumably equivalent cells: u13_gold u13_gate (XOR2x2_ASAP7_75t_R) -> u13
+Presumably equivalent cells: u129_gold u129_gate (OAI21x1_ASAP7_75t_R) -> u129
+Presumably equivalent cells: u128_gold u128_gate (XOR2x2_ASAP7_75t_R) -> u128
+Presumably equivalent cells: u127_gold u127_gate (OA211x2_ASAP7_75t_R) -> u127
+Presumably equivalent cells: u126_gold u126_gate (MAJx2_ASAP7_75t_R) -> u126
+Presumably equivalent cells: u125_gold u125_gate (INVx1_ASAP7_75t_R) -> u125
+Presumably equivalent cells: u124_gold u124_gate (OR3x1_ASAP7_75t_R) -> u124
+Presumably equivalent cells: u123_gold u123_gate (OR2x6_ASAP7_75t_R) -> u123
+Presumably equivalent cells: u122_gold u122_gate (OAI21x1_ASAP7_75t_R) -> u122
+Presumably equivalent cells: u121_gold u121_gate (NAND2x1_ASAP7_75t_R) -> u121
+Presumably equivalent cells: u120_gold u120_gate (INVx1_ASAP7_75t_R) -> u120
+Presumably equivalent cells: u12_gold u12_gate (DFFHQNx1_ASAP7_75t_R) -> u12
+Presumably equivalent cells: u119_gold u119_gate (DFFHQNx1_ASAP7_75t_R) -> u119
+Presumably equivalent cells: u118_gold u118_gate (DFFHQNx1_ASAP7_75t_R) -> u118
+Presumably equivalent cells: u117_gold u117_gate (AO221x1_ASAP7_75t_R) -> u117
+Presumably equivalent cells: u116_gold u116_gate (AO21x1_ASAP7_75t_R) -> u116
+Presumably equivalent cells: u115_gold u115_gate (OA211x2_ASAP7_75t_R) -> u115
+Presumably equivalent cells: u114_gold u114_gate (AO21x1_ASAP7_75t_R) -> u114
+Presumably equivalent cells: u113_gold u113_gate (OAI22x1_ASAP7_75t_R) -> u113
+Presumably equivalent cells: u112_gold u112_gate (AOI21x1_ASAP7_75t_R) -> u112
+Presumably equivalent cells: u111_gold u111_gate (NOR2x1_ASAP7_75t_R) -> u111
+Presumably equivalent cells: u110_gold u110_gate (AND3x1_ASAP7_75t_R) -> u110
+Presumably equivalent cells: u11_gold u11_gate (DFFHQNx1_ASAP7_75t_R) -> u11
+Presumably equivalent cells: u109_gold u109_gate (XOR2x2_ASAP7_75t_R) -> u109
+Presumably equivalent cells: u108_gold u108_gate (DFFHQNx1_ASAP7_75t_R) -> u108
+Presumably equivalent cells: u107_gold u107_gate (DFFHQNx1_ASAP7_75t_R) -> u107
+Presumably equivalent cells: u106_gold u106_gate (OA21x2_ASAP7_75t_R) -> u106
+Presumably equivalent cells: u105_gold u105_gate (XNOR2x2_ASAP7_75t_R) -> u105
+Presumably equivalent cells: u104_gold u104_gate (AO21x1_ASAP7_75t_R) -> u104
+Presumably equivalent cells: u103_gold u103_gate (OAI21x1_ASAP7_75t_R) -> u103
+Presumably equivalent cells: u102_gold u102_gate (MAJx2_ASAP7_75t_R) -> u102
+Presumably equivalent cells: u101_gold u101_gate (INVx1_ASAP7_75t_R) -> u101
+Presumably equivalent cells: u100_gold u100_gate (NOR2x1_ASAP7_75t_R) -> u100
+Presumably equivalent cells: u10_gold u10_gate (AO21x1_ASAP7_75t_R) -> u10
+Presumably equivalent cells: u1_gold u1_gate (INVx4_ASAP7_75t_R) -> u1
+Presumably equivalent cells: u0_gold u0_gate (DFFHQNx1_ASAP7_75t_R) -> u0
+Presumably equivalent cells: place121_gold place121_gate (BUFx2_ASAP7_75t_R) -> place121
+Presumably equivalent cells: place120_gold place120_gate (BUFx2_ASAP7_75t_R) -> place120
+Presumably equivalent cells: place119_gold place119_gate (BUFx2_ASAP7_75t_R) -> place119
+Presumably equivalent cells: place118_gold place118_gate (BUFx2_ASAP7_75t_R) -> place118
+Presumably equivalent cells: place117_gold place117_gate (BUFx2_ASAP7_75t_R) -> place117
+Presumably equivalent cells: place116_gold place116_gate (BUFx2_ASAP7_75t_R) -> place116
+Presumably equivalent cells: place115_gold place115_gate (BUFx2_ASAP7_75t_R) -> place115
+Presumably equivalent cells: place114_gold place114_gate (BUFx2_ASAP7_75t_R) -> place114
+Presumably equivalent cells: place113_gold place113_gate (BUFx2_ASAP7_75t_R) -> place113
+Presumably equivalent cells: place112_gold place112_gate (BUFx2_ASAP7_75t_R) -> place112
+Presumably equivalent cells: place111_gold place111_gate (BUFx2_ASAP7_75t_R) -> place111
+Presumably equivalent cells: place110_gold place110_gate (BUFx6f_ASAP7_75t_R) -> place110
+Presumably equivalent cells: output94_gold output94_gate (BUFx2_ASAP7_75t_R) -> output94
+Presumably equivalent cells: output93_gold output93_gate (BUFx2_ASAP7_75t_R) -> output93
+Presumably equivalent cells: output92_gold output92_gate (BUFx2_ASAP7_75t_R) -> output92
+Presumably equivalent cells: output91_gold output91_gate (BUFx2_ASAP7_75t_R) -> output91
+Presumably equivalent cells: output90_gold output90_gate (BUFx2_ASAP7_75t_R) -> output90
+Presumably equivalent cells: output89_gold output89_gate (BUFx2_ASAP7_75t_R) -> output89
+Presumably equivalent cells: output88_gold output88_gate (BUFx2_ASAP7_75t_R) -> output88
+Presumably equivalent cells: output87_gold output87_gate (BUFx2_ASAP7_75t_R) -> output87
+Presumably equivalent cells: output86_gold output86_gate (BUFx2_ASAP7_75t_R) -> output86
+Presumably equivalent cells: output85_gold output85_gate (BUFx2_ASAP7_75t_R) -> output85
+Presumably equivalent cells: output84_gold output84_gate (BUFx2_ASAP7_75t_R) -> output84
+Presumably equivalent cells: output83_gold output83_gate (BUFx2_ASAP7_75t_R) -> output83
+Presumably equivalent cells: output82_gold output82_gate (BUFx2_ASAP7_75t_R) -> output82
+Presumably equivalent cells: output81_gold output81_gate (BUFx2_ASAP7_75t_R) -> output81
+Presumably equivalent cells: output80_gold output80_gate (BUFx2_ASAP7_75t_R) -> output80
+Presumably equivalent cells: output79_gold output79_gate (BUFx2_ASAP7_75t_R) -> output79
+Presumably equivalent cells: output78_gold output78_gate (BUFx2_ASAP7_75t_R) -> output78
+Presumably equivalent cells: output77_gold output77_gate (BUFx2_ASAP7_75t_R) -> output77
+Presumably equivalent cells: input76_gold input76_gate (BUFx2_ASAP7_75t_R) -> input76
+Presumably equivalent cells: input75_gold input75_gate (BUFx2_ASAP7_75t_R) -> input75
+Presumably equivalent cells: input74_gold input74_gate (BUFx2_ASAP7_75t_R) -> input74
+Presumably equivalent cells: input73_gold input73_gate (BUFx2_ASAP7_75t_R) -> input73
+Presumably equivalent cells: input72_gold input72_gate (BUFx2_ASAP7_75t_R) -> input72
+Presumably equivalent cells: input71_gold input71_gate (BUFx2_ASAP7_75t_R) -> input71
+Presumably equivalent cells: input70_gold input70_gate (BUFx2_ASAP7_75t_R) -> input70
+Presumably equivalent cells: input69_gold input69_gate (BUFx2_ASAP7_75t_R) -> input69
+Presumably equivalent cells: input68_gold input68_gate (BUFx2_ASAP7_75t_R) -> input68
+Presumably equivalent cells: input67_gold input67_gate (BUFx2_ASAP7_75t_R) -> input67
+Presumably equivalent cells: input66_gold input66_gate (BUFx2_ASAP7_75t_R) -> input66
+Presumably equivalent cells: input65_gold input65_gate (BUFx2_ASAP7_75t_R) -> input65
+Presumably equivalent cells: input64_gold input64_gate (BUFx2_ASAP7_75t_R) -> input64
+Presumably equivalent cells: input63_gold input63_gate (BUFx2_ASAP7_75t_R) -> input63
+Presumably equivalent cells: input62_gold input62_gate (BUFx2_ASAP7_75t_R) -> input62
+Presumably equivalent cells: input61_gold input61_gate (BUFx2_ASAP7_75t_R) -> input61
+Presumably equivalent cells: input60_gold input60_gate (BUFx2_ASAP7_75t_R) -> input60
+Presumably equivalent cells: input59_gold input59_gate (BUFx2_ASAP7_75t_R) -> input59
+Presumably equivalent cells: input58_gold input58_gate (BUFx2_ASAP7_75t_R) -> input58
+Presumably equivalent cells: input57_gold input57_gate (BUFx2_ASAP7_75t_R) -> input57
+Presumably equivalent cells: input56_gold input56_gate (BUFx2_ASAP7_75t_R) -> input56
+Presumably equivalent cells: input55_gold input55_gate (BUFx2_ASAP7_75t_R) -> input55
+Presumably equivalent cells: input54_gold input54_gate (BUFx2_ASAP7_75t_R) -> input54
+Presumably equivalent cells: input53_gold input53_gate (BUFx2_ASAP7_75t_R) -> input53
+Presumably equivalent cells: input52_gold input52_gate (BUFx2_ASAP7_75t_R) -> input52
+Presumably equivalent cells: input51_gold input51_gate (BUFx2_ASAP7_75t_R) -> input51
+Presumably equivalent cells: input50_gold input50_gate (BUFx2_ASAP7_75t_R) -> input50
+Presumably equivalent cells: input49_gold input49_gate (BUFx2_ASAP7_75t_R) -> input49
+Presumably equivalent cells: input48_gold input48_gate (BUFx2_ASAP7_75t_R) -> input48
+Presumably equivalent cells: input47_gold input47_gate (BUFx2_ASAP7_75t_R) -> input47
+Presumably equivalent cells: input46_gold input46_gate (BUFx2_ASAP7_75t_R) -> input46
+Presumably equivalent cells: input45_gold input45_gate (BUFx2_ASAP7_75t_R) -> input45
+Presumably equivalent cells: input44_gold input44_gate (BUFx2_ASAP7_75t_R) -> input44
+Presumably equivalent cells: input43_gold input43_gate (BUFx2_ASAP7_75t_R) -> input43
+Presumably equivalent cells: input42_gold input42_gate (BUFx2_ASAP7_75t_R) -> input42
+Presumably equivalent cells: clkload2_gold clkload2_gate (BUFx10_ASAP7_75t_R) -> clkload2
+Presumably equivalent cells: clkload1_gold clkload1_gate (BUFx8_ASAP7_75t_R) -> clkload1
+Presumably equivalent cells: clkload0_gold clkload0_gate (BUFx2_ASAP7_75t_R) -> clkload0
+Presumably equivalent cells: clkbuf_2_3__f_clk_gold clkbuf_2_3__f_clk_gate (BUFx2_ASAP7_75t_R) -> clkbuf_2_3__f_clk
+Presumably equivalent cells: clkbuf_2_2__f_clk_gold clkbuf_2_2__f_clk_gate (BUFx2_ASAP7_75t_R) -> clkbuf_2_2__f_clk
+Presumably equivalent cells: clkbuf_2_1__f_clk_gold clkbuf_2_1__f_clk_gate (BUFx2_ASAP7_75t_R) -> clkbuf_2_1__f_clk
+Presumably equivalent cells: clkbuf_2_0__f_clk_gold clkbuf_2_0__f_clk_gate (BUFx2_ASAP7_75t_R) -> clkbuf_2_0__f_clk
+Presumably equivalent cells: clkbuf_0_clk_gold clkbuf_0_clk_gate (BUFx2_ASAP7_75t_R) -> clkbuf_0_clk
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \equiv
+
+9.2. Analyzing design hierarchy..
+Top module:  \equiv
+Removing unused module `\gcd_candidate'.
+Removing unused module `\gcd_baseline'.
+Removed 2 unused modules.
+
+10. Executing PROC pass (convert processes to netlists).
+
+10.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+10.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+10.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+10.4. Executing PROC_INIT pass (extract init attributes).
+
+10.5. Executing PROC_ARST pass (detect async resets in processes).
+
+10.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+10.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+10.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+10.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+10.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+10.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+10.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module equiv.
+
+11. Executing FLATTEN pass (flatten design).
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \equiv..
+Removed 3 unused cells and 0 unused wires.
+<suppressed ~3 debug messages>
+
+13. Executing EQUIV_SIMPLE pass.
+Proved 0 previously unproven $equiv cells.
+
+14. Executing EQUIV_INDUCT pass.
+No selected unproven $equiv cells found in equiv.
+Proved 0 previously unproven $equiv cells.
+
+15. Executing EQUIV_STATUS pass.
+Found 331 $equiv cells in equiv:
+  Of those cells 331 are proven and 0 are unproven.
+  Equivalence successfully proven!
+
+End of script. Logfile hash: ac83423dda, time: 0.21s, user: 0.19s, system: 0.02s, MEM: 53.97 MB peak
+Yosys 0.68+post (git sha1 c12172fbae8af5e20f6fb52e3d4e92d56ed587b6, Release, AppleClang clang++ 17.0.0.17000604)
+Time spent: 86% 10x read_liberty (0 sec), 9% 4x read_verilog (0 sec), ...

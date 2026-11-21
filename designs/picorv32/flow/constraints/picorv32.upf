@@ -1,0 +1,3 @@
+# Single-domain baseline at the SKY130 nominal supply.
+create_power_domain PD_TOP -elements {.}
+set_domain_voltage -domain PD_TOP -voltage 1.8

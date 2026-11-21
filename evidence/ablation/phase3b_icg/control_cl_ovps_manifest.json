@@ -1,0 +1,431 @@
+{
+  "activity_model": {
+    "fallback_transitions_per_cycle": null,
+    "mode": "measured_vcd",
+    "signoff_eligible": true
+  },
+  "created_utc": "2026-11-04T11:30:52.334953+00:00",
+  "design": "gcd_phase3b_control",
+  "engine": "CL-OVPS universal OpenROAD measurement runner",
+  "flow_plan": {
+    "evidence": {
+      "lec_log": {
+        "path": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/stage4/lec.log",
+        "sha256": "5fc63d394ae2e42ab6bf95940e1964ba84b4de035a1e72b0ef619c9c7693df8f"
+      },
+      "lec_status": {
+        "path": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/stage4/lec_status.txt",
+        "sha256": "3dfee40a69bb4a0bbf4d280bb4e042a447c820ef6e3e786df917379ff0203f96"
+      },
+      "psm_log": {
+        "path": "$CL_OVPS_ROOT/build/orfs/logs/sky130hd/gcd_phase3b_control_20261104/clovps_phase3b_control_gcd_20261104_route/6_report.log",
+        "sha256": "60a43b2b58747d19c9cbb3da8e6a6114e76e77c61c88c5016fb97bd4e457bad2"
+      },
+      "route_log": {
+        "path": "$CL_OVPS_ROOT/build/orfs/logs/sky130hd/gcd_phase3b_control_20261104/clovps_phase3b_control_gcd_20261104_route/5_2_route.log",
+        "sha256": "b6bf78c3cd3e995806c85c801b4fc85fc6a2239c0c81171cc20f09f7775f3105"
+      }
+    },
+    "final": {
+      "placed_odb": {
+        "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_phase3b_control_20261104/clovps_phase3b_control_gcd_20261104_route/6_final.odb",
+        "sha256": "bcd0a8e4f87071667d905105f2a2cd1b9531767eade052752378d02423f850b8"
+      },
+      "sdc": {
+        "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_phase3b_control_20261104/clovps_phase3b_control_gcd_20261104_route/6_final.sdc",
+        "sha256": "2fcc41e3bf3f80ff38b20a0067781701a7e1247755dc549c419e004939e698dd"
+      },
+      "spef": {
+        "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_phase3b_control_20261104/clovps_phase3b_control_gcd_20261104_route/6_final.spef",
+        "sha256": "5bbb12e8d5ba59ccb7936121fae670bcbf7df4bf63d44184322cc53eb399dc81"
+      },
+      "vcd_dir": {
+        "path": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/candidate_vcd",
+        "sha256": "47b828074bb9cf050bf04fd03e8adb7b0913426f5a408a86656f51410bcc4403"
+      }
+    },
+    "path": "$CL_OVPS_ROOT/configs/phase3b/gcd_control_flow_plan.json",
+    "sha256": "81f1648996ace1c5e07943c8aefc7493ff97762f6b106fb85fc715236270a5e8",
+    "stages": [
+      {
+        "commands": [
+          {
+            "argv": [
+              "python3",
+              "$CL_OVPS_ROOT/scripts/cl_ovps_copy_odb.py",
+              "--input-odb",
+              "$CL_OVPS_ROOT/build/power/phase3b_gcd_cold_20261104/stage1/optimized.odb",
+              "--output-odb",
+              "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/stage1/optimized.odb"
+            ],
+            "log": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/flow_plan/stage1.1.log",
+            "log_sha256": "011526af0465120b7b519ed9692d4f8e3606df87943d306cab050e5a933c7717",
+            "return_code": 0
+          }
+        ],
+        "name": "stage1",
+        "outputs": {
+          "optimized_odb": {
+            "path": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/stage1/optimized.odb",
+            "sha256": "0fbbeefbfe709d030e41c2719b406ce074eb9f716b01a08244e44d5ae02f1f89"
+          }
+        }
+      },
+      {
+        "commands": [
+          {
+            "argv": [
+              "python3",
+              "$CL_OVPS_ROOT/scripts/run_cl_ovps_cts.py",
+              "--design",
+              "gcd_flowplan_cold",
+              "--flow-dir",
+              "$CL_OVPS_ROOT/tools/openroad-flow-scripts/flow",
+              "--flow-config",
+              "$CL_OVPS_ROOT/designs/gcd/flow/config.mk",
+              "--work-home",
+              "$CL_OVPS_ROOT/build/orfs",
+              "--platform",
+              "sky130hd",
+              "--design-nickname",
+              "gcd_phase3b_control_20261104",
+              "--placement-odb",
+              "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/stage1/optimized.odb",
+              "--placement-sdc",
+              "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_power/gcd_baseline20ns/3_place.sdc",
+              "--variant",
+              "clovps_phase3b_control_gcd_20261104_cts",
+              "--output-dir",
+              "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/cts"
+            ],
+            "log": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/flow_plan/stage2.1.log",
+            "log_sha256": "1b3ae4beb3aab53fb134b3afa18c55afb12eed7a12085343a741176d0b523c24",
+            "return_code": 0
+          },
+          {
+            "argv": [
+              "python3",
+              "$CL_OVPS_ROOT/scripts/run_cl_ovps_pass.py",
+              "--stage",
+              "clock",
+              "--action",
+              "all",
+              "--input-odb",
+              "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_phase3b_control_20261104/clovps_phase3b_control_gcd_20261104_cts/4_1_cts.odb",
+              "--sdc",
+              "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_phase3b_control_20261104/clovps_phase3b_control_gcd_20261104_cts/4_cts.sdc",
+              "--default-activity",
+              "0.1",
+              "--lib",
+              "$CL_OVPS_ROOT/tools/openroad-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib",
+              "--rc-tcl",
+              "$CL_OVPS_ROOT/tools/openroad-flow-scripts/flow/platforms/sky130hd/setRC.tcl",
+              "--upf",
+              "$CL_OVPS_ROOT/designs/gcd/flow/constraints/gcd.upf",
+              "--output-odb",
+              "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/stage2/clock.odb",
+              "--report",
+              "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/stage2/clock.tsv",
+              "--log",
+              "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/stage2/clock.log"
+            ],
+            "log": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/flow_plan/stage2.2.log",
+            "log_sha256": "f677eb04b51af809f559bcbb4be46b5ce12ad1fa4073931e76a174b10dc089db",
+            "return_code": 0
+          }
+        ],
+        "name": "stage2",
+        "outputs": {
+          "clock_odb": {
+            "path": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/stage2/clock.odb",
+            "sha256": "829389628d1df17822cdd6876a31e2b31fe033a282e8bfb483059d32567de216"
+          },
+          "cts_sdc": {
+            "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_phase3b_control_20261104/clovps_phase3b_control_gcd_20261104_cts/4_cts.sdc",
+            "sha256": "2fcc41e3bf3f80ff38b20a0067781701a7e1247755dc549c419e004939e698dd"
+          }
+        }
+      },
+      {
+        "commands": [
+          {
+            "argv": [
+              "python3",
+              "$CL_OVPS_ROOT/scripts/run_cl_ovps_pass.py",
+              "--stage",
+              "sizing",
+              "--action",
+              "all",
+              "--input-odb",
+              "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/stage2/clock.odb",
+              "--sdc",
+              "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_phase3b_control_20261104/clovps_phase3b_control_gcd_20261104_cts/4_cts.sdc",
+              "--default-activity",
+              "0.1",
+              "--lib",
+              "$CL_OVPS_ROOT/tools/openroad-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib",
+              "--rc-tcl",
+              "$CL_OVPS_ROOT/tools/openroad-flow-scripts/flow/platforms/sky130hd/setRC.tcl",
+              "--upf",
+              "$CL_OVPS_ROOT/designs/gcd/flow/constraints/gcd.upf",
+              "--output-odb",
+              "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/stage3/sized.odb",
+              "--report",
+              "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/stage3/sizing.tsv",
+              "--log",
+              "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/stage3/sizing.log"
+            ],
+            "log": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/flow_plan/stage3.1.log",
+            "log_sha256": "e436611ed451129b8685d17b4cd36ad8970216357cef188773a873596f4268a5",
+            "return_code": 0
+          }
+        ],
+        "name": "stage3",
+        "outputs": {
+          "sizing_odb": {
+            "path": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/stage3/sized.odb",
+            "sha256": "662022c2317fe86fd8f0da4ff031045c6e214f9b6dfd95bac20e2666590e8f1a"
+          }
+        }
+      },
+      {
+        "commands": [
+          {
+            "argv": [
+              "python3",
+              "$CL_OVPS_ROOT/scripts/run_cl_ovps_stage4.py",
+              "--design",
+              "gcd_flowplan_cold",
+              "--flow-dir",
+              "$CL_OVPS_ROOT/tools/openroad-flow-scripts/flow",
+              "--flow-config",
+              "$CL_OVPS_ROOT/designs/gcd/flow/config.mk",
+              "--work-home",
+              "$CL_OVPS_ROOT/build/orfs",
+              "--platform",
+              "sky130hd",
+              "--design-nickname",
+              "gcd_phase3b_control_20261104",
+              "--source-place-odb",
+              "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/stage1/optimized.odb",
+              "--source-place-sdc",
+              "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_power/gcd_baseline20ns/3_place.sdc",
+              "--transformed-odb",
+              "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/stage3/sized.odb",
+              "--cts-sdc",
+              "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_phase3b_control_20261104/clovps_phase3b_control_gcd_20261104_cts/4_cts.sdc",
+              "--variant",
+              "clovps_phase3b_control_gcd_20261104_route",
+              "--output-dir",
+              "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/stage4",
+              "--openroad",
+              "$CL_OVPS_ROOT/tools/openroad/build/bin/openroad",
+              "--baseline-netlist",
+              "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcdflowplan_cold_v2/clovps_flowplan_gcd_cold_20261103_v2_route/6_final.v",
+              "--lec-plan",
+              "$CL_OVPS_ROOT/configs/phase3b/gcd_lec_plan.json"
+            ],
+            "log": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/flow_plan/stage4.1.log",
+            "log_sha256": "f8afb9e442089b6ac8a5f9b3870c0dd7de116f9b63a8095b0b27fc1e4f0accd8",
+            "return_code": 0
+          },
+          {
+            "argv": [
+              "python3",
+              "$CL_OVPS_ROOT/scripts/cl_ovps_run_gate_vcd.py",
+              "--script",
+              "$CL_OVPS_ROOT/designs/gcd/sim/run_activity.sh",
+              "--netlist",
+              "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_phase3b_control_20261104/clovps_phase3b_control_gcd_20261104_route/6_final.v",
+              "--output-dir",
+              "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/candidate_vcd"
+            ],
+            "log": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/flow_plan/stage4.2.log",
+            "log_sha256": "0ee82fdf1f84754082e4c62f8769348505b081ac1828361eee4dcea32a093bf9",
+            "return_code": 0
+          }
+        ],
+        "name": "stage4",
+        "outputs": {
+          "candidate_vcd_dir": {
+            "path": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/candidate_vcd",
+            "sha256": "47b828074bb9cf050bf04fd03e8adb7b0913426f5a408a86656f51410bcc4403"
+          },
+          "final_netlist": {
+            "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_phase3b_control_20261104/clovps_phase3b_control_gcd_20261104_route/6_final.v",
+            "sha256": "599dcfe036b30b970a01471894f74bd4f3afa07ac94a9c0b712a783c815a2afc"
+          },
+          "final_odb": {
+            "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_phase3b_control_20261104/clovps_phase3b_control_gcd_20261104_route/6_final.odb",
+            "sha256": "bcd0a8e4f87071667d905105f2a2cd1b9531767eade052752378d02423f850b8"
+          },
+          "final_sdc": {
+            "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_phase3b_control_20261104/clovps_phase3b_control_gcd_20261104_route/6_final.sdc",
+            "sha256": "2fcc41e3bf3f80ff38b20a0067781701a7e1247755dc549c419e004939e698dd"
+          },
+          "final_spef": {
+            "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_phase3b_control_20261104/clovps_phase3b_control_gcd_20261104_route/6_final.spef",
+            "sha256": "5bbb12e8d5ba59ccb7936121fae670bcbf7df4bf63d44184322cc53eb399dc81"
+          },
+          "stage4_manifest": {
+            "path": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/stage4/stage4_manifest.json",
+            "sha256": "e19d0b871cf6f2627976d2305911b2ba3926839b87a65b421d3a7686525d31e5"
+          }
+        }
+      }
+    ]
+  },
+  "gates": {
+    "Activity coverage": {
+      "detail": "all pins have measured or clock-propagated activity",
+      "pass": true
+    }
+  },
+  "inputs": {
+    "flow_plan": {
+      "path": "$CL_OVPS_ROOT/configs/phase3b/gcd_control_flow_plan.json",
+      "sha256": "81f1648996ace1c5e07943c8aefc7493ff97762f6b106fb85fc715236270a5e8"
+    },
+    "libraries": [
+      {
+        "path": "$CL_OVPS_ROOT/tools/openroad-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib",
+        "sha256": "ec0e1067a35c8bf20b11e58d1e8ac53326067e4dac84a125cc1b917a3518d0d9"
+      }
+    ],
+    "placed_odb": {
+      "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_phase3b_control_20261104/clovps_phase3b_control_gcd_20261104_route/6_final.odb",
+      "sha256": "bcd0a8e4f87071667d905105f2a2cd1b9531767eade052752378d02423f850b8"
+    },
+    "sdc": {
+      "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_phase3b_control_20261104/clovps_phase3b_control_gcd_20261104_route/6_final.sdc",
+      "sha256": "2fcc41e3bf3f80ff38b20a0067781701a7e1247755dc549c419e004939e698dd"
+    },
+    "spef": {
+      "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_phase3b_control_20261104/clovps_phase3b_control_gcd_20261104_route/6_final.spef",
+      "sha256": "5bbb12e8d5ba59ccb7936121fae670bcbf7df4bf63d44184322cc53eb399dc81"
+    },
+    "upf": {
+      "path": "$CL_OVPS_ROOT/designs/gcd/flow/constraints/gcd.upf",
+      "sha256": "fdc19eaa8dacf30bf350b99243fb81f92c3002944020b3db1e3ddc6d3fdd59af"
+    },
+    "vcd_dir": {
+      "path": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/candidate_vcd",
+      "sha256": "47b828074bb9cf050bf04fd03e8adb7b0913426f5a408a86656f51410bcc4403"
+    }
+  },
+  "schema_version": 1,
+  "status": "PASS",
+  "workloads": {
+    "idle": {
+      "candidate": {
+        "activity_mode": "vcd",
+        "activity_policy": "vcd_or_clock_propagated",
+        "annotated_pins": 972,
+        "clock_activity_covered_pins": 0,
+        "clock_domains": 2,
+        "clock_names": [
+          "core_clock",
+          "vclk_core_clock"
+        ],
+        "cts_buffers": 0,
+        "cts_dummy_loads": 0,
+        "cts_inverters": 5,
+        "dbu_per_micron": 1000,
+        "dynamic_power_w": 0.00011118625116069,
+        "hold_slack_ns": 0.566843016969,
+        "internal_power_w": 8.388725109398e-05,
+        "leakage_power_w": 1.186069686909e-09,
+        "openroad_log": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/candidate.idle.scope00.log",
+        "raw_unannotated_pins": 0,
+        "sequential_sinks": 35,
+        "setup_slack_ns": 13.0252519881,
+        "signal_hpwl_dbu": 4257481,
+        "signal_hpwl_um": 4257.481,
+        "switching_power_w": 2.729900006671e-05,
+        "tns_ns": 0.0,
+        "top": "gcd",
+        "total_power_w": 0.0001111874372304,
+        "unannotated_pins": 0,
+        "vcd": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/candidate_vcd/idle.vcd",
+        "vcd_scope": "tb_gcd_activity/dut",
+        "vcd_sha256": "914ea7927a05a38c194409f31c5b4e06bb2600cbea7ba623bfb1b9ca7319127d",
+        "vcd_unannotated_pins": 0,
+        "workload": "idle"
+      }
+    },
+    "peak": {
+      "candidate": {
+        "activity_mode": "vcd",
+        "activity_policy": "vcd_or_clock_propagated",
+        "annotated_pins": 972,
+        "clock_activity_covered_pins": 0,
+        "clock_domains": 2,
+        "clock_names": [
+          "core_clock",
+          "vclk_core_clock"
+        ],
+        "cts_buffers": 0,
+        "cts_dummy_loads": 0,
+        "cts_inverters": 5,
+        "dbu_per_micron": 1000,
+        "dynamic_power_w": 0.00021372755145418,
+        "hold_slack_ns": 0.566843016969,
+        "internal_power_w": 0.0001404984068358,
+        "leakage_power_w": 1.106565949982e-09,
+        "openroad_log": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/candidate.peak.scope00.log",
+        "raw_unannotated_pins": 0,
+        "sequential_sinks": 35,
+        "setup_slack_ns": 13.0252519881,
+        "signal_hpwl_dbu": 4257481,
+        "signal_hpwl_um": 4257.481,
+        "switching_power_w": 7.322914461838e-05,
+        "tns_ns": 0.0,
+        "top": "gcd",
+        "total_power_w": 0.0002137286580202,
+        "unannotated_pins": 0,
+        "vcd": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/candidate_vcd/peak.vcd",
+        "vcd_scope": "tb_gcd_activity/dut",
+        "vcd_sha256": "416ee5dfcf30fd1afe339c7bb3f434cb52cdc7004c12738f276a68eb1984044f",
+        "vcd_unannotated_pins": 0,
+        "workload": "peak"
+      }
+    },
+    "typical": {
+      "candidate": {
+        "activity_mode": "vcd",
+        "activity_policy": "vcd_or_clock_propagated",
+        "annotated_pins": 972,
+        "clock_activity_covered_pins": 0,
+        "clock_domains": 2,
+        "clock_names": [
+          "core_clock",
+          "vclk_core_clock"
+        ],
+        "cts_buffers": 0,
+        "cts_dummy_loads": 0,
+        "cts_inverters": 5,
+        "dbu_per_micron": 1000,
+        "dynamic_power_w": 0.00012608604811248998,
+        "hold_slack_ns": 0.566843016969,
+        "internal_power_w": 9.222532389686e-05,
+        "leakage_power_w": 1.030252438916e-09,
+        "openroad_log": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/candidate.typical.scope00.log",
+        "raw_unannotated_pins": 0,
+        "sequential_sinks": 35,
+        "setup_slack_ns": 13.0252519881,
+        "signal_hpwl_dbu": 4257481,
+        "signal_hpwl_um": 4257.481,
+        "switching_power_w": 3.386072421563e-05,
+        "tns_ns": 0.0,
+        "top": "gcd",
+        "total_power_w": 0.0001260870783649,
+        "unannotated_pins": 0,
+        "vcd": "$CL_OVPS_ROOT/build/power/phase3b_gcd_control_cold_20261104/candidate_vcd/typical.vcd",
+        "vcd_scope": "tb_gcd_activity/dut",
+        "vcd_sha256": "2021d90aea88a2ddd4dc0e5d5a5576d9990539e79ac3677c0a881f9722688860",
+        "vcd_unannotated_pins": 0,
+        "workload": "typical"
+      }
+    }
+  }
+}

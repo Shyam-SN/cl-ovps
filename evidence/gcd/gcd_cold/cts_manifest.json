@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "design": "gcd_topology_safe",
+  "variant": "cts",
+  "status": "PASS",
+  "input_odb": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/stage1/optimized.odb",
+  "input_odb_sha256": "0fbbeefbfe709d030e41c2719b406ce074eb9f716b01a08244e44d5ae02f1f89",
+  "cts_odb": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcdtopo_safe_20261103/cts/4_1_cts.odb",
+  "cts_odb_sha256": "f773c1de611d3b23b37e82653801d0c2b964c1063f1d29e4eeec7727d2fc8c6a",
+  "cts_sdc": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcdtopo_safe_20261103/cts/4_cts.sdc",
+  "cts_sdc_sha256": "2fcc41e3bf3f80ff38b20a0067781701a7e1247755dc549c419e004939e698dd",
+  "log": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/cts/orfs_cts.log"
+}

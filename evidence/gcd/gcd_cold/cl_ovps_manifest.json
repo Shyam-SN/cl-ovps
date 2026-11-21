@@ -1,0 +1,360 @@
+{
+  "activity_model": {
+    "fallback_transitions_per_cycle": null,
+    "mode": "measured_vcd",
+    "signoff_eligible": true
+  },
+  "created_utc": "2026-11-03T12:54:25.363690+00:00",
+  "design": "gcd_topology_safe_20261103",
+  "engine": "CL-OVPS universal OpenROAD measurement runner",
+  "evidence": {
+    "lec": {
+      "available": true,
+      "log": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/stage4_proof_refresh/lec.log",
+      "pass": true,
+      "path": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/stage4_proof_refresh/lec_status.txt",
+      "proven_points": 52,
+      "sha256": "3dfee40a69bb4a0bbf4d280bb4e042a447c820ef6e3e786df917379ff0203f96",
+      "status": "LEC_PASS",
+      "unproven_points": 0
+    },
+    "power_grid": {
+      "available": true,
+      "pass": true,
+      "path": "$CL_OVPS_ROOT/build/orfs/logs/sky130hd/gcdtopo_safe_20261103/route/6_report.log",
+      "psm_0069_count": 0,
+      "sha256": "c4a9187f9bf391dbe762a778624dd2a7d407685fb9644123c8848c1b7dae6b1a",
+      "vdd_pass": true,
+      "vss_pass": true
+    },
+    "route": {
+      "antenna_net_violations": 0,
+      "antenna_pin_violations": 0,
+      "available": true,
+      "drc_violations": 0,
+      "pass": true,
+      "path": "$CL_OVPS_ROOT/build/orfs/logs/sky130hd/gcdtopo_safe_20261103/route/5_2_route.log",
+      "sha256": "14d25ac7883452288cbb5c215877e1dd993d680debdde51e3a0857fd3d8ff087"
+    }
+  },
+  "gates": {
+    "Activity coverage": {
+      "detail": "all pins have measured or clock-propagated activity",
+      "pass": true
+    },
+    "Measured workload VCD evidence": {
+      "detail": "gate-level VCDs required for workload-specific power signoff",
+      "pass": true
+    },
+    "VDD/VSS connectivity": {
+      "detail": "VDD=True; VSS=True; PSM-0069=0",
+      "pass": true
+    },
+    "Yosys LEC": {
+      "detail": "52 proven, 0 unproven; status=LEC_PASS",
+      "pass": true
+    },
+    "detailed route DRC and antenna": {
+      "detail": "DRC=0; antenna net=0, pin=0",
+      "pass": true
+    },
+    "dynamic power improves in all workloads": {
+      "detail": "internal plus net switching power, routed SPEF/VCD",
+      "pass": true
+    },
+    "non-negative setup floor when baseline is closed": {
+      "detail": "candidate setup slack remains non-negative whenever baseline setup slack is non-negative",
+      "pass": true
+    },
+    "setup/hold regression within guard": {
+      "detail": "each workload compared against baseline slack",
+      "guard_ps": 50.0,
+      "pass": true
+    }
+  },
+  "inputs": {
+    "baseline_odb": {
+      "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_power/gcd_baseline20ns/6_final.odb",
+      "sha256": "d9cd072861e04da673881490df6edb1c6a590456a6a3f24e0081289d321da531"
+    },
+    "baseline_sdc": {
+      "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_power/gcd_baseline20ns/6_final.sdc",
+      "sha256": "2fcc41e3bf3f80ff38b20a0067781701a7e1247755dc549c419e004939e698dd"
+    },
+    "baseline_spef": {
+      "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcd_power/gcd_baseline20ns/6_final.spef",
+      "sha256": "14bb2430133ac3dd972af5e413cf6a231cfdc52cc241758ec126f8c85ed6ce5b"
+    },
+    "baseline_vcd_dir": {
+      "path": "$CL_OVPS_ROOT/build/activity/gcd_baseline20ns/routed",
+      "sha256": "aa887ac2e2576ac9d70d5fb1a2697bddb61b7b8e28d9057eee347b42c28dad3c"
+    },
+    "libraries": [
+      {
+        "path": "$CL_OVPS_ROOT/tools/openroad-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib",
+        "sha256": "ec0e1067a35c8bf20b11e58d1e8ac53326067e4dac84a125cc1b917a3518d0d9"
+      }
+    ],
+    "placed_odb": {
+      "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcdtopo_safe_20261103/route/6_final.odb",
+      "sha256": "bcd0a8e4f87071667d905105f2a2cd1b9531767eade052752378d02423f850b8"
+    },
+    "sdc": {
+      "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcdtopo_safe_20261103/route/6_final.sdc",
+      "sha256": "2fcc41e3bf3f80ff38b20a0067781701a7e1247755dc549c419e004939e698dd"
+    },
+    "spef": {
+      "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/gcdtopo_safe_20261103/route/6_final.spef",
+      "sha256": "02bc8f67446a55b02c4c6d3d4d17e4d20c4c5e119e7a4e385019929001f038f1"
+    },
+    "upf": {
+      "path": "$CL_OVPS_ROOT/designs/gcd/flow/constraints/gcd.upf",
+      "sha256": "fdc19eaa8dacf30bf350b99243fb81f92c3002944020b3db1e3ddc6d3fdd59af"
+    },
+    "vcd_dir": {
+      "path": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/activity",
+      "sha256": "a0ab8aa46adfe8cc5d343422d9b632c0634420f2a3725d0f7e2363bbe646c18c"
+    }
+  },
+  "schema_version": 1,
+  "status": "PASS",
+  "workloads": {
+    "idle": {
+      "absolute_setup_floor_pass": true,
+      "baseline": {
+        "activity_mode": "vcd",
+        "activity_policy": "vcd_or_clock_propagated",
+        "annotated_pins": 978,
+        "clock_activity_covered_pins": 0,
+        "clock_domains": 2,
+        "clock_names": [
+          "core_clock",
+          "vclk_core_clock"
+        ],
+        "cts_buffers": 5,
+        "cts_dummy_loads": 3,
+        "cts_inverters": 0,
+        "dbu_per_micron": 1000,
+        "dynamic_power_w": 0.00013563292304755,
+        "hold_slack_ns": 0.57079457827,
+        "internal_power_w": 0.0001100171793951,
+        "leakage_power_w": 1.227931645253e-09,
+        "openroad_log": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/measured_signoff_topology_proof/baseline.idle.scope00.log",
+        "raw_unannotated_pins": 0,
+        "sequential_sinks": 35,
+        "setup_slack_ns": 12.8089530094,
+        "signal_hpwl_dbu": 4243695,
+        "signal_hpwl_um": 4243.695,
+        "switching_power_w": 2.561574365245e-05,
+        "tns_ns": 0.0,
+        "top": "gcd",
+        "total_power_w": 0.0001356341509792,
+        "unannotated_pins": 0,
+        "vcd": "$CL_OVPS_ROOT/build/activity/gcd_baseline20ns/routed/idle.vcd",
+        "vcd_scope": "tb_gcd_activity/dut",
+        "vcd_sha256": "c6b1f47b89843a39ec001f823ddf22f8c27ec1fe7526b7b801feff2ab2133ee6",
+        "vcd_unannotated_pins": 0,
+        "workload": "idle"
+      },
+      "candidate": {
+        "activity_mode": "vcd",
+        "activity_policy": "vcd_or_clock_propagated",
+        "annotated_pins": 972,
+        "clock_activity_covered_pins": 0,
+        "clock_domains": 2,
+        "clock_names": [
+          "core_clock",
+          "vclk_core_clock"
+        ],
+        "cts_buffers": 0,
+        "cts_dummy_loads": 0,
+        "cts_inverters": 5,
+        "dbu_per_micron": 1000,
+        "dynamic_power_w": 0.00011118625116069,
+        "hold_slack_ns": 0.566843016969,
+        "internal_power_w": 8.388725109398e-05,
+        "leakage_power_w": 1.186069686909e-09,
+        "openroad_log": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/measured_signoff_topology_proof/candidate.idle.scope00.log",
+        "raw_unannotated_pins": 0,
+        "sequential_sinks": 35,
+        "setup_slack_ns": 13.0252519881,
+        "signal_hpwl_dbu": 4257481,
+        "signal_hpwl_um": 4257.481,
+        "switching_power_w": 2.729900006671e-05,
+        "tns_ns": 0.0,
+        "top": "gcd",
+        "total_power_w": 0.0001111874372304,
+        "unannotated_pins": 0,
+        "vcd": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/activity/idle.vcd",
+        "vcd_scope": "tb_gcd_activity/dut",
+        "vcd_sha256": "87a80010c8654a9632ce4b7e21d306811b649bf6b0052f351b2911d1bc5b41ae",
+        "vcd_unannotated_pins": 0,
+        "workload": "idle"
+      },
+      "dynamic_delta_w": -2.4446671886859994e-05,
+      "dynamic_improved": true,
+      "hold_delta_ps": -3.9515613010000505,
+      "relative_timing_guard_pass": true,
+      "setup_delta_ps": 216.29897870000116,
+      "timing_guard_pass": true
+    },
+    "peak": {
+      "absolute_setup_floor_pass": true,
+      "baseline": {
+        "activity_mode": "vcd",
+        "activity_policy": "vcd_or_clock_propagated",
+        "annotated_pins": 978,
+        "clock_activity_covered_pins": 0,
+        "clock_domains": 2,
+        "clock_names": [
+          "core_clock",
+          "vclk_core_clock"
+        ],
+        "cts_buffers": 5,
+        "cts_dummy_loads": 3,
+        "cts_inverters": 0,
+        "dbu_per_micron": 1000,
+        "dynamic_power_w": 0.00024004105944181998,
+        "hold_slack_ns": 0.57079457827,
+        "internal_power_w": 0.0001685782190179,
+        "leakage_power_w": 1.146088113302e-09,
+        "openroad_log": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/measured_signoff_topology_proof/baseline.peak.scope00.log",
+        "raw_unannotated_pins": 0,
+        "sequential_sinks": 35,
+        "setup_slack_ns": 12.8089530094,
+        "signal_hpwl_dbu": 4243695,
+        "signal_hpwl_um": 4243.695,
+        "switching_power_w": 7.146284042392e-05,
+        "tns_ns": 0.0,
+        "top": "gcd",
+        "total_power_w": 0.00024004220553,
+        "unannotated_pins": 0,
+        "vcd": "$CL_OVPS_ROOT/build/activity/gcd_baseline20ns/routed/peak.vcd",
+        "vcd_scope": "tb_gcd_activity/dut",
+        "vcd_sha256": "6f134487b46d72690e75cb2d979f6a82dbf5422734ae71f9be77a5ff67c61e48",
+        "vcd_unannotated_pins": 0,
+        "workload": "peak"
+      },
+      "candidate": {
+        "activity_mode": "vcd",
+        "activity_policy": "vcd_or_clock_propagated",
+        "annotated_pins": 972,
+        "clock_activity_covered_pins": 0,
+        "clock_domains": 2,
+        "clock_names": [
+          "core_clock",
+          "vclk_core_clock"
+        ],
+        "cts_buffers": 0,
+        "cts_dummy_loads": 0,
+        "cts_inverters": 5,
+        "dbu_per_micron": 1000,
+        "dynamic_power_w": 0.00021372755145418,
+        "hold_slack_ns": 0.566843016969,
+        "internal_power_w": 0.0001404984068358,
+        "leakage_power_w": 1.106565949982e-09,
+        "openroad_log": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/measured_signoff_topology_proof/candidate.peak.scope00.log",
+        "raw_unannotated_pins": 0,
+        "sequential_sinks": 35,
+        "setup_slack_ns": 13.0252519881,
+        "signal_hpwl_dbu": 4257481,
+        "signal_hpwl_um": 4257.481,
+        "switching_power_w": 7.322914461838e-05,
+        "tns_ns": 0.0,
+        "top": "gcd",
+        "total_power_w": 0.0002137286580202,
+        "unannotated_pins": 0,
+        "vcd": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/activity/peak.vcd",
+        "vcd_scope": "tb_gcd_activity/dut",
+        "vcd_sha256": "aa15f79cb5106bb285640d986e31bcc8fff6a40262b69aeb5d1ff3fc7f3533d3",
+        "vcd_unannotated_pins": 0,
+        "workload": "peak"
+      },
+      "dynamic_delta_w": -2.6313507987639994e-05,
+      "dynamic_improved": true,
+      "hold_delta_ps": -3.9515613010000505,
+      "relative_timing_guard_pass": true,
+      "setup_delta_ps": 216.29897870000116,
+      "timing_guard_pass": true
+    },
+    "typical": {
+      "absolute_setup_floor_pass": true,
+      "baseline": {
+        "activity_mode": "vcd",
+        "activity_policy": "vcd_or_clock_propagated",
+        "annotated_pins": 978,
+        "clock_activity_covered_pins": 0,
+        "clock_domains": 2,
+        "clock_names": [
+          "core_clock",
+          "vclk_core_clock"
+        ],
+        "cts_buffers": 5,
+        "cts_dummy_loads": 3,
+        "cts_inverters": 0,
+        "dbu_per_micron": 1000,
+        "dynamic_power_w": 0.00015076911222422,
+        "hold_slack_ns": 0.57079457827,
+        "internal_power_w": 0.0001185893343063,
+        "leakage_power_w": 1.069500821238e-09,
+        "openroad_log": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/measured_signoff_topology_proof/baseline.typical.scope00.log",
+        "raw_unannotated_pins": 0,
+        "sequential_sinks": 35,
+        "setup_slack_ns": 12.8089530094,
+        "signal_hpwl_dbu": 4243695,
+        "signal_hpwl_um": 4243.695,
+        "switching_power_w": 3.217977791792e-05,
+        "tns_ns": 0.0,
+        "top": "gcd",
+        "total_power_w": 0.000150770181725,
+        "unannotated_pins": 0,
+        "vcd": "$CL_OVPS_ROOT/build/activity/gcd_baseline20ns/routed/typical.vcd",
+        "vcd_scope": "tb_gcd_activity/dut",
+        "vcd_sha256": "df12338aeb63633820696c2c45045134c926fbea5fea23f85882f781edcc3588",
+        "vcd_unannotated_pins": 0,
+        "workload": "typical"
+      },
+      "candidate": {
+        "activity_mode": "vcd",
+        "activity_policy": "vcd_or_clock_propagated",
+        "annotated_pins": 972,
+        "clock_activity_covered_pins": 0,
+        "clock_domains": 2,
+        "clock_names": [
+          "core_clock",
+          "vclk_core_clock"
+        ],
+        "cts_buffers": 0,
+        "cts_dummy_loads": 0,
+        "cts_inverters": 5,
+        "dbu_per_micron": 1000,
+        "dynamic_power_w": 0.00012608604811248998,
+        "hold_slack_ns": 0.566843016969,
+        "internal_power_w": 9.222532389686e-05,
+        "leakage_power_w": 1.030252438916e-09,
+        "openroad_log": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/measured_signoff_topology_proof/candidate.typical.scope00.log",
+        "raw_unannotated_pins": 0,
+        "sequential_sinks": 35,
+        "setup_slack_ns": 13.0252519881,
+        "signal_hpwl_dbu": 4257481,
+        "signal_hpwl_um": 4257.481,
+        "switching_power_w": 3.386072421563e-05,
+        "tns_ns": 0.0,
+        "top": "gcd",
+        "total_power_w": 0.0001260870783649,
+        "unannotated_pins": 0,
+        "vcd": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/activity/typical.vcd",
+        "vcd_scope": "tb_gcd_activity/dut",
+        "vcd_sha256": "ed501b48ce388fdae6a493576b86ef6e151620df08a2e7473e860c509655dc43",
+        "vcd_unannotated_pins": 0,
+        "workload": "typical"
+      },
+      "dynamic_delta_w": -2.468306411173001e-05,
+      "dynamic_improved": true,
+      "hold_delta_ps": -3.9515613010000505,
+      "relative_timing_guard_pass": true,
+      "setup_delta_ps": 216.29897870000116,
+      "timing_guard_pass": true
+    }
+  }
+}

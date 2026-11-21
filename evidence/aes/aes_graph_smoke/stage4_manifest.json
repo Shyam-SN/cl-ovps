@@ -1,0 +1,55 @@
+{
+  "clock_leaf_ndr_nets": 107,
+  "design": "aes_graphfilter_aesndr_margin50",
+  "engine": "CL-OVPS Stage 4 ORFS route/signoff driver",
+  "gates": {
+    "clock_leaf_ndr": true,
+    "logical_equivalence": false,
+    "pdn_vdd_vss": true,
+    "route_drc_antenna": true
+  },
+  "inputs": {
+    "$CL_OVPS_ROOT/build/orfs/results/sky130hd/aes/aes_power38_margin50_20261103a_xrow39070_stage2pathresize_xor3_2/3_place.odb": "c0559e8bae7866073c7e9b3d0eac613ad6cc5c48f85e97dfc79f40a593ff26ed",
+    "$CL_OVPS_ROOT/build/orfs/results/sky130hd/aes/aes_power38_margin50_20261103a_xrow39070_stage2pathresize_xor3_2/3_place.sdc": "1d0bb74815c2a27120bb5d8d0a4cfe22edc800f4bcb54ffb0fdffaf36eaa877c",
+    "$CL_OVPS_ROOT/build/orfs/results/sky130hd/aes/aes_power38_margin50_20261103a_xrow39070_stage2pathresize_xor3_2/4_cts.sdc": "41086e72f249e57f83d08f8c29705dda55050e4c1fa4cc0e05f3371ea23a8755",
+    "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/stage3_graphfilter.odb": "0269e43ea2e173b07d29568cac517e1cd55fb7475b5a9c89fa4264e1fbea4e15",
+    "$CL_OVPS_ROOT/designs/aes/flow/aes_leaf_clock_ndr.tcl": "0614830bff08276bc30073a00aa363948a546ede5a2a34416ba1e5488e969a60",
+    "$CL_OVPS_ROOT/designs/aes/flow/config.mk": "f2094790bd3af8ff75ef3cfef87b082b3d097879b2911ec512840abd1ec19b74"
+  },
+  "lec": {
+    "log": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/stage4_graphfilter_aesndr_margin50/lec.log",
+    "pass": false,
+    "plan": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/lec_plan.json",
+    "return_code": 1,
+    "status": "LEC_FAIL"
+  },
+  "outputs": {
+    "lec_status": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/stage4_graphfilter_aesndr_margin50/lec_status.txt",
+    "netlist": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/aes/topology_safe_graphfilter_aesndr_margin50_20261103/6_final.v",
+    "netlist_sha256": "befbd69eb8ab292f76947461ecdcc975fc5a9c047307938ca01eaa37fe04c986",
+    "odb": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/aes/topology_safe_graphfilter_aesndr_margin50_20261103/6_final.odb",
+    "odb_sha256": "645dd65d83558614d10f1d3c1e6df82cd0bdc612c629d95a79fad8758d30e78d",
+    "spef": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/aes/topology_safe_graphfilter_aesndr_margin50_20261103/6_final.spef",
+    "spef_sha256": "fbc2b83c0b1f56b441db07932f20bea4be1005bfd1647327aef043a9c2e02de2"
+  },
+  "power_grid": {
+    "pass": true,
+    "psm_0069_count": 0,
+    "vdd_pass": true,
+    "vss_pass": true
+  },
+  "pre_global_route_tcl": "$CL_OVPS_ROOT/designs/aes/flow/aes_leaf_clock_ndr.tcl",
+  "route": {
+    "antenna_net_violations": 0,
+    "antenna_pin_violations": 0,
+    "drc_violations": 0,
+    "pass": true
+  },
+  "schema_version": 1,
+  "status": "FAIL",
+  "timing_repair": {
+    "effective_setup_margin_ns": 0.5,
+    "requested_setup_margin_ns": 0.5
+  },
+  "variant": "topology_safe_graphfilter_aesndr_margin50_20261103"
+}

@@ -1,0 +1,21 @@
+# Source revisions and host tool versions for this workspace.
+openroad_repo=https://github.com/The-OpenROAD-Project/OpenROAD.git
+openroad_commit=bc739caf43047bfc2e225fe10dd968d672b617f8
+openroad_commit_date=2026-10-16
+openroad_commit_source=OpenROAD-flow-scripts tools/OpenROAD submodule pin
+openroad_flow_scripts_repo=https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts.git
+openroad_flow_scripts_commit=64939f3717ad7c694199ba04cb98924b98022868
+openroad_flow_scripts_commit_date=2026-10-25
+picorv32_repo=https://github.com/YosysHQ/picorv32.git
+picorv32_commit=ef203c2b0a3fb793280f5114941416c425c5b461
+sky130_pdk=sky130
+sky130_open_pdks_commit=c6d73a35f524070e85faff4a6a9eef49553ebc2b
+orfs_sky130hd_tt_lib_sha256=ec0e1067a35c8bf20b11e58d1e8ac53326067e4dac84a125cc1b917a3518d0d9
+orfs_sky130hd_rcx_sha256=d5bd9b1077ceac9929416abca272a6d52e51cd9a575453a31d129817bb286476
+sky130_fd_sc_hd_verilog_sha256=12d5d6448ccf265c544d88402d5c10ab6de9bee8b8cde48eee1f31ea8c3c3e45
+volare_version=0.20.6
+yosys_version=0.68+post
+yosys_commit=c12172fbae8af5e20f6fb52e3d4e92d56ed587b6
+build_compiler=AppleClang-17
+build_bison=3.8.2
+build_flex=2.6.4

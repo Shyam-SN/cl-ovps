@@ -1,0 +1,356 @@
+{
+  "activity_model": {
+    "fallback_transitions_per_cycle": null,
+    "mode": "measured_vcd",
+    "signoff_eligible": true
+  },
+  "created_utc": "2026-11-03T16:35:44.278203+00:00",
+  "design": "aes_topology_safe_graphfilter_aesndr_margin50",
+  "engine": "CL-OVPS universal OpenROAD measurement runner",
+  "evidence": {
+    "lec": {
+      "available": true,
+      "log": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/stage4_graphfilter_aesndr_margin50_recheck/lec.log",
+      "pass": true,
+      "path": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/stage4_graphfilter_aesndr_margin50_recheck/lec_status.txt",
+      "proven_points": 562,
+      "sha256": "3dfee40a69bb4a0bbf4d280bb4e042a447c820ef6e3e786df917379ff0203f96",
+      "status": "LEC_PASS",
+      "unproven_points": 0
+    },
+    "power_grid": {
+      "available": true,
+      "pass": true,
+      "path": "$CL_OVPS_ROOT/build/orfs/logs/sky130hd/aes/topology_safe_graphfilter_aesndr_margin50_20261103/6_report.log",
+      "psm_0069_count": 0,
+      "sha256": "eb87dd8568cfbe4fe7e07efb1af1403993014c2078c649dcce1428a7ebb9bc33",
+      "vdd_pass": true,
+      "vss_pass": true
+    },
+    "route": {
+      "antenna_net_violations": 0,
+      "antenna_pin_violations": 0,
+      "available": true,
+      "drc_violations": 0,
+      "pass": true,
+      "path": "$CL_OVPS_ROOT/build/orfs/logs/sky130hd/aes/topology_safe_graphfilter_aesndr_margin50_20261103/5_2_route.log",
+      "sha256": "ace7cdd186b702743f73eb207b1d19f3cdfdf2376417b3d52d2f206f475b179e"
+    }
+  },
+  "gates": {
+    "Activity coverage": {
+      "detail": "all pins have measured or clock-propagated activity",
+      "pass": true
+    },
+    "Measured workload VCD evidence": {
+      "detail": "gate-level VCDs required for workload-specific power signoff",
+      "pass": true
+    },
+    "VDD/VSS connectivity": {
+      "detail": "VDD=True; VSS=True; PSM-0069=0",
+      "pass": true
+    },
+    "Yosys LEC": {
+      "detail": "562 proven, 0 unproven; status=LEC_PASS",
+      "pass": true
+    },
+    "detailed route DRC and antenna": {
+      "detail": "DRC=0; antenna net=0, pin=0",
+      "pass": true
+    },
+    "dynamic power improves in all workloads": {
+      "detail": "internal plus net switching power, routed SPEF/VCD",
+      "pass": true
+    },
+    "non-negative setup floor when baseline is closed": {
+      "detail": "candidate setup slack remains non-negative whenever baseline setup slack is non-negative",
+      "pass": true
+    },
+    "setup/hold regression within guard": {
+      "detail": "each workload compared against baseline slack",
+      "guard_ps": 50.0,
+      "pass": true
+    }
+  },
+  "inputs": {
+    "baseline_odb": {
+      "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/aes/aes_powerbase38_margin50_20261102a/6_final.odb",
+      "sha256": "b937af571804ac2c41ebfc138c52b0f06b92d45e310b526b8edb369901cf71e2"
+    },
+    "baseline_sdc": {
+      "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/aes/aes_powerbase38_margin50_20261102a/6_final.sdc",
+      "sha256": "41086e72f249e57f83d08f8c29705dda55050e4c1fa4cc0e05f3371ea23a8755"
+    },
+    "baseline_spef": {
+      "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/aes/aes_powerbase38_margin50_20261102a/6_final.spef",
+      "sha256": "10dcfc63c4c63db8f9ea870b8d2baacbb6afe915d2628f1f4efc8080da18ff70"
+    },
+    "baseline_vcd_dir": {
+      "path": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/aes_activity_graphfilter_aesndr_margin50/aes_powerbase38_margin50_20261102a",
+      "sha256": "183caf57ec397b6350014ec6ff70f4981009582a247cd3110020a49749cb9793"
+    },
+    "libraries": [
+      {
+        "path": "$CL_OVPS_ROOT/tools/openroad-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib",
+        "sha256": "ec0e1067a35c8bf20b11e58d1e8ac53326067e4dac84a125cc1b917a3518d0d9"
+      }
+    ],
+    "placed_odb": {
+      "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/aes/topology_safe_graphfilter_aesndr_margin50_20261103/6_final.odb",
+      "sha256": "645dd65d83558614d10f1d3c1e6df82cd0bdc612c629d95a79fad8758d30e78d"
+    },
+    "sdc": {
+      "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/aes/topology_safe_graphfilter_aesndr_margin50_20261103/6_final.sdc",
+      "sha256": "41086e72f249e57f83d08f8c29705dda55050e4c1fa4cc0e05f3371ea23a8755"
+    },
+    "spef": {
+      "path": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/aes/topology_safe_graphfilter_aesndr_margin50_20261103/6_final.spef",
+      "sha256": "fbc2b83c0b1f56b441db07932f20bea4be1005bfd1647327aef043a9c2e02de2"
+    },
+    "vcd_dir": {
+      "path": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/aes_activity_graphfilter_aesndr_margin50/topology_safe_graphfilter_aesndr_margin50_20261103",
+      "sha256": "504fe8e630fff7dca9dabc117231d1d43c348dd7de4c86e8bf32700154a38f34"
+    }
+  },
+  "schema_version": 1,
+  "status": "PASS",
+  "workloads": {
+    "idle": {
+      "absolute_setup_floor_pass": true,
+      "baseline": {
+        "activity_mode": "vcd",
+        "activity_policy": "vcd_or_clock_propagated",
+        "annotated_pins": 52133,
+        "clock_activity_covered_pins": 0,
+        "clock_domains": 2,
+        "clock_names": [
+          "clk",
+          "vclk_clk"
+        ],
+        "cts_buffers": 109,
+        "cts_dummy_loads": 97,
+        "cts_inverters": 0,
+        "dbu_per_micron": 1000,
+        "dynamic_power_w": 0.016572699882089,
+        "hold_slack_ns": 0.462803906309,
+        "internal_power_w": 0.01210350356996,
+        "leakage_power_w": 3.693534367244e-08,
+        "openroad_log": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/measured_signoff_graphfilter_aesndr_margin50/baseline.idle.scope00.log",
+        "raw_unannotated_pins": 0,
+        "sequential_sinks": 562,
+        "setup_slack_ns": -0.0419473344948,
+        "signal_hpwl_dbu": 442541822,
+        "signal_hpwl_um": 442541.822,
+        "switching_power_w": 0.004469196312129,
+        "tns_ns": -0.20060708649793924,
+        "top": "aes_cipher_top",
+        "total_power_w": 0.01657273681743,
+        "unannotated_pins": 0,
+        "vcd": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/aes_activity_graphfilter_aesndr_margin50/aes_powerbase38_margin50_20261102a/idle/aes_activity.vcd",
+        "vcd_scope": "tb_aes_activity/dut",
+        "vcd_sha256": "8ce8eade3387720d282f1e17e5fb945ee9276dade193d169df454c2c8db0d1c9",
+        "vcd_unannotated_pins": 0,
+        "workload": "idle"
+      },
+      "candidate": {
+        "activity_mode": "vcd",
+        "activity_policy": "vcd_or_clock_propagated",
+        "annotated_pins": 52013,
+        "clock_activity_covered_pins": 0,
+        "clock_domains": 2,
+        "clock_names": [
+          "clk",
+          "vclk_clk"
+        ],
+        "cts_buffers": 8,
+        "cts_dummy_loads": 0,
+        "cts_inverters": 100,
+        "dbu_per_micron": 1000,
+        "dynamic_power_w": 0.010319220367819,
+        "hold_slack_ns": 0.461629401372,
+        "internal_power_w": 0.006953466683626,
+        "leakage_power_w": 3.585584806842e-08,
+        "openroad_log": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/measured_signoff_graphfilter_aesndr_margin50/candidate.idle.scope00.log",
+        "raw_unannotated_pins": 0,
+        "sequential_sinks": 562,
+        "setup_slack_ns": 0.00189137594475,
+        "signal_hpwl_dbu": 442829343,
+        "signal_hpwl_um": 442829.343,
+        "switching_power_w": 0.003365753684193,
+        "tns_ns": 0.0,
+        "top": "aes_cipher_top",
+        "total_power_w": 0.01031925622367,
+        "unannotated_pins": 0,
+        "vcd": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/aes_activity_graphfilter_aesndr_margin50/topology_safe_graphfilter_aesndr_margin50_20261103/idle/aes_activity.vcd",
+        "vcd_scope": "tb_aes_activity/dut",
+        "vcd_sha256": "b094c4dfb17b782385bd1733a8371cdee08e60df1448569a93864a9a8d59ca2d",
+        "vcd_unannotated_pins": 0,
+        "workload": "idle"
+      },
+      "dynamic_delta_w": -0.006253479514269999,
+      "dynamic_improved": true,
+      "hold_delta_ps": -1.1745049369999983,
+      "relative_timing_guard_pass": true,
+      "setup_delta_ps": 43.838710439550006,
+      "timing_guard_pass": true
+    },
+    "peak": {
+      "absolute_setup_floor_pass": true,
+      "baseline": {
+        "activity_mode": "vcd",
+        "activity_policy": "vcd_or_clock_propagated",
+        "annotated_pins": 52133,
+        "clock_activity_covered_pins": 0,
+        "clock_domains": 2,
+        "clock_names": [
+          "clk",
+          "vclk_clk"
+        ],
+        "cts_buffers": 109,
+        "cts_dummy_loads": 97,
+        "cts_inverters": 0,
+        "dbu_per_micron": 1000,
+        "dynamic_power_w": 0.0771465562284,
+        "hold_slack_ns": 0.462803906309,
+        "internal_power_w": 0.03459676355124,
+        "leakage_power_w": 4.618405924361e-08,
+        "openroad_log": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/measured_signoff_graphfilter_aesndr_margin50/baseline.peak.scope00.log",
+        "raw_unannotated_pins": 0,
+        "sequential_sinks": 562,
+        "setup_slack_ns": -0.0419473344948,
+        "signal_hpwl_dbu": 442541822,
+        "signal_hpwl_um": 442541.822,
+        "switching_power_w": 0.04254979267716,
+        "tns_ns": -0.20060708649793924,
+        "top": "aes_cipher_top",
+        "total_power_w": 0.07714660241246,
+        "unannotated_pins": 0,
+        "vcd": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/aes_activity_graphfilter_aesndr_margin50/aes_powerbase38_margin50_20261102a/peak/aes_activity.vcd",
+        "vcd_scope": "tb_aes_activity/dut",
+        "vcd_sha256": "e72fe99f78ef81386711f37d5c765699664770cb9b2c81c9f0c3600606fd3ef6",
+        "vcd_unannotated_pins": 0,
+        "workload": "peak"
+      },
+      "candidate": {
+        "activity_mode": "vcd",
+        "activity_policy": "vcd_or_clock_propagated",
+        "annotated_pins": 52013,
+        "clock_activity_covered_pins": 0,
+        "clock_domains": 2,
+        "clock_names": [
+          "clk",
+          "vclk_clk"
+        ],
+        "cts_buffers": 8,
+        "cts_dummy_loads": 0,
+        "cts_inverters": 100,
+        "dbu_per_micron": 1000,
+        "dynamic_power_w": 0.07111771963537,
+        "hold_slack_ns": 0.461629401372,
+        "internal_power_w": 0.02960687316954,
+        "leakage_power_w": 4.493902139302e-08,
+        "openroad_log": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/measured_signoff_graphfilter_aesndr_margin50/candidate.peak.scope00.log",
+        "raw_unannotated_pins": 0,
+        "sequential_sinks": 562,
+        "setup_slack_ns": 0.00189137594475,
+        "signal_hpwl_dbu": 442829343,
+        "signal_hpwl_um": 442829.343,
+        "switching_power_w": 0.04151084646583,
+        "tns_ns": 0.0,
+        "top": "aes_cipher_top",
+        "total_power_w": 0.07111776457439,
+        "unannotated_pins": 0,
+        "vcd": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/aes_activity_graphfilter_aesndr_margin50/topology_safe_graphfilter_aesndr_margin50_20261103/peak/aes_activity.vcd",
+        "vcd_scope": "tb_aes_activity/dut",
+        "vcd_sha256": "61c959e003f421cec677f04659c603276721c6626b387272d6c57ed2bd8b9889",
+        "vcd_unannotated_pins": 0,
+        "workload": "peak"
+      },
+      "dynamic_delta_w": -0.006028836593029996,
+      "dynamic_improved": true,
+      "hold_delta_ps": -1.1745049369999983,
+      "relative_timing_guard_pass": true,
+      "setup_delta_ps": 43.838710439550006,
+      "timing_guard_pass": true
+    },
+    "typical": {
+      "absolute_setup_floor_pass": true,
+      "baseline": {
+        "activity_mode": "vcd",
+        "activity_policy": "vcd_or_clock_propagated",
+        "annotated_pins": 52133,
+        "clock_activity_covered_pins": 0,
+        "clock_domains": 2,
+        "clock_names": [
+          "clk",
+          "vclk_clk"
+        ],
+        "cts_buffers": 109,
+        "cts_dummy_loads": 97,
+        "cts_inverters": 0,
+        "dbu_per_micron": 1000,
+        "dynamic_power_w": 0.07575605437159999,
+        "hold_slack_ns": 0.462803906309,
+        "internal_power_w": 0.0340717881918,
+        "leakage_power_w": 4.587423418911e-08,
+        "openroad_log": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/measured_signoff_graphfilter_aesndr_margin50/baseline.typical.scope00.log",
+        "raw_unannotated_pins": 0,
+        "sequential_sinks": 562,
+        "setup_slack_ns": -0.0419473344948,
+        "signal_hpwl_dbu": 442541822,
+        "signal_hpwl_um": 442541.822,
+        "switching_power_w": 0.0416842661798,
+        "tns_ns": -0.20060708649793924,
+        "top": "aes_cipher_top",
+        "total_power_w": 0.07575610024583,
+        "unannotated_pins": 0,
+        "vcd": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/aes_activity_graphfilter_aesndr_margin50/aes_powerbase38_margin50_20261102a/typical/aes_activity.vcd",
+        "vcd_scope": "tb_aes_activity/dut",
+        "vcd_sha256": "a2de447fe316277fe5818d55266a10adf4dcd8c0598905bd9f0d91a688ce6f3f",
+        "vcd_unannotated_pins": 0,
+        "workload": "typical"
+      },
+      "candidate": {
+        "activity_mode": "vcd",
+        "activity_policy": "vcd_or_clock_propagated",
+        "annotated_pins": 52013,
+        "clock_activity_covered_pins": 0,
+        "clock_domains": 2,
+        "clock_names": [
+          "clk",
+          "vclk_clk"
+        ],
+        "cts_buffers": 8,
+        "cts_dummy_loads": 0,
+        "cts_inverters": 100,
+        "dbu_per_micron": 1000,
+        "dynamic_power_w": 0.06970009393990001,
+        "hold_slack_ns": 0.461629401372,
+        "internal_power_w": 0.02905493415892,
+        "leakage_power_w": 4.463155889312e-08,
+        "openroad_log": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/measured_signoff_graphfilter_aesndr_margin50/candidate.typical.scope00.log",
+        "raw_unannotated_pins": 0,
+        "sequential_sinks": 562,
+        "setup_slack_ns": 0.00189137594475,
+        "signal_hpwl_dbu": 442829343,
+        "signal_hpwl_um": 442829.343,
+        "switching_power_w": 0.04064515978098,
+        "tns_ns": 0.0,
+        "top": "aes_cipher_top",
+        "total_power_w": 0.06970013857146,
+        "unannotated_pins": 0,
+        "vcd": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/aes_graph_smoke/aes_activity_graphfilter_aesndr_margin50/topology_safe_graphfilter_aesndr_margin50_20261103/typical/aes_activity.vcd",
+        "vcd_scope": "tb_aes_activity/dut",
+        "vcd_sha256": "2f9b51b4f58d5e4928d930703060c19a26eb95f8a57d2d22ac3533bd0e2c33f6",
+        "vcd_unannotated_pins": 0,
+        "workload": "typical"
+      },
+      "dynamic_delta_w": -0.0060559604316999804,
+      "dynamic_improved": true,
+      "hold_delta_ps": -1.1745049369999983,
+      "relative_timing_guard_pass": true,
+      "setup_delta_ps": 43.838710439550006,
+      "timing_guard_pass": true
+    }
+  }
+}

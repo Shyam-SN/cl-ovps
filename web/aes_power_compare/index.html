@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1720" />
+  <meta name="description" content="Measured routed clock-optimization results for GCD, AES, and RISCV32I." />
+  <title>Clock Power Study · CL/OVPS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="CL OVPS home">
+        <span class="brand-symbol"><i></i><i></i><i></i></span>
+        <span class="brand-name">CL<span>/</span>OVPS<small>PHYSICAL DESIGN LAB</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#benchmarks">Benchmarks</a>
+        <a href="#results">Results</a>
+        <a href="#flow">Our flow</a>
+        <a href="#journal">Journal</a>
+        <a href="#signoff">Sign-off</a>
+      </nav>
+      <div class="topbar-status"><span class="status-light"></span> ROUTED · VERIFIED</div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-grid"></div>
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> CLOCK POWER OPTIMIZATION <span class="eyebrow-code" id="heroCase">3 DESIGNS / SKY130HD</span></div>
+          <h1>One clock-aware flow.<br /><em>Three routed designs.</em></h1>
+          <p class="hero-intro">We used a CTS-aware placement oracle, restructured clock trees, and measured each candidate after detailed routing with matched gate-level VCD activity.</p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#results">See the measured results <span aria-hidden="true">↓</span></a>
+            <span class="hero-assurance"><span class="check-mark">✓</span> All three measured candidates passed sign-off gates</span>
+          </div>
+          <div class="hero-facts">
+            <span><b id="heroPlatform">Sky130HD</b> platform</span><span><b id="heroSinks">—</b> clock sinks</span><span><b>3</b> VCD workloads</span>
+          </div>
+        </div>
+
+        <aside class="hero-result" aria-label="Typical workload result">
+          <div class="hero-result-head"><span id="heroResultHead">AES · ROUTED TYPICAL</span><span class="tiny-check">✓</span></div>
+          <div class="hero-big-number"><span id="heroSaving">−6.056</span><small id="heroUnit">mW</small></div>
+          <div class="hero-result-label">dynamic power saved</div>
+          <div class="hero-meter"><span id="heroMeter"></span></div>
+          <div class="hero-meter-labels"><span id="heroBaseline">75.756 mW baseline</span><b id="heroPercent">−7.99%</b></div>
+          <div class="hero-result-rule"></div>
+          <div class="hero-clock-note"><span class="clock-glyph">⌁</span><div><b id="heroClockChange">109 → 8 buffers</b><small id="heroClockCaption">clock network cell count</small></div><span class="note-arrow">↘</span></div>
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        </aside>
+        <div class="hero-bottom-note"><span>01—03</span> Routed SPEF · gate-level VCD · OpenSTA</div>
+      </section>
+
+      <section class="results-section section-pad" id="results">
+        <div class="section-head results-head">
+          <div><div class="eyebrow light-eyebrow"><span class="eyebrow-line"></span> MEASURED ACROSS THREE BENCHMARKS</div><h2>Lower power in <em>every workload.</em></h2><p class="section-intro" id="resultsIntro">Choose a design to inspect its routed dynamic power and clock-tree changes.</p></div>
+          <div class="metric-note"><span class="metric-note-icon">↘</span><span>Internal + switching power<br /><b>Leakage reported separately</b></span></div>
+        </div>
+
+        <div class="benchmark-overview" id="benchmarks" role="tablist" aria-label="Select a design"></div>
+
+        <div class="workload-cards" role="tablist" aria-label="Selected design workload results">
+          <button class="workload-card selected" type="button" role="tab" aria-selected="true" data-workload="idle">
+            <span class="workload-card-top"><span>IDLE</span><span class="workload-glyph">◌</span></span>
+            <span class="workload-saving"><span class="saving-value">−6.253</span><small class="saving-unit">mW</small></span>
+            <span class="workload-percent">37.73% less dynamic power</span>
+            <span class="workload-powers"><span class="baseline-value">16.5727</span><i>→</i><b><span class="optimized-value">10.3192</span> <span class="power-unit">mW</span></b></span>
+            <span class="card-line"><i style="width:37.73%"></i></span>
+          </button>
+          <button class="workload-card" type="button" role="tab" aria-selected="false" data-workload="typical">
+            <span class="workload-card-top"><span>TYPICAL</span><span class="workload-glyph">⌁</span></span>
+            <span class="workload-saving"><span class="saving-value">−6.056</span><small class="saving-unit">mW</small></span>
+            <span class="workload-percent">7.99% less dynamic power</span>
+            <span class="workload-powers"><span class="baseline-value">75.7561</span><i>→</i><b><span class="optimized-value">69.7001</span> <span class="power-unit">mW</span></b></span>
+            <span class="card-line"><i style="width:7.99%"></i></span>
+          </button>
+          <button class="workload-card" type="button" role="tab" aria-selected="false" data-workload="peak">
+            <span class="workload-card-top"><span>PEAK</span><span class="workload-glyph">↗</span></span>
+            <span class="workload-saving"><span class="saving-value">−6.029</span><small class="saving-unit">mW</small></span>
+            <span class="workload-percent">7.82% less dynamic power</span>
+            <span class="workload-powers"><span class="baseline-value">77.1466</span><i>→</i><b><span class="optimized-value">71.1177</span> <span class="power-unit">mW</span></b></span>
+            <span class="card-line"><i style="width:7.82%"></i></span>
+          </button>
+        </div>
+
+        <div class="chart-panel">
+          <div class="chart-panel-head"><div><span class="panel-overline">POWER AT A GLANCE</span><h3>Baseline → optimized</h3></div><div class="chart-legend"><span><i class="legend-dot baseline-dot"></i>Baseline</span><span><i class="legend-dot optimized-dot"></i>Our final flow</span></div></div>
+          <div class="power-bars" id="powerBars" aria-label="Baseline and optimized power by workload">
+            <button class="power-row selected" type="button" data-workload="idle" aria-label="Idle: baseline 16.572700 milliwatts, optimized 10.319220 milliwatts">
+              <span class="bar-row-label">Idle<small>low activity</small></span><span class="bar-pair"><i class="bar baseline-bar" style="width:100%"></i><i class="bar optimized-bar" style="width:62.27%"></i></span><span class="bar-row-value"><b>−37.73%</b><small>−6.253 mW</small></span>
+            </button>
+            <button class="power-row" type="button" data-workload="typical" aria-label="Typical: baseline 75.756054 milliwatts, optimized 69.700094 milliwatts">
+              <span class="bar-row-label">Typical<small>representative activity</small></span><span class="bar-pair"><i class="bar baseline-bar" style="width:100%"></i><i class="bar optimized-bar" style="width:92.01%"></i></span><span class="bar-row-value"><b>−7.99%</b><small>−6.056 mW</small></span>
+            </button>
+            <button class="power-row" type="button" data-workload="peak" aria-label="Peak: baseline 77.146556 milliwatts, optimized 71.117720 milliwatts">
+              <span class="bar-row-label">Peak<small>high activity</small></span><span class="bar-pair"><i class="bar baseline-bar" style="width:100%"></i><i class="bar optimized-bar" style="width:92.18%"></i></span><span class="bar-row-value"><b>−7.82%</b><small>−6.029 mW</small></span>
+            </button>
+          </div>
+          <div class="chart-foot"><span>Each row is scaled to its own baseline for legibility.</span><span id="selectedWorkload">Selected · Idle</span></div>
+        </div>
+        <div class="results-caption"><span class="caption-star">✳</span><p id="resultInsight"><b>What stands out:</b> idle power drops across workloads, alongside routed dynamic power savings.</p></div>
+      </section>
+
+      <section class="flow-section section-pad" id="flow">
+        <div class="section-head flow-head"><div><div class="eyebrow"><span class="eyebrow-line"></span> HOW WE GOT THERE</div><h2>Four steps. One <em>verified result.</em></h2><p class="section-intro">Select a step to see what the optimizer changed, why it matters, and how we checked it.</p></div><div class="flow-index"><b>CL—OVPS</b><span>PLACEMENT → CTS → ROUTE</span></div></div>
+        <div class="flow-explorer">
+          <div class="step-nav" role="tablist" aria-label="Optimization flow steps">
+            <button class="step-tab active" type="button" role="tab" aria-selected="true" data-step="0"><span class="step-index">01</span><span class="step-nav-copy"><b>Profile activity</b><small>Gate-level VCD</small></span><span class="step-chevron">↗</span></button>
+            <button class="step-tab" type="button" role="tab" aria-selected="false" data-step="1"><span class="step-index">02</span><span class="step-nav-copy"><b>Choose placement</b><small>CTS oracle</small></span><span class="step-chevron">↗</span></button>
+            <button class="step-tab" type="button" role="tab" aria-selected="false" data-step="2"><span class="step-index">03</span><span class="step-nav-copy"><b>Reshape clock tree</b><small>Cell power</small></span><span class="step-chevron">↗</span></button>
+            <button class="step-tab" type="button" role="tab" aria-selected="false" data-step="3"><span class="step-index">04</span><span class="step-nav-copy"><b>Close & verify</b><small>Routed sign-off</small></span><span class="step-chevron">↗</span></button>
+            <div class="step-rail"><i></i></div>
+          </div>
+          <article class="step-detail" id="stepDetail" aria-live="polite">
+            <div class="step-detail-top"><span class="step-kicker">STEP 01 · INPUT SIGNAL</span><span class="step-ok"><i>✓</i> CHECKED</span></div>
+            <h3>Use realistic switching activity.</h3>
+            <p class="step-lede">Gate-level VCD traces show which parts of AES are active in idle, typical, and peak operation.</p>
+            <div class="detail-columns"><div><span class="detail-label">WHAT HAPPENS</span><p>The typical trace guides activity-aware scoring. All three workload traces are replayed against the routed final design so the result is checked beyond the placement workload.</p></div><div><span class="detail-label">WHY IT MATTERS</span><p>Power depends on switching. A representative trace lets the flow focus on active nets while workload-specific routing analysis checks the actual result.</p></div></div>
+            <div class="step-proof"><span class="proof-icon">✓</span><span><b>Coverage check</b><small>0 unannotated VCD pins in idle, typical, and peak</small></span><strong>PASS</strong></div>
+            <div class="detail-visual activity-visual" aria-hidden="true"><div class="wave-label">ACTIVITY TRACE <span>VCD</span></div><svg viewBox="0 0 560 78" preserveAspectRatio="none"><path class="wave-grid" d="M0 20H560M0 40H560M0 60H560M70 0V78M140 0V78M210 0V78M280 0V78M350 0V78M420 0V78M490 0V78"/><path class="wave-line wave-a" d="M0 48H22V24H38V48H64V48H78V17H95V48H116V48H129V31H145V48H170V48H182V20H200V48H226V48H244V36H256V48H281V48H294V15H312V48H332V48H348V28H366V48H389V48H404V17H421V48H446V48H458V34H473V48H497V48H509V21H528V48H560"/><path class="wave-line wave-b" d="M0 66H45V54H58V66H105V66H118V58H130V66H168V66H181V52H195V66H233V66H247V57H258V66H296V66H309V50H323V66H363V66H377V60H388V66H426V66H439V53H453V66H492V66H505V56H520V66H560"/></svg><div class="wave-foot"><span>idle</span><span>typical</span><span>peak</span></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="journal-section section-pad" id="journal" aria-labelledby="journal-title">
+        <div class="journal-heading">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-line"></span> ENGINEERING JOURNAL · FIELD NOTES 01</div>
+            <h2 id="journal-title">From placement intuition<br />to a <em>clock-tree oracle.</em></h2>
+            <p class="section-intro">How we built, tested, and bounded the CL-OVPS clock optimization flow across GCD, AES, and RISCV32I.</p>
+          </div>
+          <div class="journal-meta"><span>TECHNICAL WALKTHROUGH</span><b>5 MIN READ</b><small>UPDATED · NOV 04, 2026</small></div>
+        </div>
+
+        <div class="journal-status" role="note">
+          <span class="journal-status-mark">01</span>
+          <div><b>Three measured Phase 1 sign-offs. Phase 2 stays experimental.</b><p>All displayed power wins come from routed SPEF and measured gate-level VCDs. The newer datapath passes were tested with fail-closed guards; none changed the signed-off candidates.</p></div>
+          <a href="#journal-phase2">Read the Phase 2 results <span aria-hidden="true">↓</span></a>
+        </div>
+
+        <div class="journal-layout">
+          <aside class="journal-sidebar" aria-label="Article contents">
+            <span class="journal-sidebar-label">IN THIS NOTE</span>
+            <a href="#journal-measurement" class="current">01 <span>Define the measurement</span></a>
+            <a href="#journal-placement">02 <span>Put CTS in placement</span></a>
+            <a href="#journal-clock-tree">03 <span>Reshape the clock tree</span></a>
+            <a href="#journal-signoff">04 <span>Prove the routed result</span></a>
+            <a href="#journal-phase2">05 <span>Test the datapath passes</span></a>
+            <div class="journal-side-rule"></div>
+            <small>BENCHMARKS<br /><b>35 · 562 · 1,056 sinks</b></small>
+          </aside>
+
+          <article class="journal-article">
+            <div class="article-byline"><span>CL-OVPS · PHYSICAL DESIGN</span><span>SKY130HD · OPENROAD</span></div>
+            <p class="article-deck">The research question was simple: can a placement decision anticipate what clock-tree synthesis will build, then prove its power impact after routing? The answer became a staged flow that asks CTS directly, preserves clock polarity, and measures only final routed designs.</p>
+
+            <section class="journal-chapter" id="journal-measurement">
+              <div class="chapter-number">01</div>
+              <div class="chapter-copy">
+                <h3>First, define what “power saved” means.</h3>
+                <p>We kept this phase focused on dynamic power and reported leakage separately. OpenSTA measures cell internal power and net switching power using the routed SPEF plus a gate-level VCD for each workload.</p>
+                <div class="equation-card"><span class="equation-label">MEASURED OBJECTIVE</span><strong>P<sub>dynamic</sub> = P<sub>internal</sub> + P<sub>switching</sub></strong><small>Leakage is reported separately; it is not included in these reductions.</small></div>
+                <p>That separation matters. A clock cell can consume internal power even when datapath activity is low. Net switching, by contrast, depends more strongly on the workload and extracted capacitance. We therefore kept idle, typical, and peak VCDs paired with both the baseline and optimized routed netlists.</p>
+                <div class="journal-insight"><span>↗</span><p><b>Why idle shows the largest percentage on AES.</b> The clock keeps toggling in idle, so clock-cell internal savings remain large. Active workloads add much more datapath switching to the denominator: the same order of clock-cell win becomes a smaller share of total dynamic power.</p></div>
+              </div>
+            </section>
+
+            <section class="journal-chapter" id="journal-placement">
+              <div class="chapter-number">02</div>
+              <div class="chapter-copy">
+                <h3>Make placement ask CTS what it will build.</h3>
+                <p>Early experiments with HPWL, MST, centroids, and leaf-wire estimates could not reliably rank tiny routed clock branches. The decisive clock-power change was discrete: a small sink relocation could change a CTS balancing cell, while nearby moves often did nothing.</p>
+                <p>Stage 1 therefore screens legal placement moves with a fast CTS trial. For each candidate, the oracle observes the actual sink-to-branch assignment and selected clock cells, then scores <b>total clock-cell internal power</b>. It uses signal HPWL and setup/hold limits as guardrails. The scoring objective includes active clock buffers and inverters as well as dummy loads, preventing a “dummy-only” win from hiding a larger active-buffer penalty.</p>
+                <div class="stage-result-grid">
+                  <div><small>GCD</small><b>xrow1006</b><span>one selected move · +1.071% signal HPWL</span></div>
+                  <div><small>AES</small><b>xrow39070</b><span>CTS-aware placement candidate</span></div>
+                  <div><small>RISCV32I</small><b>2 legal moves</b><span>selected automatically in the cold run</span></div>
+                </div>
+                <p class="article-footnote">The placement oracle predicts the clock-cell event; it does not claim to predict every detailed-route coupling change. Tier 2 leaf-wire proxies stayed out of the placer after held-out tests showed unreliable ranking.</p>
+              </div>
+            </section>
+
+            <section class="journal-chapter" id="journal-clock-tree">
+              <div class="chapter-number">03</div>
+              <div class="chapter-copy">
+                <h3>Restructure only clock paths we can prove.</h3>
+                <p>Stage 2 traces clock sources and sinks through the OpenDB clock graph, recording endpoint identity and inversion parity. It accepts only safe buffer stars: no direct sink or port tap on the parent net, legal parent/child relationships, and a proven path to each endpoint. It then tries a parity-safe inverter substitution and checks polarity, timing, slew, placement, and clock-gating boundaries before committing.</p>
+                <p>This is a cell-topology change, not a lower-V<sub>t</sub> strategy. Eligible clock buffers are replaced by characterized inverter masters, and balancing dummy loads are pruned when the timing checks allow it. The flow does not infer CTS membership from a cell name alone; ambiguous graphs fail closed.</p>
+                <div class="journal-table-wrap">
+                  <table class="journal-table">
+                    <thead><tr><th>Design</th><th>Clock sinks</th><th>Before</th><th>Final</th></tr></thead>
+                    <tbody>
+                      <tr><td>GCD</td><td>35</td><td>5 buffers · 3 dummies</td><td>5 inverters</td></tr>
+                      <tr><td>AES</td><td>562</td><td>109 buffers · 97 dummies</td><td>100 inverters · 8 buffers</td></tr>
+                      <tr><td>RISCV32I</td><td>1,056</td><td>112 buffers · 94 dummies</td><td>111 inverters · 1 buffer</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="article-footnote">Cell counts describe the final routed candidates. The oracle uses the characterized total clock-cell objective; the table shows the resulting network, not a claim that each replacement has the same per-cell power delta.</p>
+              </div>
+            </section>
+
+            <section class="journal-chapter" id="journal-signoff">
+              <div class="chapter-number">04</div>
+              <div class="chapter-copy">
+                <h3>Only routed measurements count as results.</h3>
+                <p>Each Phase 1 result was routed, extracted to SPEF, and measured with idle, typical, and peak gate-level VCDs. The sign-off flow checks setup and hold, detailed-route DRC and antenna violations, VDD/VSS connectivity, VCD annotation, and Yosys logical equivalence.</p>
+                <div class="journal-table-wrap">
+                  <table class="journal-table result-table">
+                    <thead><tr><th>Design</th><th>Idle saved</th><th>Typical saved</th><th>Peak saved</th><th>LEC</th></tr></thead>
+                    <tbody>
+                      <tr><td>GCD</td><td>24.447 µW · 18.02%</td><td>24.683 µW · 16.37%</td><td>26.314 µW · 10.96%</td><td>52 / 52</td></tr>
+                      <tr><td>AES</td><td>6.253 mW · 37.73%</td><td>6.056 mW · 7.99%</td><td>6.029 mW · 7.81%</td><td>562 / 562</td></tr>
+                      <tr><td>RISCV32I</td><td>3.255 mW · 25.32%</td><td>3.260 mW · 17.65%</td><td>3.252 mW · 13.60%</td><td>1,123 / 1,123</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="signoff-strip"><span>0</span> unannotated pins <i></i><span>0</span> DRC / antenna <i></i> VDD + VSS PASS</div>
+                <p>Timing stayed inside each benchmark’s guard. AES used its 3.8 ns constraint, 0.5 ns setup-repair margin, and leaf-clock NDR; it finished at +1.891 ps setup WNS. RISCV32I used 7.0 ns and finished at +11.674 ps. GCD finished at +13.025 ns in its 20 ns configuration. Full sign-off evidence remains in the project manifests.</p>
+              </div>
+            </section>
+
+            <section class="journal-chapter phase2-chapter" id="journal-phase2">
+              <div class="chapter-number">05</div>
+              <div class="chapter-copy">
+                <div class="phase2-label"><span></span> PHASE 2 · EMPIRICALLY GUARDED</div>
+                <h3>Extend the flow, but let evidence set the boundary.</h3>
+                <p>We added three opt-in datapath passes. Each is fail-closed, emits its own manifest and trial evidence, and remains outside the default optimization path until it produces positive routed savings across the held-out designs.</p>
+                <div class="phase2-cards">
+                  <article><span>3C</span><h4>Sequential sizing</h4><p>Liberty audit covers 69 sequential masters and all 69 clock/gate pin groups. Thirty replacement pairs pass the static non-increasing clock-capacitance filter. No eligible instances appeared on these benchmarks, so no flop was changed.</p><b>0 accepted · ODB hashes unchanged</b></article>
+                  <article><span>3D</span><h4>Complex-gate folding</h4><p>270 Liberty functions are evaluated by truth table. Candidates must be local, single-fanout, pin-mapped, legal, timing-safe, lower-power, and LEC-clean. GCD had no mappings; AES and RISCV32I trial folds failed the timing floor or physical mapping checks.</p><b>0 accepted · no routed gain claimed</b></article>
+                  <article><span>3E</span><h4>Glitch diagnostics</h4><p>Routed SDF and input-arrival skew reports were generated. A matched SDF-annotated VCD could not be produced because the flattened escaped SDF hierarchy did not resolve in Icarus.</p><b>Glitches unmeasured · alignment disabled</b></article>
+                </div>
+                <div class="skew-summary"><small>ARRIVAL SKEW P50 / P95 / MAX</small><span>GCD <b>1.481 / 4.140 / 4.290 ns</b></span><span>AES <b>0.336 / 0.982 / 2.447 ns</b></span><span>RISCV32I <b>1.755 / 4.672 / 9.142 ns</b></span></div>
+                <p class="phase2-conclusion"><b>Current boundary:</b> Phase 1 has three measured routed sign-offs. Phase 2 infrastructure is implemented and tested, but its datapath transformations are not promoted and add no claimed savings to those results. This keeps the site’s headline numbers tied to measured, unchanged artifacts.</p>
+                <a class="journal-report-link" href="#results">Return to the measured comparison <span aria-hidden="true">↑</span></a>
+              </div>
+            </section>
+
+            <div class="article-source"><span>METHOD NOTE</span><p>Power deltas are OpenSTA dynamic power (internal + switching) using routed SPEF and measured gate-level VCDs. Leakage is excluded. Phase 2 trial details and all rejected-candidate reasons are recorded in the engineering manifests.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="clock-section section-pad" aria-labelledby="clock-title">
+        <div class="clock-intro"><div class="eyebrow light-eyebrow"><span class="eyebrow-line"></span> THE MAIN MECHANISM</div><h2 id="clock-title">Fewer costly clock cells.<br /><em>Lower routed power.</em></h2><p id="clockDescription">The clock-cell mix was reshaped after CTS-aware placement, pruning dummy loads and replacing eligible clock-buffer stars with polarity-safe inverters.</p><div class="clock-saving"><b id="clockSaving">—</b><span id="clockSavingLabel">clock-tree topology change<br /><small>measured dynamic power saved</small></span></div></div>
+        <div class="tree-compare">
+          <div class="tree-card before-tree"><div class="tree-card-head"><span>BASELINE TREE</span><span>BEFORE</span></div><div class="tree-drawing before-drawing" aria-hidden="true"><div class="tree-root"></div><div class="tree-branches"><i></i><i></i><i></i><i></i><i></i></div><div class="tree-cells"><i class="buf"></i><i class="buf"></i><i class="dum"></i><i class="buf"></i><i class="dum"></i><i class="buf"></i><i class="dum"></i><i class="buf"></i><i class="dum"></i></div><div class="tree-sinks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="tree-counts"><span><i class="cell-key buf-key"></i><span id="beforeBuffers">109</span> buffers</span><span><i class="cell-key dum-key"></i><span id="beforeDummies">97</span> dummy loads</span><span><i class="cell-key inv-key"></i><span id="beforeInverters">0</span> inverters</span></div></div>
+          <div class="tree-arrow" aria-hidden="true"><span>→</span><small>RESHAPED</small></div>
+          <div class="tree-card after-tree"><div class="tree-card-head"><span>FINAL TREE</span><span>AFTER</span></div><div class="tree-drawing after-drawing" aria-hidden="true"><div class="tree-root"></div><div class="tree-branches"><i></i><i></i><i></i><i></i><i></i></div><div class="tree-cells"><i class="inv"></i><i class="inv"></i><i class="inv"></i><i class="inv"></i><i class="inv"></i><i class="inv"></i><i class="inv"></i><i class="inv"></i><i class="inv"></i></div><div class="tree-sinks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="tree-counts"><span><i class="cell-key inv-key"></i><span id="afterInverters">100</span> inverters</span><span><i class="cell-key buf-key"></i><span id="afterBuffers">8</span> buffers</span><span><i class="cell-key zero-key"></i><span id="afterDummies">0</span> dummy loads</span></div></div>
+        </div>
+      </section>
+
+      <section class="signoff-section section-pad" id="signoff">
+        <div class="section-head signoff-head"><div><div class="eyebrow light-eyebrow"><span class="eyebrow-line"></span> ENGINEERING CHECKS</div><h2>Power improved.<br /><em>Sign-off stayed intact.</em></h2><p class="section-intro" id="signoffIntro">Each result uses routed SPEF, matched gate-level VCDs, and the design's timing constraints.</p></div><div class="signoff-stamp"><span>FINAL</span><b>PASS</b><small id="signoffTarget">—</small></div></div>
+        <div class="signoff-grid">
+          <article class="signoff-card timing-card"><span class="signoff-icon">↗</span><span class="signoff-label">FINAL SETUP WNS</span><strong><span id="finalWns">+1.891</span><small id="wnsUnit">ps</small></strong><div class="signoff-detail">baseline <span id="baselineWns">−41.947 ps</span><br /><b id="setupDelta">+43.839 ps change</b></div></article>
+          <article class="signoff-card"><span class="signoff-icon">⌁</span><span class="signoff-label">HOLD CHANGE</span><strong><span id="holdDelta">−1.175</span><small>ps</small></strong><div class="signoff-detail">within the 50 ps guard<br /><b>PASS</b></div></article>
+          <article class="signoff-card"><span class="signoff-icon">◇</span><span class="signoff-label">ROUTE DRC / ANTENNA</span><strong>0 <small>/ 0</small></strong><div class="signoff-detail">design-rule / antenna violations<br /><b>PASS</b></div></article>
+          <article class="signoff-card"><span class="signoff-icon">▤</span><span class="signoff-label">LOGIC EQUIVALENCE</span><strong><span id="lecPoints">562</span><small> proven</small></strong><div class="signoff-detail">Yosys equivalence points<br /><b>PROVEN</b></div></article>
+          <article class="signoff-card"><span class="signoff-icon">◉</span><span class="signoff-label">VCD COVERAGE</span><strong>0<small> missing</small></strong><div class="signoff-detail">unannotated pins, all workloads<br /><b>COMPLETE</b></div></article>
+          <article class="signoff-card"><span class="signoff-icon">⌂</span><span class="signoff-label">POWER GRID</span><strong>VDD<small> + VSS</small></strong><div class="signoff-detail">final connectivity checks<br /><b>PASS</b></div></article>
+        </div>
+        <div class="final-candidate"><span class="final-check">✓</span><div><small>FINAL MEASURED CANDIDATE</small><code id="candidateName">—</code></div><span class="candidate-platform" id="candidatePlatform">AES · SKY130HD</span></div>
+      </section>
+    </main>
+
+    <footer class="footer"><a class="footer-brand" href="#top">CL<span>/</span>OVPS</a><span>Routed SPEF + gate-level VCD · OpenSTA measurement</span><span class="footer-end">THREE BENCHMARKS <i></i> COMPLETE</span></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

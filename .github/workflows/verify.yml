@@ -1,0 +1,40 @@
+name: Verify Evidence & Sign-off
+
+on:
+  push:
+    branches: [ main, prep/publish ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.13", "3.14"]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          allow-prereleases: true
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install ruff pytest numpy pandas scipy
+
+      - name: Lint with Ruff
+        run: |
+          ruff check .
+
+      - name: Run Fast Unit Tests
+        run: |
+          pytest -v -m "not slow"
+
+      - name: Evidence Consistency Check
+        run: |
+          python scripts/verify_results.py

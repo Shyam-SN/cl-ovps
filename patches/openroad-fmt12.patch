@@ -1,0 +1,15 @@
+diff --git a/third-party/CMakeLists.txt b/third-party/CMakeLists.txt
+--- a/third-party/CMakeLists.txt
++++ b/third-party/CMakeLists.txt
+@@ -80,4 +80,8 @@
+ add_subdirectory(slang-elab/third_party/slang EXCLUDE_FROM_ALL)
++
++# fmt 12 moved fmt::format out of fmt/core.h, while this Slang revision still
++# uses that API from core.h. Preload the full format interface for Slang users.
++target_compile_options(slang_slang PUBLIC "SHELL:-include fmt/format.h")
+ 
+ # slang's gitversion.cmake defines a colliding get_git_head_revision() function
+ # that later breaks STA's call (_gitversionmoddir is unset in STA's dir scope).
+ 
+ # slang's gitversion.cmake defines a colliding get_git_head_revision() function
+ # that later breaks STA's call (_gitversionmoddir is unset in STA's dir scope).

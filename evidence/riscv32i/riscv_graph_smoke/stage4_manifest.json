@@ -1,0 +1,53 @@
+{
+  "clock_leaf_ndr_nets": 103,
+  "design": "riscv32i_topology_safe_7ns",
+  "engine": "CL-OVPS Stage 4 ORFS route/signoff driver",
+  "gates": {
+    "clock_leaf_ndr": true,
+    "logical_equivalence": true,
+    "pdn_vdd_vss": true,
+    "route_drc_antenna": true
+  },
+  "inputs": {
+    "$CL_OVPS_ROOT/build/orfs/results/sky130hd/riscv32i_7ns_clovps/clovps_riscv32i_7ns_timingfloor_route/3_place.odb": "74c1e6402028400721e3639abd49dba7d3cbead0b6e6e516fb2ee783efaa98ae",
+    "$CL_OVPS_ROOT/build/orfs/results/sky130hd/riscv32i_7ns_clovps/clovps_riscv32i_7ns_timingfloor_route/3_place.sdc": "5b5e847c545164311ae14b341a16afcf96cababda4f3cd6110f26b66de75ec03",
+    "$CL_OVPS_ROOT/build/orfs/results/sky130hd/riscv32i_7ns_clovps/clovps_riscv32i_7ns_timingfloor_route/4_cts.sdc": "d1d5427667e4f7fe21b5766034a3792a5fff9ce1483ed65482293ec792a782bb",
+    "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/riscv_graph_smoke/candidate_stage3_graphfilter.odb": "a8bd580a7aee6e83d3d6736a47acf1ce8840c480637da7ac925adf16e82ee3e8",
+    "$CL_OVPS_ROOT/tools/openroad-flow-scripts/flow/designs/sky130hd/riscv32i/config.mk": "7f11b55c0dd10ee8fb8dc55aadb3369910fc16020f59526c054fe4ddc1b7b1f5"
+  },
+  "lec": {
+    "log": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/riscv_graph_smoke/candidate_stage4_graphfilter/lec.log",
+    "pass": true,
+    "plan": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/riscv_graph_smoke/candidate_lec_plan.json",
+    "return_code": 0,
+    "status": "LEC_PASS"
+  },
+  "outputs": {
+    "lec_status": "$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/riscv_graph_smoke/candidate_stage4_graphfilter/lec_status.txt",
+    "netlist": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/riscv32i_7ns_clovps/topology_safe_graphfilter_20261103/6_final.v",
+    "netlist_sha256": "c36a7100be86cda8950e7ecade685b8229bb6f419107cc71eccebc1c3671f682",
+    "odb": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/riscv32i_7ns_clovps/topology_safe_graphfilter_20261103/6_final.odb",
+    "odb_sha256": "9e4dd23602fc210ac89be1e0c2d343bcabd2949fefb6f1b0669593b1fbb5df52",
+    "spef": "$CL_OVPS_ROOT/build/orfs/results/sky130hd/riscv32i_7ns_clovps/topology_safe_graphfilter_20261103/6_final.spef",
+    "spef_sha256": "0f54e98854ce70adc0c2e09f2b8a7b96f632f8b283dd13eacc37559c48d04c0f"
+  },
+  "power_grid": {
+    "pass": true,
+    "psm_0069_count": 0,
+    "vdd_pass": true,
+    "vss_pass": true
+  },
+  "route": {
+    "antenna_net_violations": 0,
+    "antenna_pin_violations": 0,
+    "drc_violations": 0,
+    "pass": true
+  },
+  "schema_version": 1,
+  "status": "PASS",
+  "timing_repair": {
+    "effective_setup_margin_ns": 0.0,
+    "requested_setup_margin_ns": null
+  },
+  "variant": "topology_safe_graphfilter_20261103"
+}

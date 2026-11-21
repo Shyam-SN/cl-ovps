@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cl-ovps"
+version = "1.0.0"
+description = "Clock-Logic OpenROAD Power Sign-off: 4-stage physical design flow reducing routed dynamic power"
+readme = "README.md"
+requires-python = ">=3.14"
+license = { text = "BSD-3-Clause" }
+authors = [
+    { name = "Shyam SN", email = "snshyam747@gmail.com" }
+]
+keywords = ["openroad", "eda", "physical-design", "cts", "power-optimization", "opensta"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)",
+]
+dependencies = [
+    "numpy>=2.0.0",
+    "pandas>=2.2.0",
+    "scipy>=1.14.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.8.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+# Strict modern linting is configured for active verification tools and test suites.
+# Historical 2026 exploration scripts and ORFS flow adapters under scripts/ and designs/
+# are excluded to preserve original run artifacts and exact execution semantics.
+include = [
+    "scripts/verify_results.py",
+    "tests/**/*.py",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: marks tests as slow/integration requiring external EDA tools (OpenROAD/ORFS/Yosys)"
+]

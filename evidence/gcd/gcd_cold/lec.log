@@ -1,0 +1,8 @@
+# [EXTRACTED SUMMARY] - GCD Stage 4 LEC summary extract
+# Original file: <LOCAL_ROOT>/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/stage4_proof_refresh/lec.log
+# Original size: 652 bytes (0.00 MB)
+# Original SHA-256: 442b208e3a1e49a4ace5c0c0d7d92befe16943689a2e9814203859f1d203b20a
+
+CL_OVPS_LEC status=LEC_PASS top=gcd baseline_removed_clock=5 candidate_removed_clock=5 baseline_removed_dummy=3 candidate_removed_dummy=0 baseline_ties=2 candidate_ties=2 baseline_supply_pins_added=1108 candidate_supply_pins_added=1108 reset_model=native_cell_model clock_sinks=35 clock_transport_abstraction=graph_verified topology=$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/stage4_proof_refresh/lec/clock_topology.json log=$CL_OVPS_ROOT/build/power/cl_ovps_topology_upgrade_20261103/gcd_cold/stage4_proof_refresh/lec/equivalence.log
+
+LEC_PROOF_POINTS proven=52 unproven=0
