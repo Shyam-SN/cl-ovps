@@ -7,7 +7,7 @@ A static local website comparing the final routed clock-optimization results for
 On macOS, open `start.command`, or run from the project root:
 
 ```sh
-python3 web/aes_power_compare/server.py
+python3 web/clock_power_study/server.py
 ```
 
 Open <http://127.0.0.1:8765>. Press Control-C in the server terminal to stop it.

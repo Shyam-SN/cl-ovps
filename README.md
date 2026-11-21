@@ -14,17 +14,18 @@ All values below represent **post-detailed-route dynamic power** (internal cell 
 
 ### Primary Results (SkyWater Sky130HD)
 
-| Design | PDK | Clock | Run Type | Idle Dyn. Red. (Abs / %) | Typical Dyn. Red. (Abs / %) | Peak Dyn. Red. (Abs / %) | Setup Δ (WNS) | Hold Δ | DRC / Ant. | PDN (VDD/VSS) | VCD Missing | LEC (Yosys) | Evidence |
+| Design | PDK | Clock | Run Type & Manifest Proof | Idle Dyn. Red. (Abs / %) | Typical Dyn. Red. (Abs / %) | Peak Dyn. Red. (Abs / %) | Setup Δ (WNS) | Hold Δ | DRC / Ant. | PDN (VDD/VSS) | VCD Missing | LEC (Yosys) | Evidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| **GCD** | Sky130HD | 20.0 ns | **Cold run** | −24.45 µW (−18.02%) | **−24.68 µW (−16.37%)** | −26.31 µW (−10.96%) | +216.30 ps | −3.95 ps | 0 / 0 | PASS (0 PSM) | 0 (100%) | **52/52** | [Folder](evidence/gcd/gcd_cold/) |
-| **AES** | Sky130HD | 3.8 ns | **Replay** | −6.253 mW (−37.73%) | **−6.056 mW (−7.99%)** | **−6.029 mW (−7.81%)*** | +43.84 ps | −1.17 ps | 0 / 0 | PASS (0 PSM) | 0 (100%) | **562/562** | [Folder](evidence/aes/aes_graph_smoke/) |
-| **RISCV32I** | Sky130HD | 7.0 ns | **Replay** | −3.255 mW (−25.32%) | **−3.260 mW (−17.65%)** | −3.252 mW (−13.60%) | −3.56 ps | +14.05 ps | 0 / 0 | PASS (0 PSM) | 0 (100%) | **1123/1123** | [Folder](evidence/riscv32i/riscv_graph_smoke/) |
+| **GCD** | Sky130HD | 20.0 ns | **Cold run** (`stage4_manifest.json` inputs: `.../3_place.odb`) | −24.45 µW (−18.02%) | **−24.68 µW (−16.37%)** | −26.31 µW (−10.96%) | +216.30 ps | −3.95 ps | 0 / 0 | PASS (0 PSM) | 0 (100%) | **52/52** | [Folder](evidence/gcd/gcd_cold/) |
+| **AES** | Sky130HD | 3.8 ns | **Cold run** (`stage4_manifest.json` inputs: `.../3_place.odb`) | −6.253 mW (−37.73%) | **−6.056 mW (−7.99%)** | **−6.029 mW (−7.81%)*** | +43.84 ps | −1.17 ps | 0 / 0 | PASS (0 PSM) | 0 (100%) | **562/562** | [Folder](evidence/aes/aes_graph_smoke/) |
+| **RISCV32I** | Sky130HD | 7.0 ns | **Cold run** (`stage4_manifest.json` inputs: `.../3_place.odb`) | −3.255 mW (−25.32%) | **−3.260 mW (−17.65%)** | −3.252 mW (−13.60%) | −3.56 ps | +14.05 ps | 0 / 0 | PASS (0 PSM) | 0 (100%) | **1123/1123** | [Folder](evidence/riscv32i/riscv_graph_smoke/) |
+| **RISCV32I (Timing Floor)** | Sky130HD | 7.0 ns | **Measurement replay** (`cl_ovps_manifest.json` inputs: `.../6_final.odb`) | −3.255 mW (−25.32%) | **−3.260 mW (−17.65%)** | −3.252 mW (−13.60%) | −3.56 ps | +14.05 ps | 0 / 0 | PASS (0 PSM) | 0 (100%) | **1123/1123** | [Folder](evidence/riscv32i/timing_floor_replay/) |
 
 *\*Note on AES Peak Precision*: In `reports/CL_OVPS_FINAL_CLOSEOUT.md`, the AES peak reduction was listed as 7.82% due to historical display rounding; recomputing directly from the unrounded manifest watt values (−0.006028837 W / 0.077146556 W) yields **−7.81%** under standard two-decimal precision.
 
-*Notes on Run Types*:
-- **Cold run** (`gcd_cold`): Full end-to-end flow execution starting from raw placed ODB through Stage 1, 2, 3, detailed routing, and final sign-off.
-- **Measurement-only replay** (`aes_graph_smoke`, `riscv_graph_smoke`, `timing_floor_replay`): Reopening the final routed candidate ODB, extracted SPEF, SDC, and workload VCDs to re-measure all metrics without re-running optimization.
+*Notes on Run Types and Manifest Provenance*:
+- **Cold run** (`gcd_cold`, `aes_graph_smoke`, `riscv_graph_smoke`): End-to-end execution starting from raw placed ODB (`3_place.odb` recorded in `stage4_manifest.json` inputs) through Stage 1 placer search, Stage 2 clock restructuring, Stage 3 sizing, detailed routing, and final sign-off. (Note: The manifest JSON schema does not record an explicit top-level `run_type` key; run type is recorded and verified from the input database stage in `stage4_manifest.json`).
+- **Measurement-only replay** (`timing_floor_replay`): Re-verification of paired VCDs directly against the already-routed database (`6_final.odb` recorded in `inputs.placed_odb.path`, logs in `.../measured_vcd_signoff_final/`) without re-running optimization passes, verifying timing floor preservation when critical `a21o` resize is rejected.
 - **Setup Δ**: Positive indicates slack improvement (e.g., AES setup slack recovered from −41.95 ps to **+1.89 ps**, achieving timing closure). RISCV32I setup delta (−3.56 ps) stayed well within the strict ≤50 ps regression guard.
 
 ### Experimental Platform Result (ASAP7 7nm Predictive PDK)
@@ -33,9 +34,9 @@ Evaluated under Phase 3A multi-threshold voltage ($V_t$) in-place optimization.
 - **Boundary condition**: Evaluated on a **matched same-route checkpoint with no re-route** after the $V_t$ swaps. Matched standard cell layout dimensions and pin geometry preserve the existing detailed route; signal and special net sections in DEF are byte-identical.
 - **Power scope**: Power values are **dynamic power only** (cell internal plus net switching). Static leakage power is evaluated and reported separately.
 
-| Design | PDK | Clock | Run Type | Idle Dyn. Red. (Abs / %) | Typical Dyn. Red. (Abs / %) | Peak Dyn. Red. (Abs / %) | Leakage Δ (Typ) | Setup Δ | DRC / Ant. | PDN | LEC (Yosys) | Evidence |
+| Design | PDK | Clock | Run Type & Manifest Proof | Idle Dyn. Red. (Abs / %) | Typical Dyn. Red. (Abs / %) | Peak Dyn. Red. (Abs / %) | Leakage Δ (Typ) | Setup Δ | DRC / Ant. | PDN | LEC (Yosys) | Evidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| **GCD** | ASAP7 | 500 ps | **Same-route replay (no re-route)** | −0.0048 µW (−0.0033%) | **−1.088 µW (−0.42%)** | −2.152 µW (−0.53%) | −37.661 nW | +0.17 ps | 0 / 0 (inherited) | PASS | **331/331** | [Folder](evidence/asap7_gcd/phase3a_asap7_gcd_500ps/) |
+| **GCD** | ASAP7 | 500 ps | **Same-route evaluation (no re-route)** (`stage3a_multivt_manifest.json`) | **−4.800 nW (−0.003%)** | **−1088.272 nW (−0.420%)** | **−2151.530 nW (−0.526%)** | −37.661 nW | +0.17 ps | 0 / 0 (inherited) | PASS | **331/331** | [Folder](evidence/asap7_gcd/phase3a_asap7_gcd_500ps/) |
 
 ---
 
@@ -98,7 +99,7 @@ python3 scripts/verify_results.py
 
 The script:
 1. Validates the SHA-256 integrity of all evidence files in [`evidence/SHA256SUMS`](evidence/SHA256SUMS).
-2. Re-derives all headline power deltas, percentages, and timing slacks directly from raw OpenSTA quantities in the signed manifests.
+2. Re-derives all headline power deltas, percentages, and timing slacks directly from committed OpenSTA-derived manifest values.
 3. Checks every derived number against this README, failing if any discrepancy exists.
 
 To run the unit test suite:
@@ -164,7 +165,7 @@ We document experimental passes that were evaluated and rejected:
 │   ├── ENVIRONMENT.md         # Pinned tool commits, compiler flags, and system specs
 │   └── METHODOLOGY.md         # Power definitions, VCD generation, timing rules
 ├── reports/                   # Authoritative closeout and ablation technical reports
-├── web/                       # Local static power comparison visualizer
+├── web/                       # Local static power comparison visualizer (web/clock_power_study)
 ├── versions.lock              # Pinned Git SHAs for OpenROAD, ORFS, Yosys, PDKs
 └── pyproject.toml             # Python >=3.14 project definition and dependencies
 ```

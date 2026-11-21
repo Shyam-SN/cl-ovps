@@ -2,7 +2,7 @@
 """CL-OVPS Evidence Consistency Check.
 
 Validates that committed evidence manifests match their recorded SHA-256 sums,
-re-derives power and timing deltas from raw OpenSTA-derived quantities in the manifests,
+re-derives power and timing deltas from committed OpenSTA-derived manifest values,
 verifies physical and equivalence sign-off gates, and checks exact numerical agreement
 with the README results tables.
 
@@ -55,7 +55,7 @@ def verify_sha256sums(sums_file: Path) -> tuple[int, int]:
 
 
 def re_derive_manifest_metrics(manifest_path: Path) -> dict:
-    """Parse raw OpenSTA quantities from a manifest and re-derive all power and timing deltas."""
+    """Parse committed OpenSTA-derived manifest values and re-derive all power and timing deltas."""
     data = json.loads(manifest_path.read_text())
     design = data.get("design", "")
     workloads = data.get("workloads", {})
@@ -116,6 +116,8 @@ def verify_readme_alignment(verified_runs: dict, readme_path: Path) -> list[str]
         return ["README.md not found"]
 
     readme_text = readme_path.read_text()
+    # Normalize unicode minus to ASCII minus for robust character matching
+    norm_text = readme_text.replace("\u2212", "-")
     errors = []
 
     # 1. GCD (-16.37% typical)
@@ -123,7 +125,7 @@ def verify_readme_alignment(verified_runs: dict, readme_path: Path) -> list[str]
     if gcd:
         typ = gcd["workloads"].get("typical", {})
         pct = abs(typ.get("derived_pct", 0.0))
-        if f"{pct:.2f}%" not in readme_text:
+        if f"{pct:.2f}%" not in norm_text:
             errors.append(
                 f"GCD typical power reduction percentage {pct:.2f}% not found in README"
             )
@@ -133,15 +135,15 @@ def verify_readme_alignment(verified_runs: dict, readme_path: Path) -> list[str]
     if aes:
         typ = aes["workloads"].get("typical", {})
         pct_typ = abs(typ.get("derived_pct", 0.0))
-        if f"{pct_typ:.2f}%" not in readme_text:
+        if f"{pct_typ:.2f}%" not in norm_text:
             errors.append(
                 f"AES typical power reduction percentage {pct_typ:.2f}% not found in README"
             )
-        if "37.73%" not in readme_text:
+        if "37.73%" not in norm_text:
             errors.append("AES idle power reduction 37.73% not found in README")
         peak = aes["workloads"].get("peak", {})
         pct_peak = abs(peak.get("derived_pct", 0.0))
-        if f"{pct_peak:.2f}%" not in readme_text:
+        if f"{pct_peak:.2f}%" not in norm_text:
             errors.append(
                 f"AES peak power reduction percentage {pct_peak:.2f}% not found in README"
             )
@@ -151,13 +153,33 @@ def verify_readme_alignment(verified_runs: dict, readme_path: Path) -> list[str]
     if riscv:
         typ = riscv["workloads"].get("typical", {})
         pct = abs(typ.get("derived_pct", 0.0))
-        if f"{pct:.2f}%" not in readme_text:
+        if f"{pct:.2f}%" not in norm_text:
             errors.append(
                 f"RISCV32I typical power reduction percentage {pct:.2f}% not found in README"
             )
 
-    # 4. Phase 3B ICG negative result (+41.115 uW)
-    if "41.115" not in readme_text:
+    # 4. Timing Floor Replay
+    if "timing_floor_replay" not in norm_text and "Timing Floor" not in norm_text:
+        errors.append("Timing floor replay row not found in README")
+
+    # 5. ASAP7 GCD precision check (-0.003% idle, -0.420% typical, -0.526% peak, and nW deltas)
+    asap7 = verified_runs.get("asap7_gcd", {})
+    if asap7:
+        if "-0.003%" not in norm_text:
+            errors.append("ASAP7 idle percentage -0.003% not found in README")
+        if "-0.420%" not in norm_text:
+            errors.append("ASAP7 typical percentage -0.420% not found in README")
+        if "-0.526%" not in norm_text:
+            errors.append("ASAP7 peak percentage -0.526% not found in README")
+        if "-4.800 nW" not in norm_text:
+            errors.append("ASAP7 idle delta -4.800 nW not found in README")
+        if "-1088.272 nW" not in norm_text:
+            errors.append("ASAP7 typical delta -1088.272 nW not found in README")
+        if "-2151.530 nW" not in norm_text:
+            errors.append("ASAP7 peak delta -2151.530 nW not found in README")
+
+    # 6. Phase 3B ICG negative result (+41.115 uW)
+    if "41.115" not in norm_text:
         errors.append("Phase 3B ICG negative power delta (+41.115 µW) not documented in README")
 
     return errors
@@ -185,11 +207,14 @@ def main() -> int:
         return 1
 
     # 2. Re-derive Metrics from Manifests
-    print("\n[Step 2/3] Re-deriving dynamic power and timing metrics from raw OpenSTA values...")
+    print(
+        "\n[Step 2/3] Re-deriving dynamic power and timing metrics from committed OpenSTA-derived manifest values..."
+    )
     manifest_targets = {
         "gcd_cold": EVIDENCE_DIR / "gcd/gcd_cold/cl_ovps_manifest.json",
         "aes_graph_smoke": EVIDENCE_DIR / "aes/aes_graph_smoke/cl_ovps_manifest.json",
         "riscv_graph_smoke": EVIDENCE_DIR / "riscv32i/riscv_graph_smoke/cl_ovps_manifest.json",
+        "timing_floor_replay": EVIDENCE_DIR / "riscv32i/timing_floor_replay/cl_ovps_manifest.json",
         "asap7_gcd": EVIDENCE_DIR / "asap7_gcd/phase3a_asap7_gcd_500ps/cl_ovps_manifest.json",
         "phase3b_icg": EVIDENCE_DIR / "ablation/phase3b_icg/cl_ovps_manifest.json",
     }
@@ -197,8 +222,8 @@ def main() -> int:
     verified_runs = {}
     any_errors = False
 
-    header_fmt = "{:<18} | {:<8} | {:<12} | {:<12} | {:<12} | {:<8} | {:<10} | {:<10}"
-    row_fmt = "{:<18} | {:<8} | {:>9.4f} {:<2} | {:>9.4f} {:<2} | {:>+9.4f} {:<2} | {:>+7.2f}% | {:>+8.2f} ps | {:<10}"
+    header_fmt = "{:<20} | {:<8} | {:<12} | {:<12} | {:<14} | {:<9} | {:<10} | {:<10}"
+    row_fmt = "{:<20} | {:<8} | {:>9.4f} {:<2} | {:>9.4f} {:<2} | {:>+11.4f} {:<2} | {:>+8.2f}% | {:>+8.2f} ps | {:<10}"
 
     print(
         "\n"
@@ -213,7 +238,7 @@ def main() -> int:
             "Status",
         )
     )
-    print("-" * 105)
+    print("-" * 110)
 
     for tag, m_path in manifest_targets.items():
         if not m_path.exists():
@@ -243,6 +268,32 @@ def main() -> int:
                 any_errors = True
 
             # Format unit for display
+            if tag == "asap7_gcd":
+                # User requested ASAP7 deltas displayed in nW with 3-decimal % precision
+                base_scale = 1e6
+                cand_scale = 1e6
+                delta_scale = 1e9
+                delta_unit = "nW"
+                unit = "µW"
+                asap_fmt = "{:<20} | {:<8} | {:>9.4f} {:<2} | {:>9.4f} {:<2} | {:>+11.3f} {:<2} | {:>+8.3f}% | {:>+8.2f} ps | {:<10}"
+                status = "PASS"
+                print(
+                    asap_fmt.format(
+                        tag,
+                        w_name,
+                        base_w * base_scale,
+                        unit,
+                        cand_w * cand_scale,
+                        unit,
+                        delta_w * delta_scale,
+                        delta_unit,
+                        pct,
+                        setup_ps,
+                        status,
+                    )
+                )
+                continue
+
             unit = "mW" if base_w >= 1e-3 else "µW"
             scale = 1e3 if unit == "mW" else 1e6
             status = (

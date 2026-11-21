@@ -30,7 +30,7 @@ class TestVerifyResults(unittest.TestCase):
         self.assertGreater(passed, 30, f"Expected at least 30 verified files, got {passed}")
 
     def test_manifest_rederivation_gcd(self):
-        """Verify GCD manifest re-derivation from raw OpenSTA quantities."""
+        """Verify GCD manifest re-derivation from committed OpenSTA-derived manifest values."""
         manifest_path = EVIDENCE_DIR / "gcd/gcd_cold/cl_ovps_manifest.json"
         self.assertTrue(manifest_path.exists())
 
@@ -44,7 +44,7 @@ class TestVerifyResults(unittest.TestCase):
         self.assertGreater(typ["derived_setup_delta_ps"], 200.0)
 
     def test_manifest_rederivation_aes(self):
-        """Verify AES manifest re-derivation from raw OpenSTA quantities."""
+        """Verify AES manifest re-derivation from committed OpenSTA-derived manifest values."""
         manifest_path = EVIDENCE_DIR / "aes/aes_graph_smoke/cl_ovps_manifest.json"
         self.assertTrue(manifest_path.exists())
 
@@ -66,7 +66,7 @@ class TestVerifyResults(unittest.TestCase):
         self.assertEqual(route["antenna_pin_violations"], 0)
 
     def test_manifest_rederivation_riscv32i(self):
-        """Verify RISCV32I manifest re-derivation from raw OpenSTA quantities."""
+        """Verify RISCV32I manifest re-derivation from committed OpenSTA-derived manifest values."""
         manifest_path = EVIDENCE_DIR / "riscv32i/riscv_graph_smoke/cl_ovps_manifest.json"
         self.assertTrue(manifest_path.exists())
 
@@ -78,16 +78,39 @@ class TestVerifyResults(unittest.TestCase):
         self.assertLess(abs(typ["derived_setup_delta_ps"]), 50.0)
         self.assertGreater(typ["derived_hold_delta_ps"], 10.0)
 
-    def test_asap7_gcd_same_route(self):
-        """Verify ASAP7 GCD multi-Vt in-place replacement metrics."""
-        manifest_path = EVIDENCE_DIR / "asap7_gcd/phase3a_asap7_gcd_500ps/cl_ovps_manifest.json"
+    def test_manifest_rederivation_timing_floor_replay(self):
+        """Verify RISCV32I timing-floor replay manifest re-derivation."""
+        manifest_path = EVIDENCE_DIR / "riscv32i/timing_floor_replay/cl_ovps_manifest.json"
         self.assertTrue(manifest_path.exists())
 
         metrics = re_derive_manifest_metrics(manifest_path)
         self.assertEqual(metrics["status"], "PASS")
 
         typ = metrics["workloads"]["typical"]
-        self.assertTrue(math.isclose(typ["derived_pct"], -0.42, abs_tol=0.1))
+        self.assertTrue(math.isclose(typ["derived_pct"], -17.65, abs_tol=0.1))
+        self.assertLess(abs(typ["derived_setup_delta_ps"]), 50.0)
+
+    def test_asap7_gcd_same_route(self):
+        """Verify ASAP7 GCD multi-Vt in-place replacement metrics and nW precision."""
+        manifest_path = EVIDENCE_DIR / "asap7_gcd/phase3a_asap7_gcd_500ps/cl_ovps_manifest.json"
+        self.assertTrue(manifest_path.exists())
+
+        metrics = re_derive_manifest_metrics(manifest_path)
+        self.assertEqual(metrics["status"], "PASS")
+
+        idle = metrics["workloads"]["idle"]
+        typ = metrics["workloads"]["typical"]
+        peak = metrics["workloads"]["peak"]
+
+        # 3-decimal percentage precision
+        self.assertTrue(math.isclose(idle["derived_pct"], -0.003, abs_tol=0.001))
+        self.assertTrue(math.isclose(typ["derived_pct"], -0.420, abs_tol=0.005))
+        self.assertTrue(math.isclose(peak["derived_pct"], -0.526, abs_tol=0.005))
+
+        # Absolute deltas in nW
+        self.assertTrue(math.isclose(idle["derived_delta_w"] * 1e9, -4.800, abs_tol=0.05))
+        self.assertTrue(math.isclose(typ["derived_delta_w"] * 1e9, -1088.272, abs_tol=0.5))
+        self.assertTrue(math.isclose(peak["derived_delta_w"] * 1e9, -2151.530, abs_tol=0.5))
         self.assertGreaterEqual(typ["derived_setup_delta_ps"], 0.0)
 
     def test_negative_result_phase3b_icg(self):

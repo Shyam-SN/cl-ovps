@@ -1,7 +1,7 @@
 #!/bin/zsh
 set -e
 cd "$(dirname "$0")/../.."
-python3 web/aes_power_compare/server.py &
+python3 web/clock_power_study/server.py &
 server_pid=$!
 trap 'kill "$server_pid" 2>/dev/null || true' EXIT INT TERM
 sleep 1
