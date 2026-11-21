@@ -29,7 +29,7 @@ jobs:
 
       - name: Run Fast Unit Tests
         run: |
-          pytest -v -m "not slow"
+          python -m pytest -v -m "not slow"
 
       - name: Evidence Consistency Check
         run: |

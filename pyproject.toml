@@ -45,6 +45,7 @@ include = [
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]
 markers = [
     "slow: marks tests as slow/integration requiring external EDA tools (OpenROAD/ORFS/Yosys)"
 ]
